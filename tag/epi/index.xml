@@ -14,6 +14,16 @@
     
     <item>
       <title>Risk factors for attention deficit hyperactivity disorder (ADHD)</title>
+      <link>/project/cogneuro/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/project/cogneuro/</guid>
+      <description>&lt;p&gt;One paper in this area examines &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/31451995/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;how self selection into a study and loss to follow up can bias associations between exposures and outcomes&lt;/a&gt;, and how one can best reduce this bias. Elaborating on a &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/15308962/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;seminal paper by Hernan and colleagues&lt;/a&gt; we point out that one cannot determine if large studies such as for example &lt;a href=&#34;https://www.fhi.no/en/studies/moba/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MoBa&lt;/a&gt;, &lt;a href=&#34;http://www.bristol.ac.uk/alspac/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ALSPAC&lt;/a&gt; or the &lt;a href=&#34;https://www.ukbiobank.ac.uk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UK Biobank&lt;/a&gt; are generally &amp;ldquo;representative&amp;rdquo;. Instead the relationship between specific variables of interest in a study and variables that predict (continued) participation determine if bias is likely and how it should be accounted for. Importantly: When mental health related outcomes like ADHD, depression, etc. are involved, simply adjusting for participation predictors will often increase and not decrease bias. In comparison, inverse probability of participation weights will reduce bias. The reason for this is that participation predictors are often colliders between (mental health) outcomes and exposures, and conditioning on colliders introduces bias, but weighting does not.&lt;/p&gt;
+&lt;p&gt;In other research colleagues and I investigate associations between maternal characteristics, often assessed in pregnancy, and developmental outcomes including ADHD. Differently then some research in this field we use Bayesian hierarchical regression models to estimate associations, which allows us to deal effectively with the multiple comparison problem, and we focus on effect sizes as opposed to statistical significance (using the MoBa, our sample size is often in the tens of thousands). So far our findings indicate that in rich industrialized countries the association between maternal nutrition or exposure to toxicants have &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/31375821/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;such small effects and child developmental outcomes is small that it is unlikely practically meaningful&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Risk factors for attention deficit hyperactivity disorder (ADHD)</title>
       <link>/project/epi/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/project/epi/</guid>
