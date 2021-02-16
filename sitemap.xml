@@ -273,6 +273,36 @@
   </url>
   
   <url>
+    <loc>/publication/pub_2020b/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/b-muhlemann/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/g-biele/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/others/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/t-c-jones/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/t-veith/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/azemira-sabaredzovic/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -298,7 +328,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2020b/</loc>
+    <loc>/publication/pub_2020c/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -373,26 +403,6 @@
   </url>
   
   <url>
-    <loc>/author/anne-lise-brans%C3%A6ter/</loc>
-    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/e-rangnhild-eek-brandlistuen/</loc>
-    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2019c/</loc>
-    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/heide-aase/</loc>
-    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/author/are-hugo-pripp/</loc>
     <lastmod>2019-04-01T00:00:00+00:00</lastmod>
   </url>
@@ -408,7 +418,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2019d/</loc>
+    <loc>/publication/pub_2019c/</loc>
     <lastmod>2019-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -533,27 +543,12 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2017e/</loc>
+    <loc>/publication/pub_2017b/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/frode-willoch/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/lotte-thomsen/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/author/mads-lund-pedersen/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/marie-eikemo/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -563,22 +558,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2017c/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/siri-leknes/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2017b/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2017d/</loc>
+    <loc>/publication/pub_2017a/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -593,7 +573,12 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2017f/</loc>
+    <loc>/author/frode-willoch/</loc>
+    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/pub_2017c/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -603,12 +588,22 @@
   </url>
   
   <url>
+    <loc>/author/lotte-thomsen/</loc>
+    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/marie-eikemo/</loc>
+    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/mats-fredriksen/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/pub_2017g/</loc>
+    <loc>/publication/pub_2017d/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -618,28 +613,13 @@
   </url>
   
   <url>
-    <loc>/author/tor-endestad/</loc>
+    <loc>/author/siri-leknes/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/athanasia-m-mowinckel/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/edmund-sonuga-barke/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2017a/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/mads-l-pedersen/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
+    <loc>/author/tor-endestad/</loc>
+    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -674,6 +654,11 @@
   
   <url>
     <loc>/publication/pub_2016c/</loc>
+    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/athanasia-m-mowinckel/</loc>
     <lastmod>2016-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -753,63 +738,18 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2015d/</loc>
-    <lastmod>2015-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/author/thorsten-pachur/</loc>
     <lastmod>2015-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/pub_2014b/</loc>
+    <loc>/publication/pub_2014a/</loc>
     <lastmod>2014-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/pub_2014a/</loc>
-    <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/g-biele/</loc>
-    <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/h-aase/</loc>
-    <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/p-zeiner/</loc>
-    <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/author/chantal-berna/</loc>
-    <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/gregory-d-snyder/</loc>
-    <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/irene-tracey/</loc>
-    <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/michael-c-lee/</loc>
-    <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2013c/</loc>
-    <lastmod>2013-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -818,7 +758,12 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2013d/</loc>
+    <loc>/publication/pub_2013c/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/gregory-d-snyder/</loc>
     <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -834,6 +779,16 @@
   
   <url>
     <loc>/author/holger-thiele/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/irene-tracey/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/michael-c-lee/</loc>
     <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -923,7 +878,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2010g/</loc>
+    <loc>/publication/pub_2010f/</loc>
     <lastmod>2010-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -933,7 +888,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2010f/</loc>
+    <loc>/publication/pub_2010e/</loc>
     <lastmod>2010-10-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -973,42 +928,17 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2010e/</loc>
+    <loc>/publication/pub_2010d/</loc>
     <lastmod>2010-10-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/h-r-heekeren/</loc>
-    <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/l-k-krugel/</loc>
-    <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2010a/</loc>
-    <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/p-n-c-mohr/</loc>
-    <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/s-c-li/</loc>
-    <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2010d/</loc>
+    <loc>/publication/pub_2010c/</loc>
     <lastmod>2010-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/pub_2010c/</loc>
+    <loc>/publication/pub_2010b/</loc>
     <lastmod>2010-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1018,7 +948,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2010b/</loc>
+    <loc>/publication/pub_2010a/</loc>
     <lastmod>2010-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1053,7 +983,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2008b/</loc>
+    <loc>/publication/pub_2008a/</loc>
     <lastmod>2008-07-01T00:00:00+00:00</lastmod>
   </url>
   
