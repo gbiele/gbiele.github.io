@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nikos Green | Guido Biele</title>
+    <link>/author/nikos-green/</link>
+      <atom:link href="/author/nikos-green/index.xml" rel="self" type="application/rss+xml" />
+    <description>Nikos Green</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Oct 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Nikos Green</title>
+      <link>/author/nikos-green/</link>
+    </image>
+    
+    <item>
+      <title>Changes in neural connectivity underlie decision threshold modulation for reward maximization</title>
+      <link>/publication/pub_2012a/</link>
+      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2012a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

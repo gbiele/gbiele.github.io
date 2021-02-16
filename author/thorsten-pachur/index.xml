@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thorsten Pachur | Guido Biele</title>
+    <link>/author/thorsten-pachur/</link>
+      <atom:link href="/author/thorsten-pachur/index.xml" rel="self" type="application/rss+xml" />
+    <description>Thorsten Pachur</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Thorsten Pachur</title>
+      <link>/author/thorsten-pachur/</link>
+    </image>
+    
+    <item>
+      <title>The neural basis of risky choice with affective outcomes</title>
+      <link>/publication/pub_2015a/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2015a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The neural basis of risky choice with affective outcomes</title>
+      <link>/publication/pub_2015d/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2015d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forecasting from ignorance. the use and usefulness of recognition in lay predictions of sports events</title>
+      <link>/publication/pub_2007a/</link>
+      <pubDate>Tue, 01 May 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2007a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

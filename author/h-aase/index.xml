@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>H Aase | Guido Biele</title>
+    <link>/author/h-aase/</link>
+      <atom:link href="/author/h-aase/index.xml" rel="self" type="application/rss+xml" />
+    <description>H Aase</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jun 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>H Aase</title>
+      <link>/author/h-aase/</link>
+    </image>
+    
+    <item>
+      <title>Convergent and discriminant validity of psychiatric symptoms reported in The Norwegian Mother and Child Cohort Study at age 3 years with independent clinical …</title>
+      <link>/publication/pub_2014a/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2014a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

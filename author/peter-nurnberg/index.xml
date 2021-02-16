@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Peter Nürnberg | Guido Biele</title>
+    <link>/author/peter-nurnberg/</link>
+      <atom:link href="/author/peter-nurnberg/index.xml" rel="self" type="application/rss+xml" />
+    <description>Peter Nürnberg</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Mar 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Peter Nürnberg</title>
+      <link>/author/peter-nurnberg/</link>
+    </image>
+    
+    <item>
+      <title>Effects of PPP1R1B (DARPP-32) Polymorphism on Feedback-Related Brain Potentials Across the Life Span</title>
+      <link>/publication/pub_2013d/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2013d/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Athanasia M Mowinckel | Guido Biele</title>
+    <link>/author/athanasia-m-mowinckel/</link>
+      <atom:link href="/author/athanasia-m-mowinckel/index.xml" rel="self" type="application/rss+xml" />
+    <description>Athanasia M Mowinckel</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Athanasia M Mowinckel</title>
+      <link>/author/athanasia-m-mowinckel/</link>
+    </image>
+    
+    <item>
+      <title>Increased default-mode variability is related to reduced task-performance and is evident in adults with ADHD</title>
+      <link>/publication/pub_2017a/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelling ADHD. a review of ADHD theories through their predictions for computational models of decision-making and reinforcement learning</title>
+      <link>/publication/pub_2016a/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A meta-analysis of decision-making and attention in adults with ADHD</title>
+      <link>/publication/pub_2015b/</link>
+      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2015b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

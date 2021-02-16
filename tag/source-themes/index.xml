@@ -5,7 +5,7 @@
     <link>/tag/source-themes/</link>
       <atom:link href="/tag/source-themes/index.xml" rel="self" type="application/rss+xml" />
     <description>Source Themes</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
       <title>Source Themes</title>
@@ -13,55 +13,387 @@
     </image>
     
     <item>
-      <title>An example preprint / working paper</title>
-      <link>/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <title>Prenatal phthalate exposures and executive function in preschool children</title>
+      <link>/publication/pub_2021a/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2021a/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>An example journal article</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <title>Social anxiety among unaccompanied minor refugees in Norway.The association with pre-migration trauma and post-migration acculturation related factors</title>
+      <link>/publication/pub_2020a/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2020a/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>An example conference paper</title>
-      <link>/publication/conference-paper/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <title>Prenatal exposure to perfluoroalkyl substances and associations with symptoms of attention-deficit/hyperactivity disorder and cognitive functions in preschool children</title>
+      <link>/publication/pub_2020b/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2020b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimating the Strength of Associations Between Prenatal Diet Quality and Child Developmental Outcomes. Results From a Large Prospective Pregnancy Cohort Study</title>
+      <link>/publication/pub_2019a/</link>
+      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2019a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bias from self selection and loss to follow-up in prospective cohort studies</title>
+      <link>/publication/pub_2019b/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2019b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimating Strength of Associations Between Prenatal Diet Quality and Child Developmental Outcomes -- Results From a Large Prospective Pregnancy Cohort</title>
+      <link>/publication/pub_2019c/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2019c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screening with an ADHD-specific rating scale in preschoolers. A cross-cultural comparison of the Early Childhood Inventory-4</title>
+      <link>/publication/pub_2019d/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2019d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diagnosis of hyperkinetic disorder among children in Norway</title>
+      <link>/publication/pub_2018b/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2018b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Attention-Deficit/Hyperactivity Disorder in Preschoolers. The Accuracy of a Short Screener</title>
+      <link>/publication/pub_2018c/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2018c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thalamo-cortical functional connectivity in schizophrenia and bipolar disorder</title>
+      <link>/publication/pub_2018a/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2018a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The importance of maternal diet quality during pregnancy on cognitive and behavioural outcomes in children. a systematic review and meta-analysis</title>
+      <link>/publication/pub_2017e/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opioid Modulation of Value-Based Decision-Making in Healthy Humans</title>
+      <link>/publication/pub_2017c/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The drift diffusion model as the choice rule in reinforcement learning</title>
+      <link>/publication/pub_2017b/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The drift diffusion model as the choice rule in reinforcement learning</title>
+      <link>/publication/pub_2017d/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Increased default-mode variability is related to reduced task-performance and is evident in adults with ADHD</title>
+      <link>/publication/pub_2017f/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017f/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opioid Modulation of Value-Based Decision-Making in Healthy Humans</title>
+      <link>/publication/pub_2017g/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017g/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Increased default-mode variability is related to reduced task-performance and is evident in adults with ADHD</title>
+      <link>/publication/pub_2017a/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The influence of maternal dietary exposure to dioxins and PCBs during pregnancy on ADHD symptoms and cognitive functions in Norwegian preschool children</title>
+      <link>/publication/pub_2016b/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ADHD i Norge. En statusrapport</title>
+      <link>/publication/pub_2016c/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Consistent Bayesians Are No More Accurate Than Non-Bayesians. Economists Surveyed About PSA</title>
+      <link>/publication/pub_2016d/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelling ADHD. a review of ADHD theories through their predictions for computational models of decision-making and reinforcement learning</title>
+      <link>/publication/pub_2016a/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global brain connectivity alterations in patients with schizophrenia and bipolar spectrum disorders</title>
+      <link>/publication/pub_2016e/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence Accumulation and Choice Maintenance Are Dissociated in Human Perceptual Decision Making</title>
+      <link>/publication/pub_2015c/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2015c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A meta-analysis of decision-making and attention in adults with ADHD</title>
+      <link>/publication/pub_2015b/</link>
+      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2015b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The neural basis of risky choice with affective outcomes</title>
+      <link>/publication/pub_2015a/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2015a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The neural basis of risky choice with affective outcomes</title>
+      <link>/publication/pub_2015d/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2015d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convergent and discriminant validity of psychiatric symptoms reported in The Norwegian Mother and Child Cohort Study at age 3 years with independent clinical assessment in the Longitudinal ADHD Cohort Study</title>
+      <link>/publication/pub_2014b/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2014b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convergent and discriminant validity of psychiatric symptoms reported in The Norwegian Mother and Child Cohort Study at age 3 years with independent clinical …</title>
+      <link>/publication/pub_2014a/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2014a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Response to the commentary &#34;multiple potential mechanisms for context effects on pain&#34;</title>
+      <link>/publication/pub_2013c/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2013c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effects of PPP1R1B (DARPP-32) Polymorphism on Feedback-Related Brain Potentials Across the Life Span</title>
+      <link>/publication/pub_2013d/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2013d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The importance of context. when relative relief renders pain pleasant</title>
+      <link>/publication/pub_2013a/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2013a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Temporal characteristics of the influence of punishment on perceptual decision making in the human brain</title>
+      <link>/publication/pub_2013b/</link>
+      <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2013b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How expert advice influences decision making</title>
+      <link>/publication/pub_2012b/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2012b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Changes in neural connectivity underlie decision threshold modulation for reward maximization</title>
+      <link>/publication/pub_2012a/</link>
+      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2012a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The neural basis of following advice</title>
+      <link>/publication/pub_2011a/</link>
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2011a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How the brain integrates costs and benefits during decision making</title>
+      <link>/publication/pub_2010g/</link>
+      <pubDate>Wed, 01 Dec 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2010g/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Differential influence of levodopa on reward-based learning in Parkinson&#39;s disease</title>
+      <link>/publication/pub_2010f/</link>
+      <pubDate>Fri, 01 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2010f/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Temporal dynamics of prediction error processing during reward-based decision making</title>
+      <link>/publication/pub_2010e/</link>
+      <pubDate>Fri, 01 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2010e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neural foundations of risk--return trade-off in investment decisions</title>
+      <link>/publication/pub_2010a/</link>
+      <pubDate>Tue, 01 Jun 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2010a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A mechanistic account of value computation in the human brain</title>
+      <link>/publication/pub_2010d/</link>
+      <pubDate>Sat, 01 May 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2010d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neural processing of risk</title>
+      <link>/publication/pub_2010c/</link>
+      <pubDate>Sat, 01 May 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2010c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neural foundations of risk-return trade-off in investment decisions</title>
+      <link>/publication/pub_2010b/</link>
+      <pubDate>Mon, 01 Feb 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2010b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Genetic variation in dopaminergic neuromodulation influences the ability to rapidly and flexibly adapt decisions</title>
+      <link>/publication/pub_2009c/</link>
+      <pubDate>Thu, 01 Oct 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2009c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning, risk attitude and hot stoves in restless bandit problems</title>
+      <link>/publication/pub_2009a/</link>
+      <pubDate>Mon, 01 Jun 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2009a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computational models for the combination of advice and individual learning</title>
+      <link>/publication/pub_2009b/</link>
+      <pubDate>Sun, 01 Mar 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2009b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Explaining Cooperation in Groups. Testing Models of Reciprocity and Learning</title>
+      <link>/publication/pub_2008b/</link>
+      <pubDate>Tue, 01 Jul 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2008b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Explaining cooperation in groups. Testing models of reciprocity and learning</title>
+      <link>/publication/pub_2008a/</link>
+      <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2008a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forecasting from ignorance. the use and usefulness of recognition in lay predictions of sports events</title>
+      <link>/publication/pub_2007a/</link>
+      <pubDate>Tue, 01 May 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2007a/</guid>
+      <description></description>
     </item>
     
   </channel>

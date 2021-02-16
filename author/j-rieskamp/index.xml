@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>J Rieskamp | Guido Biele</title>
+    <link>/author/j-rieskamp/</link>
+      <atom:link href="/author/j-rieskamp/index.xml" rel="self" type="application/rss+xml" />
+    <description>J Rieskamp</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jun 2008 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>J Rieskamp</title>
+      <link>/author/j-rieskamp/</link>
+    </image>
+    
+    <item>
+      <title>Explaining cooperation in groups. Testing models of reciprocity and learning</title>
+      <link>/publication/pub_2008a/</link>
+      <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2008a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

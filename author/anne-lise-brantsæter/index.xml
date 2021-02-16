@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anne Lise Brantsæter | Guido Biele</title>
+    <link>/author/anne-lise-brants%C3%A6ter/</link>
+      <atom:link href="/author/anne-lise-brants%C3%A6ter/index.xml" rel="self" type="application/rss+xml" />
+    <description>Anne Lise Brantsæter</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Anne Lise Brantsæter</title>
+      <link>/author/anne-lise-brants%C3%A6ter/</link>
+    </image>
+    
+    <item>
+      <title>Estimating the Strength of Associations Between Prenatal Diet Quality and Child Developmental Outcomes. Results From a Large Prospective Pregnancy Cohort Study</title>
+      <link>/publication/pub_2019a/</link>
+      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2019a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The importance of maternal diet quality during pregnancy on cognitive and behavioural outcomes in children. a systematic review and meta-analysis</title>
+      <link>/publication/pub_2017e/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The influence of maternal dietary exposure to dioxins and PCBs during pregnancy on ADHD symptoms and cognitive functions in Norwegian preschool children</title>
+      <link>/publication/pub_2016b/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

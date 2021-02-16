@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kristina C Skaatun | Guido Biele</title>
+    <link>/author/kristina-c-skaatun/</link>
+      <atom:link href="/author/kristina-c-skaatun/index.xml" rel="self" type="application/rss+xml" />
+    <description>Kristina C Skaatun</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>Kristina C Skaatun</title>
+      <link>/author/kristina-c-skaatun/</link>
+    </image>
+    
+    <item>
+      <title>Thalamo-cortical functional connectivity in schizophrenia and bipolar disorder</title>
+      <link>/publication/pub_2018a/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2018a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global brain connectivity alterations in patients with schizophrenia and bipolar spectrum disorders</title>
+      <link>/publication/pub_2016e/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016e/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
