@@ -386,7 +386,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-164879352&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-427895316&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -396,7 +396,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-164879352&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-427895316&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1120,14 +1120,6 @@ Three
       <link>/publication/pub_2008b/</link>
       <pubDate>Tue, 01 Jul 2008 00:00:00 +0000</pubDate>
       <guid>/publication/pub_2008b/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Explaining cooperation in groups. Testing models of reciprocity and learning</title>
-      <link>/publication/pub_2008a/</link>
-      <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/pub_2008a/</guid>
       <description></description>
     </item>
     
