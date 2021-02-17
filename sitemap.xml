@@ -288,13 +288,38 @@
   </url>
   
   <url>
-    <loc>/tag/source-themes/</loc>
+    <loc>/author/toril-jore/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/toril-jore/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <loc>/publication/pub_2020b/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/b-muhlemann/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/g-biele/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/others/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/t-c-jones/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/t-veith/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -334,6 +359,11 @@
   
   <url>
     <loc>/author/anne-lise-brants%C3%A6ter/</loc>
+    <lastmod>2019-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/bayesian/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   

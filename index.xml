@@ -336,6 +336,14 @@ Figure 1: A fancy pie chart.
     </item>
     
     <item>
+      <title>An analysis of SARS-CoV-2 viral load by patient age</title>
+      <link>/publication/pub_2020b/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2020b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Prenatal exposure to perfluoroalkyl substances and associations with symptoms of attention-deficit/hyperactivity disorder and cognitive functions in preschool children</title>
       <link>/publication/pub_2020c/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
@@ -387,7 +395,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-957846312&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-178345296&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -397,7 +405,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-957846312&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-178345296&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

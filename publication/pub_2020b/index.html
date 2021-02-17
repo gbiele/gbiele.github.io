@@ -11,6 +11,7 @@
   
 
   
+    <meta name="google-site-verification" content="googlef6990fc15f6a19f3.html" />
 
   
   
@@ -260,6 +261,45 @@
 
   
 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLVEJNN9LD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-NLVEJNN9LD', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
 
 
   
@@ -538,7 +578,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#publication"><span>Publications</span></a>
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
         </li>
 
         
@@ -822,12 +862,6 @@
 
 
 
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tag/source-themes/">Source Themes</a>
-  
-</div>
-
 
 
 <div class="share-box" aria-hidden="true">
@@ -971,23 +1005,6 @@
 
 
   
-  
-  <div class="article-widget content-widget-hr">
-    <h3>Related</h3>
-    <ul>
-      
-      <li><a href="/publication/pub_2021a/">Prenatal phthalate exposures and executive function in preschool children</a></li>
-      
-      <li><a href="/publication/pub_2020a/">Social anxiety among unaccompanied minor refugees in Norway.The association with pre-migration trauma and post-migration acculturation related factors</a></li>
-      
-      <li><a href="/publication/pub_2020c/">Prenatal exposure to perfluoroalkyl substances and associations with symptoms of attention-deficit/hyperactivity disorder and cognitive functions in preschool children</a></li>
-      
-      <li><a href="/publication/pub_2019a/">Estimating the Strength of Associations Between Prenatal Diet Quality and Child Developmental Outcomes. Results From a Large Prospective Pregnancy Cohort Study</a></li>
-      
-      <li><a href="/publication/pub_2019b/">Bias from self selection and loss to follow-up in prospective cohort studies</a></li>
-      
-    </ul>
-  </div>
   
 
 
