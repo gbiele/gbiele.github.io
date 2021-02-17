@@ -143,9 +143,10 @@ The variance of the distribution is $\sigma^{2}$.
       <link>/project/causalinf/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/project/causalinf/</guid>
-      <description>&lt;p&gt;Randomised controlled trials (RCTs) are due to their internal validity considered as the gold standard for causal inference. But RCTs are not always feasible or ethical, for instance if one is interested in long-term effects of treatment. I am currently establishing this research line, whereby the thematic focus is on the effect of medication and special education on educational and other outcomes of children with ADDH.&lt;/p&gt;
-&lt;p&gt;One important challenge when estimating treatment effects is that of non-random selection into treatment or treatment by indication. To deal with bias from this and others we will use directed acyclic graphs (DAGs) to represent the (assumed) causal structure that generates the data we observe and to determine the best ways to deal with potential biases. Depending on the causal structure, this adjustment, multilevel regression and post stratification, weighting or a combination of these approaches can be useful.&lt;/p&gt;
-&lt;p&gt;The goal of this research is to provide estimates of causal effects, even if we know that these are always going to be imperfect. Out aim is to reduce this imperfection as much as we can.&lt;/p&gt;
+      <description>&lt;p&gt;Randomised controlled trials (RCTs) are due to their internal validity considered as the gold standard for causal inference. But RCTs are not always feasible or ethical, for instance if one is interested in long-term effects of treatments. More generally, every investigation of causal effects trades off internal and external validity. Hence, one can argue that observational studies of causal effect, which tend to have higher external validity, have their place independent of the practical or ethical chellanges RCTs can pose.&lt;/p&gt;
+&lt;p&gt;I am currently establishing this research line after being rewarded a grant by the Norwegian Research Council. The thematic focus of this research is on the effect of medication and special education on educational and other outcomes of children with ADHD  .&lt;/p&gt;
+&lt;p&gt;One important challenge when estimating treatment effects is that of non-random selection into treatment or treatment by indication. To deal with bias from this and others we will use directed acyclic graphs (DAGs) to represent the (assumed) causal structure that generates the data we observe and to determine the best ways to deal with potential biases. Depending on the causal structure, adjustment, multilevel regression and post stratification, weighting or a combination of these approaches can be useful. We will also explore methods often used in econometrics like Difference in Differences or regression discontinuity, though it is uncertain that there is exist data in Norway to estimate such models.&lt;/p&gt;
+&lt;p&gt;The goal of this research is to provide estimates of causal effects, even if we know that these are will always be imperfect. Our aim is to reduce this imperfection as much as we can.&lt;/p&gt;
 </description>
     </item>
     
@@ -386,7 +387,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-795813624&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-734629518&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -396,7 +397,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-795813624&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-734629518&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
