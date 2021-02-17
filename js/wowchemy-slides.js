@@ -17,18 +17,18 @@
 
   // js/wowchemy-slides.js
   var enabledPlugins = [RevealMarkdown, RevealHighlight, RevealSearch, RevealNotes, RevealMath, RevealZoom];
-  var isObject = function(o) {
+  const isObject = function(o) {
     return o === Object(o) && !isArray(o) && typeof o !== "function";
   };
-  var isArray = function(a) {
+  const isArray = function(a) {
     return Array.isArray(a);
   };
-  var toCamelCase = function(s) {
+  const toCamelCase = function(s) {
     return s.replace(/([-_][a-z])/gi, function(term) {
       return term.toUpperCase().replace("-", "").replace("_", "");
     });
   };
-  var keysToCamelCase = function(o) {
+  const keysToCamelCase = function(o) {
     if (isObject(o)) {
       const n = {};
       Object.keys(o).forEach(function(k) {
@@ -84,7 +84,7 @@
     slides.diagram = false;
   }
   if (slides.diagram) {
-    mermaidOptions = {};
+    var mermaidOptions = {};
     if (typeof slides.diagram_options !== "undefined") {
       mermaidOptions = slides.diagram_options;
     }
@@ -94,5 +94,4 @@
       fixMermaid();
     });
   }
-  var mermaidOptions;
 })();
