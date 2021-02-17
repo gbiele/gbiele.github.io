@@ -167,10 +167,10 @@ In one paper we investigated, using mathematical modeling of choices in public g
       <link>/project/decneurosc/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/project/decneurosc/</guid>
-      <description>&lt;p&gt;In this research line I used and sometimes still use mathematical modelling of cognitive processes, functional magnetic resonance imaging (fMRI), and EEG to understand how humans make decisions, and how decision processes are different in adults with ADHD.&lt;/p&gt;
-&lt;p&gt;In one paper, colleagues and I used the drift diffusion model of decision making and fMRI to describe how &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/21118983/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;costs and benefits are represented in the brain&lt;/a&gt; during decision making. In a related paper we looked for &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20439711/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;representations of probabilistic evidence&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve also done &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20510376/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;some&lt;/a&gt; &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/19822738/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;work&lt;/a&gt; on reinfocement learning in general, and how it is influenced by social learning, leading to the proposal that &lt;a href=&#34;https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001089&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;following reward can in itself be rewarding&lt;/a&gt;. Some og this work has clear markers of a past time, like the  &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/19822738/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;small-sample target-gene study&lt;/a&gt;. While this was exciting work at the time, I would approach this research differently today.&lt;/p&gt;
-&lt;p&gt;More recently I have used quantitative models of decision making to understand decision making in ADHD. &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/25477020/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This&lt;/a&gt; and &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/27608958/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; review describe the general idea. And here we use the &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/27966103/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;drift diffusion model of decision making as a choice model for reinforcement learning&lt;/a&gt; in an attempt to described the effect of ADHD medication on decision making and learning.&lt;/p&gt;
+      <description>&lt;p&gt;In this research line I used and sometimes still use mathematical modelling of decision making and learning, functional magnetic resonance imaging (fMRI), and EEG to understand how human operant learning and decision making.We also investigate how learning and decision making processes are different in adults with ADHD.&lt;/p&gt;
+&lt;p&gt;In one paper, colleagues and I used a sequential sampling model of decision making and fMRI to describe how &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/21118983/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;costs and benefits are represented in the brain&lt;/a&gt; during decision making. In a related paper we looked for &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20439711/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;representations of probabilistic evidence&lt;/a&gt; during reard bases decision making.&lt;/p&gt;
+&lt;p&gt;I have also done &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20510376/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;some&lt;/a&gt; &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/19822738/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;work&lt;/a&gt; on reinforcement learning in general, and how it is influenced by social learning, leading to the proposal that &lt;a href=&#34;https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001089&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;following advice can in itself be rewarding&lt;/a&gt;. Some of this work has clear markers of a past time, like the &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/19822738/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;small-sample target-gene study&lt;/a&gt;. This was exciting work at the time, but I would approach this research differently today.&lt;/p&gt;
+&lt;p&gt;More recently, I have used quantitative models of decision making to understand decision making in ADHD. We have published a &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/25477020/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;meta analysis&lt;/a&gt; and a &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/27608958/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;theoretical review&lt;/a&gt; which describes how we can use quantitative models of decision making to better understand the development and symptoms of Attention Deficit Hyperactivity Disorder. In an empirical paper we use the &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/27966103/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;drift diffusion model of decision making as a choice model for reinforcement learning&lt;/a&gt; to described the effect of ADHD medication on decision making and operant learning.&lt;/p&gt;
 </description>
     </item>
     
@@ -387,7 +387,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-139578246&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-958123467&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -397,7 +397,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-139578246&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-958123467&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
