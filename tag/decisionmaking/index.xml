@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DecisionMaking | Guido Biele</title>
+    <link>/tag/decisionmaking/</link>
+      <atom:link href="/tag/decisionmaking/index.xml" rel="self" type="application/rss+xml" />
+    <description>DecisionMaking</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>DecisionMaking</title>
+      <link>/tag/decisionmaking/</link>
+    </image>
+    
+    <item>
+      <title>Decision making</title>
+      <link>/project/dm/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/project/dm/</guid>
+      <description>&lt;p&gt;My research career started in the &lt;a href=&#34;https://www.mpib-berlin.mpg.de/research/concluded-areas/center-for-adaptive-behavior-and-cognition&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Centre for Adaptive Behavior and Cognition&lt;/a&gt; at the &lt;a href=&#34;https://www.mpib-berlin.mpg.de/en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Max Planck Institute for Human Development&lt;/a&gt; in Berlin. This research line, in which I am currently not active, used experiments and mathematical modeling to understand decision making in a social context.
+In one paper we investigated, using mathematical modeling of choices in public goods games, if cooperation in groups is better explained by simple &lt;a href=&#34;https://psycnet.apa.org/record/2008-07158-002&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reinforcement learning, or by reciprocity&lt;/a&gt;. In hindsight it is not surprising that reciprocity explained behavior better. At the time a number of researchers proposed reinforcement learning as models of cooperation, because they naturally explain how cooperation unravels in social dilemmas like the public goods game or the prisoners dilemma.&lt;/p&gt;
+&lt;p&gt;Other papers in this area examined how basic reinforcement learning models can be modified to account for &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/21585468/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;advice taking&lt;/a&gt; or for &lt;a href=&#34;https://psycnet.apa.org/record/2009-07078-004&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pattern learning&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this area fall also some papers that have mostly an interest in decision making in common, such as the one where we learned that &lt;a href=&#34;https://www.nowpublishers.com/article/Details/RBE-0034&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;economists did not use much rational analysis&lt;/a&gt; when deciding about taking a PSA test and that &lt;a href=&#34;https://www.sciencedirect.com/science/article/abs/pii/S0001691806000801&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;some ignorance can be better than imperfect knowledge&lt;/a&gt; when predicting outcomes of sports matches.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Decision neuroscience</title>
+      <link>/project/decneurosc/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/project/decneurosc/</guid>
+      <description>&lt;p&gt;In this research line I used and sometimes still use mathematical modelling of decision making and learning, functional magnetic resonance imaging (fMRI), and EEG to understand how human operant learning and decision making.We also investigate how learning and decision making processes are different in adults with ADHD.&lt;/p&gt;
+&lt;p&gt;In one paper, colleagues and I used a sequential sampling model of decision making and fMRI to describe how &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/21118983/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;costs and benefits are represented in the brain&lt;/a&gt; during decision making. In a related paper we looked for &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20439711/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;representations of probabilistic evidence&lt;/a&gt; during reard bases decision making.&lt;/p&gt;
+&lt;p&gt;I have also done &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/20510376/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;some&lt;/a&gt; &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/19822738/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;work&lt;/a&gt; on reinforcement learning in general, and how it is influenced by social learning, leading to the proposal that &lt;a href=&#34;https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001089&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;following advice can in itself be rewarding&lt;/a&gt;. Some of this work has clear markers of a past time, like the &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/19822738/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;small-sample target-gene study&lt;/a&gt;. This was exciting work at the time, but I would approach this research differently today.&lt;/p&gt;
+&lt;p&gt;More recently, I have used quantitative models of decision making to understand decision making in ADHD. We have published a &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/25477020/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;meta analysis&lt;/a&gt; and a &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/27608958/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;theoretical review&lt;/a&gt; which describes how we can use quantitative models of decision making to better understand the development and symptoms of Attention Deficit Hyperactivity Disorder. In an empirical paper we use the &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/27966103/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;drift diffusion model of decision making as a choice model for reinforcement learning&lt;/a&gt; to described the effect of ADHD medication on decision making and operant learning.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

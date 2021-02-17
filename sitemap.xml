@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>/tag/adhd/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/project/epi/</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url>
@@ -43,7 +48,7 @@
   </url>
   
   <url>
-    <loc>/tag/cognneuro/</loc>
+    <loc>/tag/causality/</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -58,17 +63,37 @@
   </url>
   
   <url>
-    <loc>/tag/decmak/</loc>
+    <loc>/tag/decisionmaking/</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tag/epi/</loc>
+    <loc>/tag/epidemiology/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/modelling/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/neuroscience/</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/project/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/reinforcmentlearning/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/riskfactors/</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url>
   
