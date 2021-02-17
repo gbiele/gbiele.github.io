@@ -203,11 +203,6 @@
   </url>
   
   <url>
-    <loc>/tag/source-themes/</loc>
-    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/author/stephanie-m-engel/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -289,6 +284,11 @@
   
   <url>
     <loc>/publication/pub_2020a/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/source-themes/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
