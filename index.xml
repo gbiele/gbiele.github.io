@@ -139,6 +139,19 @@ The variance of the distribution is $\sigma^{2}$.
     </item>
     
     <item>
+      <title>Bayesian statistics</title>
+      <link>/project/bayes/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/project/bayes/</guid>
+      <description>&lt;p&gt;Statistical inference is for me at the core of scientific activity because it allows us to learn in a systematic manner from data. Null hypothesis significance testing (NHST) is one one to learn from data, but it happens not to be my preferred way. This preference does not stem from some deep philosophical insight, but from the experience that forcing research questions into the NHST framework is not that helpful for me.&lt;/p&gt;
+&lt;p&gt;In research on decision making theoretical progress is, I think, more readily achieved by the formulation of quantitative models. When such models are reasonably complex, Bayesian estimation is often more reliably estimates model parameters than alternative approaches. Just as importantly Bayesian estimation as for example done in &lt;a href=&#34;https://mc-stan.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stan&lt;/a&gt; also signals when a model cannot be estimated.&lt;/p&gt;
+&lt;p&gt;In epidemiological research, I think that effect sizes matter. Especially when one is dealing with large data sets in minor effect sizes can reach statistical significance. Using observational data will often require complex models that do the complexity of the data generating process justice. So even if Bayesian estimation of large epidemiological data sets can be much slower, I still prefer to wait for results I think I can trust more.&lt;/p&gt;
+&lt;p&gt;So far, I&amp;rsquo;ve published a few papers that uses Bayesian estimation. Click the &amp;ldquo;Bayesian&amp;rdquo; button below to see those.&lt;/p&gt;
+&lt;p&gt;If time permits, I also answer the one of the other question on the the &lt;a href=&#34;https://discourse.mc-stan.org/u/guido_biele/summary&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stan user forum&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Causal inference from observational data</title>
       <link>/project/causalinf/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
@@ -395,7 +408,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-263175948&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-982135647&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -405,7 +418,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-263175948&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-982135647&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

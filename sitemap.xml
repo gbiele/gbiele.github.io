@@ -43,6 +43,16 @@
   </url>
   
   <url>
+    <loc>/tag/bayesian/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/bayes/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/project/causalinf/</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url>
@@ -359,11 +369,6 @@
   
   <url>
     <loc>/author/anne-lise-brants%C3%A6ter/</loc>
-    <lastmod>2019-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/bayesian/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
