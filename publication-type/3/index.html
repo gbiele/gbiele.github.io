@@ -11,6 +11,7 @@
   
 
   
+    <meta name="google-site-verification" content="googlef6990fc15f6a19f3.html" />
 
   
   
@@ -33,7 +34,7 @@
   
     
   
-  <meta name="description" content="Research professor" />
+  <meta name="description" content="Academic website Guido Biele Baysian modelling modeling decision learning ADHD psychology neuroscience epidemiology" />
 
   
   <link rel="alternate" hreflang="en-us" href="/publication-type/3/" />
@@ -262,6 +263,45 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLVEJNN9LD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-NLVEJNN9LD', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -303,11 +343,11 @@
   <meta property="og:site_name" content="Guido Biele" />
   <meta property="og:url" content="/publication-type/3/" />
   <meta property="og:title" content="3 | Guido Biele" />
-  <meta property="og:description" content="Research professor" /><meta property="og:image" content="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="Academic website Guido Biele Baysian modelling modeling decision learning ADHD psychology neuroscience epidemiology" /><meta property="og:image" content="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2019-04-07T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2020-06-01T00:00:00&#43;00:00" />
     
   
 
@@ -337,7 +377,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.8be00435174e2a694d14c4b53a403b4d.js"></script>
+  <script src="/js/wowchemy-init.min.a404eef9f5be282ca4a04ede3a2427d5.js"></script>
 
   
 
@@ -493,7 +533,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
         </li>
 
         
@@ -633,10 +673,10 @@
     
     
     <div>
-      <h2><a href="/publication/preprint/" >An example preprint / working paper</a></h2>
+      <h2><a href="/publication/pub_2020b/" >An analysis of SARS-CoV-2 viral load by patient age</a></h2>
       <div class="article-style">
         
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+          As children are under-represented in current studies aiming to analyse transmission of SARS-coronavirus 2 (SARS-CoV-2), their contribution to transmission is unclear. Viral load, as measured by RT-PCR, can inform considerations regarding …
         
       </div>
     </div>
@@ -798,7 +838,7 @@
       
     
     
-    <script src="/en/js/wowchemy.min.982af1f55a074589bec34f6089331b4b.js"></script>
+    <script src="/en/js/wowchemy.min.973d1c678d4da48dab8fc55d6e25e3e9.js"></script>
 
     
   <script async defer src="https://buttons.github.io/buttons.js"></script>
