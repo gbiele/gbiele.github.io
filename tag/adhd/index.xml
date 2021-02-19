@@ -49,9 +49,9 @@
     
     <item>
       <title>Effects of medication and special education</title>
-      <link>/project/nprsea/</link>
+      <link>/project/nfrsea/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/project/nprsea/</guid>
+      <guid>/project/nfrsea/</guid>
       <description>&lt;p&gt;&lt;strong&gt;In this amazing project we fuse cutting edge scientific technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;That is how one could describe this project if the goal is to describe the it with a bunch of flashy terms. What we are really trying to do is to answer an important but hard question, &amp;ldquo;Do ADHD medication and special education improve school performance?&amp;rdquo; as well as we can with observational data. In order to do this we will used structural models (&lt;em&gt;causal data science&lt;/em&gt;), lots of data from registries (&lt;em&gt;big data&lt;/em&gt;), and Bayesian estimation of structural models (&lt;em&gt;probabilistic machine learning&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Some background&lt;/em&gt;&lt;/p&gt;
@@ -82,10 +82,10 @@
 &lt;figure id=&#34;figure-special-education-adhd-medication-and-early-reading-difficulties-in-norway-special-education-and-use-of-adhd-medication-increase-with-child-age-and-are-more-prevalent-among-boys-children-with-adhd-are-10-times-more-likely-to-have-severe-reading-difficulties-than-children-without-adhd-as-early-as-grade-3-data-from-httpsgsiudirno-httpwwwreseptregisteretno-norwegian-mother-and-child-cohort-study&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from &amp;lt;a href=&amp;#34;https://gsi.udir.no&amp;#34;&amp;gt;https://gsi.udir.no&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;#34;http://www.reseptregisteret.no&amp;#34;&amp;gt;http://www.reseptregisteret.no&amp;lt;/a&amp;gt;, Norwegian Mother and Child Cohort Study.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from &amp;lt;a href=&amp;#34;https://gsi.udir.no&amp;#34;&amp;gt;https://gsi.udir.no&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;#34;http://www.reseptregisteret.no&amp;#34;&amp;gt;http://www.reseptregisteret.no&amp;lt;/a&amp;gt;, Norwegian Mother and Child Cohort Study.&#34;&gt;
 
 
-  &lt;img data-src=&#34;/project/nprsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4819&#34; height=&#34;1134&#34;&gt;
+  &lt;img data-src=&#34;/project/nfrsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4819&#34; height=&#34;1134&#34;&gt;
 &lt;/a&gt;
 
 
@@ -128,10 +128,10 @@
 &lt;figure id=&#34;figure-directed-acyclic-graphs-dags-of-design-and-causal-assumptions-a-school-performance-at-time-t2-spsubt2sub-results-of-national-tests-in-grades-8-and-9-depends-on-medication-med-individual-special-education-ise-and-on-confounders-like-earlier-school-performance-spsubt1sub-national-tests-grade-5-parental-education-edu-and-comorbid-disorders-com-other-potential-confounders-like-gender-parityparental-mental-health-and-income-are-omitted-here-for-clarity-b-bias-from-observed-confounders-here-spsubt1sub-which-predicts-exposure-med-and-outcome-spsubt2sub-can-be-controlled-by-adjusting-for-them--c-when-spsubt1sub-is-a-collider-between-usubpasub-iunobservedi-parental-attention-and-usubscsub-iunobservedi-school-quality-adjustment-for-spsubt1sub-leads-to-conditioning-on-a-collider-and-cannot-correct-bias-adjusting-for-a-propensity-score-derived-from-spsubt1sub-also-introduces-bias-instead-inverse-probability-of-treatment-weights-need-to-be-used&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, which predicts exposure MED and outcome SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;) can be controlled by adjusting for them.  (c) When SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; is a collider between U&amp;lt;sub&amp;gt;PA&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; parental attention) and U&amp;lt;sub&amp;gt;SC&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; school quality), adjustment for SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, which predicts exposure MED and outcome SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;) can be controlled by adjusting for them.  (c) When SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; is a collider between U&amp;lt;sub&amp;gt;PA&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; parental attention) and U&amp;lt;sub&amp;gt;SC&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; school quality), adjustment for SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.&#34;&gt;
 
 
-  &lt;img data-src=&#34;/project/nprsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;3437&#34; height=&#34;2218&#34;&gt;
+  &lt;img data-src=&#34;/project/nfrsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;3437&#34; height=&#34;2218&#34;&gt;
 &lt;/a&gt;
 
 
@@ -270,10 +270,10 @@
 &lt;figure id=&#34;figure-results-from-prelimiay-analysis-itop-lefti-effect-estimate-for-adhd-medication-itop-righti-effect-estimate-for-special-education--ibottom-lefti-bivariate-distribution-of-medication-years-and-dosage-for-10-12-year-old-children-darker-shading-indicates-more-frequent-combinations-ibottom-righti-more-hours-special-education-per-week-are-associated-with-fewer-reading-problems-averaged-across-groups-shaded-areas-show-25-95-credible-intervals&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Results from prelimiay analysis. &amp;lt;i&amp;gt;Top left&amp;lt;/i&amp;gt;: Effect estimate for ADHD medication. &amp;lt;i&amp;gt;Top right&amp;lt;/i&amp;gt;: Effect estimate for special education.  &amp;lt;i&amp;gt;Bottom left&amp;lt;/i&amp;gt;: Bivariate distribution of medication years and dosage for 10-12 year old children. Darker shading indicates more frequent combinations. &amp;lt;i&amp;gt;Bottom right&amp;lt;/i&amp;gt;: More hours special education per week are associated with fewer reading problems (averaged across groups). Shaded areas show 25-95% credible intervals.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Results from prelimiay analysis. &amp;lt;i&amp;gt;Top left&amp;lt;/i&amp;gt;: Effect estimate for ADHD medication. &amp;lt;i&amp;gt;Top right&amp;lt;/i&amp;gt;: Effect estimate for special education.  &amp;lt;i&amp;gt;Bottom left&amp;lt;/i&amp;gt;: Bivariate distribution of medication years and dosage for 10-12 year old children. Darker shading indicates more frequent combinations. &amp;lt;i&amp;gt;Bottom right&amp;lt;/i&amp;gt;: More hours special education per week are associated with fewer reading problems (averaged across groups). Shaded areas show 25-95% credible intervals.&#34;&gt;
 
 
-  &lt;img data-src=&#34;/project/nprsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2835&#34; height=&#34;2409&#34;&gt;
+  &lt;img data-src=&#34;/project/nfrsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2835&#34; height=&#34;2409&#34;&gt;
 &lt;/a&gt;
 
 
@@ -314,10 +314,10 @@
 &lt;figure id=&#34;figure-working-packages-and-their-dependencies&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Working packages and their dependencies&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Working packages and their dependencies&#34;&gt;
 
 
-  &lt;img data-src=&#34;/project/nprsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4596&#34; height=&#34;2597&#34;&gt;
+  &lt;img data-src=&#34;/project/nfrsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4596&#34; height=&#34;2597&#34;&gt;
 &lt;/a&gt;
 
 

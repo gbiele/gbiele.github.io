@@ -1,0 +1,1527 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+    <meta name="google-site-verification" content="googlef6990fc15f6a19f3.html" />
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Guido Biele" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Estimating effects of special medication and special education on school performance using observational data" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="/project/nfrsea/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.f94d22adf54f28ebdd044668d194a594.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLVEJNN9LD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-NLVEJNN9LD', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="/project/nfrsea/" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@GuidoBiele" />
+    <meta property="twitter:creator" content="@GuidoBiele" />
+  
+  <meta property="og:site_name" content="Guido Biele" />
+  <meta property="og:url" content="/project/nfrsea/" />
+  <meta property="og:title" content="Effects of medication and special education | Guido Biele" />
+  <meta property="og:description" content="Estimating effects of special medication and special education on school performance using observational data" /><meta property="og:image" content="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-02-15T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-02-15T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/project/nfrsea/"
+  },
+  "headline": "Effects of medication and special education",
+  
+  "datePublished": "2021-02-15T00:00:00Z",
+  "dateModified": "2021-02-15T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Guido Biele"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Guido Biele",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Estimating effects of special medication and special education on school performance using observational data"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Effects of medication and special education | Guido Biele</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.a404eef9f5be282ca4a04ede3a2427d5.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Guido Biele</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Guido Biele</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#research"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/GuidoBiele" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article article-project">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Effects of medication and special education</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mon, 15 Feb, 2021
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://twitter.com/GuidoBiele" target="_blank" rel="noopener">
+    <i class="fab fa-twitter mr-1"></i>
+    Follow
+  </a>
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><strong>In this amazing project we fuse cutting edge scientific technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.</strong></p>
+<p>That is how one could describe this project if the goal is to describe the it with a bunch of flashy terms. What we are really trying to do is to answer an important but hard question, &ldquo;Do ADHD medication and special education improve school performance?&rdquo; as well as we can with observational data. In order to do this we will used structural models (<em>causal data science</em>), lots of data from registries (<em>big data</em>), and Bayesian estimation of structural models (<em>probabilistic machine learning</em>).</p>
+<p><em>Some background</em></p>
+<p>Most children with ADHD have minor or severe reading and writing problems already in the third grade. A substantial proportion of children and youth receive special educational assistance and/or ADHD medication. This begs the question: Do medication and special educational assistance improve school performance? This question is important because the few papers that looked at long-term effects of medication find only rather small effects, and we know even less about the long-term effects of special educational assistance.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-special-education-adhd-medication-and-early-reading-difficulties-in-norway-special-education-and-use-of-adhd-medication-increase-with-child-age-and-are-more-prevalent-among-boys-children-with-adhd-are-10-times-more-likely-to-have-severe-reading-difficulties-than-children-without-adhd-as-early-as-grade-3-data-from-httpsgsiudirno-httpwwwreseptregisteretno-norwegian-mother-and-child-cohort-study">
+
+
+  <a data-fancybox="" href="/project/nfrsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png" data-caption="Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from &lt;a href=&#34;https://gsi.udir.no&#34;&gt;https://gsi.udir.no&lt;/a&gt;, &lt;a href=&#34;http://www.reseptregisteret.no&#34;&gt;http://www.reseptregisteret.no&lt;/a&gt;, Norwegian Mother and Child Cohort Study.">
+
+
+  <img data-src="/project/nfrsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="4819" height="1134">
+</a>
+
+
+  
+  
+  <figcaption>
+    Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from <a href="https://gsi.udir.no">https://gsi.udir.no</a>, <a href="http://www.reseptregisteret.no">http://www.reseptregisteret.no</a>, Norwegian Mother and Child Cohort Study.
+  </figcaption>
+
+
+</figure>
+
+<p><em>Some methods</em></p>
+<p>In this project we are using data from Norwegian registries and the Norwegian Mother, Father and Child Cohort Study (MoBa) to estimate the effect of medication and special education on school performance of children with ADHD or other mental health or developmental problems.</p>
+<p>Using observational data to estimate treatment effects is difficult (some would say impossible), because individuals are not randomized into treatment conditions. We are still doing this project for two reasons. First, we are interested in effects of longer-term treatments, but conducting randomized controlled trials (RCTs) is considered unethical if one wants to estimate long-term effects of treatments that one assumes should be beneficial. Secondly, well designed placebo controlled randomized trials have the strongest internal validity, if we see outcome differences between treatment conditions those are due to the treatment, but they still can have a sub-optimal external validity, i.e. we remain uncertain about how the treatment effects generalize to treatment that is not implemented as part of an RCT. Reasons for a limited external validity include less formalized implementation of treatments outside RCTs or non-random selection of participants into the RCTs. Therefore carefully implemented observational studies can be a useful complement to RCTs.</p>
+<p>Our approach to a careful implementation of an observational study is to formulate a structural model that describes our assumed data-generating process, and to use Bayesian estimation of hierarchical models to obtain estimates of causal effects.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-directed-acyclic-graphs-dags-of-design-and-causal-assumptions-a-school-performance-at-time-t2-spsubt2sub-results-of-national-tests-in-grades-8-and-9-depends-on-medication-med-individual-special-education-ise-and-on-confounders-like-earlier-school-performance-spsubt1sub-national-tests-grade-5-parental-education-edu-and-comorbid-disorders-com-other-potential-confounders-like-gender-parityparental-mental-health-and-income-are-omitted-here-for-clarity-b-bias-from-observed-confounders-here-spsubt1sub-which-predicts-exposure-med-and-outcome-spsubt2sub-can-be-controlled-by-adjusting-for-them--c-when-spsubt1sub-is-a-collider-between-usubpasub-iunobservedi-parental-attention-and-usubscsub-iunobservedi-school-quality-adjustment-for-spsubt1sub-leads-to-conditioning-on-a-collider-and-cannot-correct-bias-adjusting-for-a-propensity-score-derived-from-spsubt1sub-also-introduces-bias-instead-inverse-probability-of-treatment-weights-need-to-be-used">
+
+
+  <a data-fancybox="" href="/project/nfrsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png" data-caption="Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP&lt;sub&gt;t2&lt;/sub&gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&lt;sub&gt;t1&lt;/sub&gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&lt;sub&gt;t1&lt;/sub&gt;, which predicts exposure MED and outcome SP&lt;sub&gt;t2&lt;/sub&gt;) can be controlled by adjusting for them.  (c) When SP&lt;sub&gt;t1&lt;/sub&gt; is a collider between U&lt;sub&gt;PA&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; parental attention) and U&lt;sub&gt;SC&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; school quality), adjustment for SP&lt;sub&gt;t1&lt;/sub&gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&lt;sub&gt;t1&lt;/sub&gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.">
+
+
+  <img data-src="/project/nfrsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="3437" height="2218">
+</a>
+
+
+  
+  
+  <figcaption>
+    Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP<sub>t2</sub>, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP<sub>t1</sub>, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP<sub>t1</sub>, which predicts exposure MED and outcome SP<sub>t2</sub>) can be controlled by adjusting for them.  (c) When SP<sub>t1</sub> is a collider between U<sub>PA</sub> (<i>unobserved</i> parental attention) and U<sub>SC</sub> (<i>unobserved</i> school quality), adjustment for SP<sub>t1</sub> leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP<sub>t1</sub> also introduces bias. Instead, inverse probability of treatment weights need to be used.
+  </figcaption>
+
+
+</figure>
+
+<p><em>Data</em></p>
+<p>We are starting with a base population of around 600,000 children that were born between 2000 and 2100. The study population consists of children with ADHD or other mental health or developmental problems (up to maybe 60,000), and these children&rsquo;s parents and siblings. Parents and siblings are an important part of children&rsquo;s environment, which has an influence on school performance generally, and which can also influence how effective treatments are implemented. Special education data is only available from MoBa, so that sample sizes will be smaller for these analyses.</p>
+<table>
+<thead>
+<tr>
+<th>Age</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6,7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">11-14</th>
+<th style="text-align:center">15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnoses</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+</tr>
+<tr>
+<td>ADHD symptoms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">MoBa</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">MoBa</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>Therapy</td>
+<td style="text-align:center">NPR, KUHR</td>
+<td style="text-align:center">NPR, KUHR</td>
+<td style="text-align:center">NPR, KUHR</td>
+<td style="text-align:center">NPR, KUHR</td>
+<td style="text-align:center">NPR, KUHR</td>
+<td style="text-align:center">NPR, KUHR</td>
+<td style="text-align:center">NPR, KUHR</td>
+</tr>
+<tr>
+<td>Medication</td>
+<td style="text-align:center">NorPD</td>
+<td style="text-align:center">NorPD</td>
+<td style="text-align:center">NorPD</td>
+<td style="text-align:center">NorPD</td>
+<td style="text-align:center">NorPD</td>
+<td style="text-align:center">NorPD</td>
+<td style="text-align:center">NorPD</td>
+</tr>
+<tr>
+<td>Special education</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">MoBa</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">MoBa</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">MoBa</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>School perform.</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">MoBa</td>
+<td style="text-align:center">SSB</td>
+<td style="text-align:center">MoBa</td>
+<td style="text-align:center">SSB</td>
+</tr>
+<tr>
+<td>Parental edu &amp; income</td>
+<td style="text-align:center">SSB</td>
+<td style="text-align:center">SSB</td>
+<td style="text-align:center">SSB</td>
+<td style="text-align:center">SSB</td>
+<td style="text-align:center">SSB</td>
+<td style="text-align:center">SSB</td>
+<td style="text-align:center">SSB</td>
+</tr>
+<tr>
+<td>Parental diagnoses</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+<td style="text-align:center">NPR</td>
+</tr>
+</tbody>
+</table>
+<p><em>Pilot analyses</em></p>
+<p>To check the general feasibility of the project I did some pilot analyses on MoBa, NPR, and NorPD data (N ~ 1,500 children with ADHD). I used a hierarchical Bayesian ordered regressions to estimate the effect of special education in kindergarten or ADHD medication on reading problems in the 3rd grade. I used inverse probability of treatment weights to adjust for confounding by indication. The effect estimates are on average positive, but also vary substantially between subgroups characterised by maternal education and child gender.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-results-from-prelimiay-analysis-itop-lefti-effect-estimate-for-adhd-medication-itop-righti-effect-estimate-for-special-education--ibottom-lefti-bivariate-distribution-of-medication-years-and-dosage-for-10-12-year-old-children-darker-shading-indicates-more-frequent-combinations-ibottom-righti-more-hours-special-education-per-week-are-associated-with-fewer-reading-problems-averaged-across-groups-shaded-areas-show-25-95-credible-intervals">
+
+
+  <a data-fancybox="" href="/project/nfrsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png" data-caption="Results from prelimiay analysis. &lt;i&gt;Top left&lt;/i&gt;: Effect estimate for ADHD medication. &lt;i&gt;Top right&lt;/i&gt;: Effect estimate for special education.  &lt;i&gt;Bottom left&lt;/i&gt;: Bivariate distribution of medication years and dosage for 10-12 year old children. Darker shading indicates more frequent combinations. &lt;i&gt;Bottom right&lt;/i&gt;: More hours special education per week are associated with fewer reading problems (averaged across groups). Shaded areas show 25-95% credible intervals.">
+
+
+  <img data-src="/project/nfrsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2835" height="2409">
+</a>
+
+
+  
+  
+  <figcaption>
+    Results from prelimiay analysis. <i>Top left</i>: Effect estimate for ADHD medication. <i>Top right</i>: Effect estimate for special education.  <i>Bottom left</i>: Bivariate distribution of medication years and dosage for 10-12 year old children. Darker shading indicates more frequent combinations. <i>Bottom right</i>: More hours special education per week are associated with fewer reading problems (averaged across groups). Shaded areas show 25-95% credible intervals.
+  </figcaption>
+
+
+</figure>
+
+<p><em>Working packages</em></p>
+<p>WP0 provides input for and guides working packages that implement the research and also organizes acquisition of register data and communication with users. WP1-WP3 follow a similar approach: Treatment patterns and predictors are identified in a first step, based on which effects are estimated in a second step. WP1 focuses on medication and uses data from Norway and Sweden. WP2 focuses on special education. WP3 focuses on interaction effects of special education and medication.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-working-packages-and-their-dependencies">
+
+
+  <a data-fancybox="" href="/project/nfrsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png" data-caption="Working packages and their dependencies">
+
+
+  <img data-src="/project/nfrsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="4596" height="2597">
+</a>
+
+
+  
+  
+  <figcaption>
+    Working packages and their dependencies
+  </figcaption>
+
+
+</figure>
+
+<p><em>Collaborators</em></p>
+<p>The project will be implemented in collaboration with colleagues in Norway, Sweden, and the UK.</p>
+<ul>
+<li><a href="https://www.med.uio.no/imb/english/people/aca/jonmic/" target="_blank" rel="noopener">Jon Michael Gran</a> (University of Oslo)</li>
+<li><a href="https://www.fhi.no/en/about/departments-and-centres/child-health-and-development/mari-vaage-wang/" target="_blank" rel="noopener">Mari Vaage Wang</a> (NIPH, Oslo)</li>
+<li><a href="https://www.fhi.no/en/about/departments-and-centres/chronic-diseases-and-ageing/oystein-karlstad/" target="_blank" rel="noopener">Øystein Karlstad</a> (NIPH, Oslo)</li>
+<li><a href="https://samforsk.no/Sider/Ansatte/Christian-Wendelborg.aspx" target="_blank" rel="noopener">Christian Wendelborg</a> (NTNU, Trondheim)</li>
+<li><a href="https://staff.ki.se/people/henlar" target="_blank" rel="noopener">Henrik Larsson</a> (Karolinska Institiute, Stockholm)</li>
+<li><a href="https://www.northumbria.ac.uk/about-us/our-staff/c/reinie-cordier/" target="_blank" rel="noopener">Reinie Cordier</a> (Northumbria University, Newcastle)</li>
+<li>Mats Fredrirksen (<a href="siv.no">Sykehuset i Vestfold</a>)</li>
+<li>Nina Holmen (<a href="adhdnorge.no">ADHD Norge</a>)</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/bayesian/">Bayesian</a>
+  
+  <a class="badge badge-light" href="/tag/epidemiology/">Epidemiology</a>
+  
+  <a class="badge badge-light" href="/tag/adhd/">ADHD</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/project/nfrsea/&amp;text=Effects%20of%20medication%20and%20special%20education" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/project/nfrsea/&amp;t=Effects%20of%20medication%20and%20special%20education" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Effects%20of%20medication%20and%20special%20education&amp;body=/project/nfrsea/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/project/nfrsea/&amp;title=Effects%20of%20medication%20and%20special%20education" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Effects%20of%20medication%20and%20special%20education%20/project/nfrsea/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/project/nfrsea/&amp;title=Effects%20of%20medication%20and%20special%20education" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/author/guido-biele/avatar_hu3a04e26399f49914e6ef0db8e6e718c4_704383_270x270_fill_q75_lanczos_center.jpg" alt="Guido Biele">
+    
+
+    <div class="media-body">
+      <h5 class="card-title">Guido Biele</h5>
+      
+      <p class="card-text">My research interests include statistical and cognitive modeling around ADHD.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/GuidoBiele" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=0UkWz9IAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/gbiele" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/project/epi/">ADHD risk factors</a></li>
+      
+      <li><a href="/project/causalinf/">Causal inference from observational data</a></li>
+      
+      <li><a href="/publication/pub_2021a/">Prenatal phthalate exposures and executive function in preschool children</a></li>
+      
+      <li><a href="/publication/pub_2020c/">Prenatal exposure to perfluoroalkyl substances and associations with symptoms of attention-deficit/hyperactivity disorder and cognitive functions in preschool children</a></li>
+      
+      <li><a href="/publication/pub_2019a/">Estimating the Strength of Associations Between Prenatal Diet Quality and Child Developmental Outcomes. Results From a Large Prospective Pregnancy Cohort Study</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+    <div class="project-related-pages content-widget-hr">
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+    </div>
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.29d2abb07db775505d3a2efc824e7b29.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.973d1c678d4da48dab8fc55d6e25e3e9.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

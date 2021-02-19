@@ -1,0 +1,29 @@
+\begin{tikzpicture}[node distance=3.25cm,
+    ->,>=stealth',
+    state/.style={draw,
+    	circle,
+    	minimum size = 5mm,
+    	inner sep = 1pt}] 
+    
+    \node[state,draw = none]         (SP1)                             {$SP_{t1}$};
+    \node[state,draw = none]         (MED)    [above right of=SP1]     {${MED}$};
+    \node[state,draw = none]         (EDU)    [left of=MED]            {$EDU$};
+    \node[state,draw = none]         (ISE)    [below right of=SP1]     {${ISE}$};
+    \node[state,draw = none]         (COM)    [left of=ISE]            {$COM$}; 
+    \node[state,draw = none]         (SP2)    [below right of=MED]     {${SP_{t2}}$};
+    \node[state,draw = none]         (a)      [above of=SP2]     {(a)};
+    
+    \path (COM)     edge  [bend right=60] node {} (SP2) 
+    edge                 node {} (SP1)
+    edge                 node {} (ISE)
+    edge                 node {} (MED)
+    (EDU)   edge  [bend left=60] node {} (SP2)
+    edge                 node {} (SP1)
+    edge                 node {} (MED)
+    edge                 node {} (ISE)
+    (SP1)   edge                 node {} (SP2)
+    edge                 node {} (MED)
+    edge                 node {} (ISE)
+    (MED)   edge [line width=1pt] node {} (SP2)
+    (ISE)   edge [line width=1pt] node {} (SP2);
+\end{tikzpicture}
