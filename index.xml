@@ -192,7 +192,296 @@ In one paper we investigated, using mathematical modeling of choices in public g
       <link>/project/nprsea/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/project/nprsea/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;DAG.png&#34; alt=&#34;Alt text here&#34; title=&#34;Title here&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;In this amazing project we fuse cutting edge scientific technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That is how one could describe this project if the goal is to describe the it with a bunch of flashy terms. What we are really trying to do is to answer an important but hard question, &amp;ldquo;Do ADHD medication and special education improve school performance?&amp;rdquo; as well as we can with observational data. In order to do this we will used structural models (&lt;em&gt;causal data science&lt;/em&gt;), lots of data from registries (&lt;em&gt;big data&lt;/em&gt;), and Bayesian estimation of structural models (&lt;em&gt;probabilistic machine learning&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Some background&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Most children with ADHD have minor or severe reading and writing problems already in the third grade. A substantial proportion of children and youth receive special educational assistance and/or ADHD medication. This begs the question: Do medication and special educational assistance improve school performance? This question is important because the few papers that looked at long-term effects of medication find only rather small effects, and we know even less about the long-term effects of special educational assistance.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-special-education-adhd-medication-and-early-reading-difficulties-in-norway-special-education-and-use-of-adhd-medication-increase-with-child-age-and-are-more-prevalent-among-boys-children-with-adhd-are-10-times-more-likely-to-have-severe-reading-difficulties-than-children-without-adhd-as-early-as-grade-3-data-from-httpsgsiudirno-httpwwwreseptregisteretno-norwegian-mother-and-child-cohort-study&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from &amp;lt;a href=&amp;#34;https://gsi.udir.no&amp;#34;&amp;gt;https://gsi.udir.no&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;#34;http://www.reseptregisteret.no&amp;#34;&amp;gt;http://www.reseptregisteret.no&amp;lt;/a&amp;gt;, Norwegian Mother and Child Cohort Study.&#34;&gt;
+
+
+  &lt;img data-src=&#34;/project/nprsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4819&#34; height=&#34;1134&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from &lt;a href=&#34;https://gsi.udir.no&#34;&gt;https://gsi.udir.no&lt;/a&gt;, &lt;a href=&#34;http://www.reseptregisteret.no&#34;&gt;http://www.reseptregisteret.no&lt;/a&gt;, Norwegian Mother and Child Cohort Study.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Some methods&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In this project we are using data from Norwegian registries and the Norwegian Mother, Father and Child Cohort Study (MoBa) to estimate the effect of medication and special education on school performance of children with ADHD or other mental health or developmental problems.&lt;/p&gt;
+&lt;p&gt;Using observational data to estimate treatment effects is difficult (some would say impossible), because individuals are not randomized into treatment conditions. We are still doing this project for two reasons. First, we are interested in effects of longer-term treatments, but conducting randomized controlled trials (RCTs) is considered unethical if one wants to estimate long-term effects of treatments that one assumes should be beneficial. Secondly, well designed placebo controlled randomized trials have the strongest internal validity, if we see outcome differences between treatment conditions those are due to the treatment, but they still can have a sub-optimal external validity, i.e. we remain uncertain about how the treatment effects generalize to treatment that is not implemented as part of an RCT. Reasons for a limited external validity include less formalized implementation of treatments outside RCTs or non-random selection of participants into the RCTs. Therefore carefully implemented observational studies can be a useful complement to RCTs.&lt;/p&gt;
+&lt;p&gt;Our approach to a careful implementation of an observational study is to formulate a structural model that describes our assumed data-generating process, and to use Bayesian estimation of hierarchical models to obtain estimates of causal effects.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-directed-acyclic-graphs-dags-of-design-and-causal-assumptions-a-school-performance-at-time-t2-spsubt2sub-results-of-national-tests-in-grades-8-and-9-depends-on-medication-med-individual-special-education-ise-and-on-confounders-like-earlier-school-performance-spsubt1sub-national-tests-grade-5-parental-education-edu-and-comorbid-disorders-com-other-potential-confounders-like-gender-parityparental-mental-health-and-income-are-omitted-here-for-clarity-b-bias-from-observed-confounders-here-spsubt1sub-which-predicts-exposure-med-and-outcome-spsubt2sub-can-be-controlled-by-adjusting-for-them--c-when-spsubt1sub-is-a-collider-between-usubpasub-iunobservedi-parental-attention-and-usubscsub-iunobservedi-school-quality-adjustment-for-spsubt1sub-leads-to-conditioning-on-a-collider-and-cannot-correct-bias-adjusting-for-a-propensity-score-derived-from-spsubt1sub-also-introduces-bias-instead-inverse-probability-of-treatment-weights-need-to-be-used&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, which predicts exposure MED and outcome SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;) can be controlled by adjusting for them.  (c) When SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; is a collider between U&amp;lt;sub&amp;gt;PA&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; parental attention) and U&amp;lt;sub&amp;gt;SC&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; school quality), adjustment for SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.&#34;&gt;
+
+
+  &lt;img data-src=&#34;/project/nprsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;3437&#34; height=&#34;2218&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP&lt;sub&gt;t2&lt;/sub&gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&lt;sub&gt;t1&lt;/sub&gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&lt;sub&gt;t1&lt;/sub&gt;, which predicts exposure MED and outcome SP&lt;sub&gt;t2&lt;/sub&gt;) can be controlled by adjusting for them.  (c) When SP&lt;sub&gt;t1&lt;/sub&gt; is a collider between U&lt;sub&gt;PA&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; parental attention) and U&lt;sub&gt;SC&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; school quality), adjustment for SP&lt;sub&gt;t1&lt;/sub&gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&lt;sub&gt;t1&lt;/sub&gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Data&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;We are starting with a base population of around 600,000 children that were born between 2000 and 2100. The study population consists of children with ADHD or other mental health or developmental problems (up to maybe 60,000), and these children&amp;rsquo;s parents and siblings. Parents and siblings are an important part of children&amp;rsquo;s environment, which has an influence on school performance generally, and which can also influence how effective treatments are implemented. Special education data is only available from MoBa, so that sample sizes will be smaller for these analyses.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Age&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;0&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;5&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;6,7&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;8&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;10&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;11-14&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;15&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Diagnoses&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADHD symptoms&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MoBa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MoBa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Therapy&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR, KUHR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR, KUHR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR, KUHR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR, KUHR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR, KUHR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR, KUHR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR, KUHR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Medication&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NorPD&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NorPD&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NorPD&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NorPD&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NorPD&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NorPD&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NorPD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Special education&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MoBa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MoBa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MoBa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;School perform.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MoBa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MoBa&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Parental edu &amp;amp; income&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Parental diagnoses&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NPR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;Pilot analyses&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;To check the general feasibility of the project I did some pilot analyses on MoBa, NPR, and NorPD data (N ~ 1,500 children with ADHD). I used a hierarchical Bayesian ordered regressions to estimate the effect of special education in kindergarten or ADHD medication on reading problems in the 3rd grade. I used inverse probability of treatment weights to adjust for confounding by indication. The effect estimates are on average positive, but also vary substantially between subgroups characterised by maternal education and child gender.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-results-from-prelimiay-analysis-itop-lefti-effect-estimate-for-adhd-medication-itop-righti-effect-estimate-for-special-education--ibottom-lefti-bivariate-distribution-of-medication-years-and-dosage-for-10-12-year-old-children-darker-shading-indicates-more-frequent-combinations-ibottom-righti-more-hours-special-education-per-week-are-associated-with-fewer-reading-problems-averaged-across-groups-shaded-areas-show-25-95-credible-intervals&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Results from prelimiay analysis. &amp;lt;i&amp;gt;Top left&amp;lt;/i&amp;gt;: Effect estimate for ADHD medication. &amp;lt;i&amp;gt;Top right&amp;lt;/i&amp;gt;: Effect estimate for special education.  &amp;lt;i&amp;gt;Bottom left&amp;lt;/i&amp;gt;: Bivariate distribution of medication years and dosage for 10-12 year old children. Darker shading indicates more frequent combinations. &amp;lt;i&amp;gt;Bottom right&amp;lt;/i&amp;gt;: More hours special education per week are associated with fewer reading problems (averaged across groups). Shaded areas show 25-95% credible intervals.&#34;&gt;
+
+
+  &lt;img data-src=&#34;/project/nprsea/SA_prelim_hud6f8f92b120c35ec75c67835976c9346_343521_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2835&#34; height=&#34;2409&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Results from prelimiay analysis. &lt;i&gt;Top left&lt;/i&gt;: Effect estimate for ADHD medication. &lt;i&gt;Top right&lt;/i&gt;: Effect estimate for special education.  &lt;i&gt;Bottom left&lt;/i&gt;: Bivariate distribution of medication years and dosage for 10-12 year old children. Darker shading indicates more frequent combinations. &lt;i&gt;Bottom right&lt;/i&gt;: More hours special education per week are associated with fewer reading problems (averaged across groups). Shaded areas show 25-95% credible intervals.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Working packages&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;WP0 provides input for and guides working packages that implement the research and also organizes acquisition of register data and communication with users. WP1-WP3 follow a similar approach: Treatment patterns and predictors are identified in a first step, based on which effects are estimated in a second step. WP1 focuses on medication and uses data from Norway and Sweden. WP2 focuses on special education. WP3 focuses on interaction effects of special education and medication.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-working-packages-and-their-dependencies&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nprsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Working packages and their dependencies&#34;&gt;
+
+
+  &lt;img data-src=&#34;/project/nprsea/workplan_hu5a560d501c31d91dffa8e99f712e2091_694900_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4596&#34; height=&#34;2597&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Working packages and their dependencies
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Collaborators&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The project will be implemented in collaboration with colleagues in Norway, Sweden, and the UK.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.med.uio.no/imb/english/people/aca/jonmic/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jon Michael Gran&lt;/a&gt; (University of Oslo)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.fhi.no/en/about/departments-and-centres/child-health-and-development/mari-vaage-wang/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mari Vaage Wang&lt;/a&gt; (NIPH, Oslo)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.fhi.no/en/about/departments-and-centres/chronic-diseases-and-ageing/oystein-karlstad/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Øystein Karlstad&lt;/a&gt; (NIPH, Oslo)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://samforsk.no/Sider/Ansatte/Christian-Wendelborg.aspx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Christian Wendelborg&lt;/a&gt; (NTNU, Trondheim)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://staff.ki.se/people/henlar&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Henrik Larsson&lt;/a&gt; (Karolinska Institiute, Stockholm)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.northumbria.ac.uk/about-us/our-staff/c/reinie-cordier/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Reinie Cordier&lt;/a&gt; (Northumbria University, Newcastle)&lt;/li&gt;
+&lt;li&gt;Mats Fredrirksen (&lt;a href=&#34;siv.no&#34;&gt;Sykehuset i Vestfold&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Nina Holmen (&lt;a href=&#34;adhdnorge.no&#34;&gt;ADHD Norge&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -417,7 +706,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-396451287&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-456739812&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -427,7 +716,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-396451287&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-456739812&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
