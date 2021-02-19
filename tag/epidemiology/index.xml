@@ -5,7 +5,7 @@
     <link>/tag/epidemiology/</link>
       <atom:link href="/tag/epidemiology/index.xml" rel="self" type="application/rss+xml" />
     <description>Epidemiology</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
       <title>Epidemiology</title>
@@ -13,35 +13,13 @@
     </image>
     
     <item>
-      <title>ADHD risk factors</title>
-      <link>/project/epi/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/project/epi/</guid>
-      <description>&lt;p&gt;In this research line I use epidemiological approaches to learn more about rsik factors for ADHD.&lt;/p&gt;
-&lt;p&gt;One paper in this area examines &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/31451995/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;how self selection into a study and loss to follow up can bias associations between exposures and outcomes&lt;/a&gt;, and how one can best reduce this bias. Elaborating on a &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/15308962/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;seminal paper by Hernan and colleagues&lt;/a&gt; we point out that one cannot determine if large studies such as for example &lt;a href=&#34;https://www.fhi.no/en/studies/moba/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MoBa&lt;/a&gt;, &lt;a href=&#34;http://www.bristol.ac.uk/alspac/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ALSPAC&lt;/a&gt; or the &lt;a href=&#34;https://www.ukbiobank.ac.uk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UK Biobank&lt;/a&gt; are generally &amp;ldquo;representative&amp;rdquo;. Instead the relationship between specific variables of interest in a study and variables that predict (continued) participation determine if bias is likely and how it should be accounted for. Importantly: When mental health related outcomes like ADHD, depression, etc. are involved, simply adjusting for participation predictors will often increase and not decrease bias. In comparison, inverse probability of participation weights will reduce bias. The reason for this is that participation predictors are often colliders between (mental health) outcomes and exposures, and conditioning on colliders introduces bias, but weighting does not.&lt;/p&gt;
-&lt;p&gt;In other research colleagues and I investigate associations between maternal characteristics, often assessed in pregnancy, and developmental outcomes including ADHD. Differently then some research in this field we use Bayesian hierarchical regression models to estimate associations, which allows us to deal effectively with the multiple comparison problem, and we focus on effect sizes as opposed to statistical significance (using &lt;a href=&#34;https://www.fhi.no/en/studies/moba/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MoBa&lt;/a&gt;, our sample size is often in the tens of thousands). So far, our findings indicate that in rich industrialized countries the association between maternal nutrition or exposure to toxicants &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/31375821/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;and child developmental outcomes are so small that they are unlikely to be practically sigfnificant.&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Causal inference from observational data</title>
-      <link>/project/causalinf/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/project/causalinf/</guid>
-      <description>&lt;p&gt;Randomised controlled trials (RCTs) are due to their internal validity considered as the gold standard for causal inference. But RCTs are not always feasible or ethical, for instance if one is interested in long-term effects of treatments. More generally, every investigation of causal effects trades off internal and external validity. Hence, one can argue that observational studies of causal effect, which tend to have higher external validity, have their place independent of the practical or ethical chellanges RCTs can pose.&lt;/p&gt;
-&lt;p&gt;I am currently establishing this research line after being rewarded a grant by the Norwegian Research Council. The thematic focus of this research is on the effect of medication and special education on educational and other outcomes of children with ADHD  .&lt;/p&gt;
-&lt;p&gt;One important challenge when estimating treatment effects is that of non-random selection into treatment or treatment by indication. To deal with bias from this and others we will use directed acyclic graphs (DAGs) to represent the (assumed) causal structure that generates the data we observe and to determine the best ways to deal with potential biases. Depending on the causal structure, adjustment, multilevel regression and post stratification, weighting or a combination of these approaches can be useful. We will also explore methods often used in econometrics like Difference in Differences or regression discontinuity, though it is uncertain that there is exist data in Norway to estimate such models.&lt;/p&gt;
-&lt;p&gt;The goal of this research is to provide estimates of causal effects, even if we know that these are will always be imperfect. Our aim is to reduce this imperfection as much as we can.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Effects of stimulant medication and special education on school performance</title>
       <link>/project/nfrsea/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/project/nfrsea/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;In this amazing project we fuse cutting edge scientific technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;That is how one could describe this project if the goal is to describe the it with a bunch of flashy terms. What we are really trying to do is to answer an important but hard question, &amp;ldquo;Do ADHD medication and special education improve school performance?&amp;rdquo; as well as we can with observational data. In order to do this we will used structural models (&lt;em&gt;causal data science&lt;/em&gt;), lots of data from registries (&lt;em&gt;big data&lt;/em&gt;), and Bayesian estimation of structural models (&lt;em&gt;probabilistic machine learning&lt;/em&gt;).&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;We fuse high impact technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.&lt;/strong&gt; That is how one could describe this project if one wants to give the impression of being &amp;ldquo;cutting edge&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;What we are really trying to do is to answer an important but hard question, &amp;ldquo;Do ADHD medication and special education improve school performance?&amp;rdquo; using observational data as well as we possible. Estimating causal effects from observational data is a challenge. To meet this challenge, we will used structural models (&lt;em&gt;causal data science&lt;/em&gt;), lots of data from registries (&lt;em&gt;big data&lt;/em&gt;), and Bayesian estimation of structural models (&lt;em&gt;probabilistic machine learning&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We are hiring two 3-year positions (Postoc, PhD student) for this project&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Some background&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Most children with ADHD have minor or severe reading and writing problems already in the third grade. A substantial proportion of children and youth receive special educational assistance and/or ADHD medication. This begs the question: Do medication and special educational assistance improve school performance? This question is important because the few papers that looked at long-term effects of medication find only rather small effects, and we know even less about the long-term effects of special educational assistance.&lt;/p&gt;
 
@@ -67,10 +45,10 @@
 
 
 
-&lt;figure id=&#34;figure-special-education-adhd-medication-and-early-reading-difficulties-in-norway-special-education-and-use-of-adhd-medication-increase-with-child-age-and-are-more-prevalent-among-boys-children-with-adhd-are-10-times-more-likely-to-have-severe-reading-difficulties-than-children-without-adhd-as-early-as-grade-3-data-from-httpsgsiudirno-httpwwwreseptregisteretno-norwegian-mother-and-child-cohort-study&#34;&gt;
+&lt;figure id=&#34;figure-special-education-adhd-medication-and-early-reading-difficulties-in-norway-special-education-and-the-use-of-adhd-medication-increase-with-child-age-and-are-more-prevalent-among-boys-third-graders-with-adhd-have-10-times-more-likely-severe-reading-difficulties-than-those-without-adhd&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from &amp;lt;a href=&amp;#34;https://gsi.udir.no&amp;#34;&amp;gt;https://gsi.udir.no&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;#34;http://www.reseptregisteret.no&amp;#34;&amp;gt;http://www.reseptregisteret.no&amp;lt;/a&amp;gt;, Norwegian Mother and Child Cohort Study.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Special education, ADHD medication and early reading difficulties in Norway. Special education and the use of ADHD medication increase with child age and are more prevalent among boys. Third graders with ADHD have 10 times more likely severe reading difficulties than those without ADHD.&#34;&gt;
 
 
   &lt;img data-src=&#34;/project/nfrsea/SA_MHP_SE_hu710ed5685c68796413877da6d0e8d741_361632_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4819&#34; height=&#34;1134&#34;&gt;
@@ -80,7 +58,7 @@
   
   
   &lt;figcaption&gt;
-    Special education, ADHD medication and early reading difficulties in Norway. Special education and use of ADHD medication increase with child age and are more prevalent among boys. Children with ADHD are 10 times more likely to have severe reading difficulties than children without ADHD as early as grade 3. Data from &lt;a href=&#34;https://gsi.udir.no&#34;&gt;https://gsi.udir.no&lt;/a&gt;, &lt;a href=&#34;http://www.reseptregisteret.no&#34;&gt;http://www.reseptregisteret.no&lt;/a&gt;, Norwegian Mother and Child Cohort Study.
+    Special education, ADHD medication and early reading difficulties in Norway. Special education and the use of ADHD medication increase with child age and are more prevalent among boys. Third graders with ADHD have 10 times more likely severe reading difficulties than those without ADHD.
   &lt;/figcaption&gt;
 
 
@@ -113,10 +91,10 @@
 
 
 
-&lt;figure id=&#34;figure-directed-acyclic-graphs-dags-of-design-and-causal-assumptions-a-school-performance-at-time-t2-spsubt2sub-results-of-national-tests-in-grades-8-and-9-depends-on-medication-med-individual-special-education-ise-and-on-confounders-like-earlier-school-performance-spsubt1sub-national-tests-grade-5-parental-education-edu-and-comorbid-disorders-com-other-potential-confounders-like-gender-parityparental-mental-health-and-income-are-omitted-here-for-clarity-b-bias-from-observed-confounders-here-spsubt1sub-which-predicts-exposure-med-and-outcome-spsubt2sub-can-be-controlled-by-adjusting-for-them--c-when-spsubt1sub-is-a-collider-between-usubpasub-iunobservedi-parental-attention-and-usubscsub-iunobservedi-school-quality-adjustment-for-spsubt1sub-leads-to-conditioning-on-a-collider-and-cannot-correct-bias-adjusting-for-a-propensity-score-derived-from-spsubt1sub-also-introduces-bias-instead-inverse-probability-of-treatment-weights-need-to-be-used&#34;&gt;
+&lt;figure id=&#34;figure-directed-acyclic-graphs-dags-of-design-and-causal-assumptions-a-school-performance-at-time-it2i-spsubit2isub-results-of-national-tests-in-grades-8-and-9-depends-on-medication-med-individual-special-education-ise-and-on-confounders-like-earlier-school-performance-spsubit1isub-national-tests-grade-5-parental-education-edu-and-comorbid-disorders-com-other-potential-confounders-like-gender-parityparental-mental-health-and-income-are-omitted-here-for-clarity-b-bias-from-observed-confounders-here-spsubit1isub-which-predicts-exposure-med-and-outcome-spsubt2sub-can-be-controlled-by-adjusting-for-them--c-when-spsubit1isub-is-a-collider-between-usubpasub-iunobservedi-parental-attention-and-usubscsub-iunobservedi-school-quality-adjustment-for-spsubit1isub-leads-to-conditioning-on-a-collider-and-cannot-correct-bias-adjusting-for-a-propensity-score-derived-from-spsubit1isub-also-introduces-bias-instead-inverse-probability-of-treatment-weights-need-to-be-used&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt;, which predicts exposure MED and outcome SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;) can be controlled by adjusting for them.  (c) When SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; is a collider between U&amp;lt;sub&amp;gt;PA&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; parental attention) and U&amp;lt;sub&amp;gt;SC&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; school quality), adjustment for SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&amp;lt;sub&amp;gt;t1&amp;lt;/sub&amp;gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/project/nfrsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time &amp;lt;i&amp;gt;t2&amp;lt;/i&amp;gt; (SP&amp;lt;sub&amp;gt;&amp;lt;i&amp;gt;t2&amp;lt;/i&amp;gt;&amp;lt;/sub&amp;gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&amp;lt;sub&amp;gt;&amp;lt;i&amp;gt;t1&amp;lt;/i&amp;gt;&amp;lt;/sub&amp;gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&amp;lt;sub&amp;gt;&amp;lt;i&amp;gt;t1&amp;lt;/i&amp;gt;&amp;lt;/sub&amp;gt;, which predicts exposure MED and outcome SP&amp;lt;sub&amp;gt;t2&amp;lt;/sub&amp;gt;) can be controlled by adjusting for them.  (c) When SP&amp;lt;sub&amp;gt;&amp;lt;i&amp;gt;t1&amp;lt;/i&amp;gt;&amp;lt;/sub&amp;gt; is a collider between U&amp;lt;sub&amp;gt;PA&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; parental attention) and U&amp;lt;sub&amp;gt;SC&amp;lt;/sub&amp;gt; (&amp;lt;i&amp;gt;unobserved&amp;lt;/i&amp;gt; school quality), adjustment for SP&amp;lt;sub&amp;gt;&amp;lt;i&amp;gt;t1&amp;lt;/i&amp;gt;&amp;lt;/sub&amp;gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&amp;lt;sub&amp;gt;&amp;lt;i&amp;gt;t1&amp;lt;/i&amp;gt;&amp;lt;/sub&amp;gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.&#34;&gt;
 
 
   &lt;img data-src=&#34;/project/nfrsea/SA_DAG_hu1fa7f68cd89c310b2967bed16dba5334_272042_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;3437&#34; height=&#34;2218&#34;&gt;
@@ -126,7 +104,7 @@
   
   
   &lt;figcaption&gt;
-    Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time t2 (SP&lt;sub&gt;t2&lt;/sub&gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&lt;sub&gt;t1&lt;/sub&gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&lt;sub&gt;t1&lt;/sub&gt;, which predicts exposure MED and outcome SP&lt;sub&gt;t2&lt;/sub&gt;) can be controlled by adjusting for them.  (c) When SP&lt;sub&gt;t1&lt;/sub&gt; is a collider between U&lt;sub&gt;PA&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; parental attention) and U&lt;sub&gt;SC&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; school quality), adjustment for SP&lt;sub&gt;t1&lt;/sub&gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&lt;sub&gt;t1&lt;/sub&gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.
+    Directed acyclic graphs (DAGs) of design and causal assumptions. (a) School performance at time &lt;i&gt;t2&lt;/i&gt; (SP&lt;sub&gt;&lt;i&gt;t2&lt;/i&gt;&lt;/sub&gt;, results of national tests in grades 8 and 9) depends on medication (MED), individual special education (ISE), and on confounders like earlier school performance (SP&lt;sub&gt;&lt;i&gt;t1&lt;/i&gt;&lt;/sub&gt;, national tests grade 5), parental education (EDU), and comorbid disorders (COM). Other potential confounders like gender, parity,parental mental health and income are omitted here for clarity. (b) Bias from observed confounders (here SP&lt;sub&gt;&lt;i&gt;t1&lt;/i&gt;&lt;/sub&gt;, which predicts exposure MED and outcome SP&lt;sub&gt;t2&lt;/sub&gt;) can be controlled by adjusting for them.  (c) When SP&lt;sub&gt;&lt;i&gt;t1&lt;/i&gt;&lt;/sub&gt; is a collider between U&lt;sub&gt;PA&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; parental attention) and U&lt;sub&gt;SC&lt;/sub&gt; (&lt;i&gt;unobserved&lt;/i&gt; school quality), adjustment for SP&lt;sub&gt;&lt;i&gt;t1&lt;/i&gt;&lt;/sub&gt; leads to conditioning on a collider and cannot correct bias. Adjusting for a propensity score derived from SP&lt;sub&gt;&lt;i&gt;t1&lt;/i&gt;&lt;/sub&gt; also introduces bias. Instead, inverse probability of treatment weights need to be used.
   &lt;/figcaption&gt;
 
 
@@ -142,9 +120,9 @@
 &lt;th style=&#34;text-align:center&#34;&gt;5&lt;/th&gt;
 &lt;th style=&#34;text-align:center&#34;&gt;6,7&lt;/th&gt;
 &lt;th style=&#34;text-align:center&#34;&gt;8&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;10&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;10 (&lt;i&gt;t1&lt;/i&gt;)&lt;/th&gt;
 &lt;th style=&#34;text-align:center&#34;&gt;11-14&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;15&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;15 (&lt;i&gt;t1&lt;/i&gt;)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -211,7 +189,7 @@
 &lt;tr&gt;
 &lt;td&gt;Parental edu &amp;amp; income&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;S&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;SSB&lt;/td&gt;
@@ -230,6 +208,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+ &lt;small&gt;
+NPR: Norwegian patient registry, MoBa: Norwegian Mother, Father and Child Cohort Study, KUHR: Norway Control and Payment of Health Reimbursement Database, NorPD: Norwegian prescription data base. SSB: Statistics Norwy
+ &lt;/small&gt;
 &lt;p&gt;&lt;em&gt;Pilot analyses&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;To check the general feasibility of the project I did some pilot analyses on MoBa, NPR, and NorPD data (N ~ 1,500 children with ADHD). I used a hierarchical Bayesian ordered regressions to estimate the effect of special education in kindergarten or ADHD medication on reading problems in the 3rd grade. I used inverse probability of treatment weights to adjust for confounding by indication. The effect estimates are on average positive, but also vary substantially between subgroups characterised by maternal education and child gender.&lt;/p&gt;
 
@@ -330,6 +311,29 @@
 &lt;li&gt;Mats Fredrirksen (&lt;a href=&#34;siv.no&#34;&gt;Sykehuset i Vestfold&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Nina Holmen (&lt;a href=&#34;adhdnorge.no&#34;&gt;ADHD Norge&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ADHD risk factors</title>
+      <link>/project/epi/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/project/epi/</guid>
+      <description>&lt;p&gt;In this research line I use epidemiological approaches to learn more about rsik factors for ADHD.&lt;/p&gt;
+&lt;p&gt;One paper in this area examines &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/31451995/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;how self selection into a study and loss to follow up can bias associations between exposures and outcomes&lt;/a&gt;, and how one can best reduce this bias. Elaborating on a &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/15308962/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;seminal paper by Hernan and colleagues&lt;/a&gt; we point out that one cannot determine if large studies such as for example &lt;a href=&#34;https://www.fhi.no/en/studies/moba/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MoBa&lt;/a&gt;, &lt;a href=&#34;http://www.bristol.ac.uk/alspac/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ALSPAC&lt;/a&gt; or the &lt;a href=&#34;https://www.ukbiobank.ac.uk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UK Biobank&lt;/a&gt; are generally &amp;ldquo;representative&amp;rdquo;. Instead the relationship between specific variables of interest in a study and variables that predict (continued) participation determine if bias is likely and how it should be accounted for. Importantly: When mental health related outcomes like ADHD, depression, etc. are involved, simply adjusting for participation predictors will often increase and not decrease bias. In comparison, inverse probability of participation weights will reduce bias. The reason for this is that participation predictors are often colliders between (mental health) outcomes and exposures, and conditioning on colliders introduces bias, but weighting does not.&lt;/p&gt;
+&lt;p&gt;In other research colleagues and I investigate associations between maternal characteristics, often assessed in pregnancy, and developmental outcomes including ADHD. Differently then some research in this field we use Bayesian hierarchical regression models to estimate associations, which allows us to deal effectively with the multiple comparison problem, and we focus on effect sizes as opposed to statistical significance (using &lt;a href=&#34;https://www.fhi.no/en/studies/moba/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MoBa&lt;/a&gt;, our sample size is often in the tens of thousands). So far, our findings indicate that in rich industrialized countries the association between maternal nutrition or exposure to toxicants &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/31375821/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;and child developmental outcomes are so small that they are unlikely to be practically sigfnificant.&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Causal inference from observational data</title>
+      <link>/project/causalinf/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/project/causalinf/</guid>
+      <description>&lt;p&gt;Randomised controlled trials (RCTs) are due to their internal validity considered as the gold standard for causal inference. But RCTs are not always feasible or ethical, for instance if one is interested in long-term effects of treatments. More generally, every investigation of causal effects trades off internal and external validity. Hence, one can argue that observational studies of causal effect, which tend to have higher external validity, have their place independent of the practical or ethical chellanges RCTs can pose.&lt;/p&gt;
+&lt;p&gt;I am currently establishing this research line after being rewarded a grant by the Norwegian Research Council. The thematic focus of this research is on the effect of medication and special education on educational and other outcomes of children with ADHD  .&lt;/p&gt;
+&lt;p&gt;One important challenge when estimating treatment effects is that of non-random selection into treatment or treatment by indication. To deal with bias from this and others we will use directed acyclic graphs (DAGs) to represent the (assumed) causal structure that generates the data we observe and to determine the best ways to deal with potential biases. Depending on the causal structure, adjustment, multilevel regression and post stratification, weighting or a combination of these approaches can be useful. We will also explore methods often used in econometrics like Difference in Differences or regression discontinuity, though it is uncertain that there is exist data in Norway to estimate such models.&lt;/p&gt;
+&lt;p&gt;The goal of this research is to provide estimates of causal effects, even if we know that these are will always be imperfect. Our aim is to reduce this imperfection as much as we can.&lt;/p&gt;
 </description>
     </item>
     
