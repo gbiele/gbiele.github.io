@@ -188,7 +188,7 @@ In one paper we investigated, using mathematical modeling of choices in public g
     </item>
     
     <item>
-      <title>Effects of medication and special education</title>
+      <title>Effects of stimulant medication and special education on school performance</title>
       <link>/project/nfrsea/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/project/nfrsea/</guid>
@@ -706,7 +706,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-825719436&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-297543861&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -716,7 +716,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-825719436&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-297543861&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
