@@ -193,7 +193,7 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2021a/</loc>
+    <loc>/publication/pub_2021c/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -308,7 +308,7 @@
   </url>
   
   <url>
-    <loc>/publication-type/3/</loc>
+    <loc>/publication-type/4/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -318,27 +318,47 @@
   </url>
   
   <url>
-    <loc>/author/b-muhlemann/</loc>
+    <loc>/author/angela-stein/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/g-biele/</loc>
+    <loc>/author/anke-edelmann/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/others/</loc>
+    <loc>/author/barbara-muhlemann/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/t-c-jones/</loc>
+    <loc>/author/christian-drosten/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/author/t-veith/</loc>
+    <loc>/author/jorg-hofmann/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/marta-zuchowski/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/talitha-veith/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/terry-c-jones/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/victor-max-corman/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -690,11 +710,6 @@
   <url>
     <loc>/publication/pub_2016b/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication-type/4/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
