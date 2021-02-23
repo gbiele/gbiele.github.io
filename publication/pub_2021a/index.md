@@ -16,7 +16,7 @@ publication: '*medRxiv*'
 publication_short: ""
 publication_types:
 - "3"
-publishDate: "2021-06-01"
+publishDate: "2021-01-01"
 slides: 
 summary: ""
 tags: 
