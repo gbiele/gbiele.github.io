@@ -183,7 +183,7 @@ The variance of the distribution is $\sigma^{2}$.
 &lt;p&gt;&lt;em&gt;Some methods&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This project uses data from Norwegian national registries and the Norwegian Mother, Father and Child Cohort Study (MoBa) to estimate the effects of medication and special education on school performance of children with ADHD or other mental health or developmental problems.&lt;/p&gt;
 &lt;p&gt;Using observational data to estimate treatment effects is difficult (some would say impossible), because individuals are not randomized into treatment conditions. We are still doing this project for two reasons. First, we are interested in effects of longer-term treatments, but conducting randomized controlled trials (RCTs) is considered unethical if one wants to estimate long-term effects of treatments that one assumes should be beneficial. Secondly, well designed placebo controlled randomized trials have the strongest internal validity&amp;ndash;if we see outcome differences between treatment conditions those are due to the treatment, but they still can have a sub-optimal external validity, i.e. we remain uncertain if the treatment effect generalizes to treatment that is not implemented in the context of an RCT. Reasons for a limited external validity include less formalized implementation of treatments outside RCTs or non-random selection of participants into the RCTs. Therefore, carefully implemented observational studies can be a useful complement to RCTs.&lt;/p&gt;
-&lt;p&gt;Our approach to a careful implementation of an observational study is to formulate and check a structural model that describes the assumed data-generating process, and to use Bayesian estimation of hierarchical models to obtain estimates of causal effects.&lt;/p&gt;
+&lt;p&gt;Our approach to a careful implementation of an observational study is to formulate and check a structural model that describes the assumed data-generating process, and to use Bayesian estimation of hierarchical models to obtain estimates of causal effects. &lt;a href=&#34;https://gbiele.github.io/media/sps358_8grp.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here&lt;/a&gt; is an article in which we implemented such an approach.&lt;/p&gt;
 
 
 
@@ -719,7 +719,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-237964815&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-472586931&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -729,7 +729,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-237964815&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-472586931&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
