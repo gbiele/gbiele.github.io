@@ -805,10 +805,11 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p><strong>Fusing high impact technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.</strong> This one way to describe this project, though I prefer the following, less flashy, description:</p>
-<p>We are trying to answer an important but hard question, &ldquo;Do ADHD medication and special education improve school performance?&rdquo; with observational data. Estimating causal effects from observational data is hard, some would say rarely possible at all. To meet this challenge, we will use structural models (<em>causal data science</em>), lots of data from national registries (<em>big data</em>), and Bayesian estimation of structural models (<em>probabilistic machine learning</em>).</p>
+      <p>This project can be described in flashy terms, like
+&ldquo;<strong>Fusing high impact technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.</strong>&rdquo; But this dos not quiet match the spirit of the project. So here is a description that the fits the project better:</p>
+<p>We are trying to answer an important but hard question, &ldquo;Do ADHD medication and special education improve school performance?&rdquo; with observational data. Estimating causal effects from observational data is hard, some would say rarely possible at all. To still make progress, we will use lots of data from national registries (<em>big data</em>) and approaches including structural models (<em>causal data science</em>) and Bayesian estimation of structural models (<em>probabilistic machine learning</em>).</p>
 <p><strong>We are hiring two 3-year positions (Postoc, PhD student) for this project</strong> <a href="https://945000.webcruiter.no/Main/Recruit/Public/4320447363?language=en&amp;link_source_id=0" target="_blank" rel="noopener">click here to apply</a></p>
-<p>Here is our related research about <a href="https://gbiele.github.io/media/Biele_2019.pdf" target="_blank" rel="noopener">selection bias</a> and <a href="https://gbiele.github.io/media/sps358_8grp.pdf" target="_blank" rel="noopener">estimation of causal effects with observational data</a>.</p>
+<p>Here is our related research about <a href="https://gbiele.github.io/media/Biele_2019.pdf" target="_blank" rel="noopener">selection bias</a> and <a href="https://gbiele.github.io/media/sps358_8grp.pdf" target="_blank" rel="noopener">estimation of causal effects with observational data</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p><em>Some background</em></p>
 <p>Most children with ADHD have minor or severe reading and writing problems already in the third grade. A substantial proportion of children and youth receive special educational assistance and/or ADHD medication. This begs the question: Do medication and special educational assistance improve school performance? This question is important, because the few papers that looked at long-term effects of medication find only very small effects, and we know even less about the long-term effects of special educational assistance.</p>
 
@@ -1100,6 +1101,14 @@ NPR: Norwegian patient registry, MoBa: Norwegian Mother, Father and Child Cohort
 <li>Mats Fredrirksen (<a href="siv.no">Sykehuset i Vestfold</a>)</li>
 <li>Nina Holmen (<a href="adhdnorge.no">ADHD Norge</a>)</li>
 </ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>This paper does not address one issue that complicates Bayesian estimation of structural models: In some circumstances, bias cannot be reduced through adjustment or multilevel regression and post stratification and one has to use weighting. The problem with weighting is that for a fully Bayesian approach, one would like to estimate weights and treatment effects in one model. However, this is due to model coupling impossible. This the begs the question how one could still propagate uncertainty about model weights into the estimation of treatment effects. As far as I know, there are currently no perfect answers to this question. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
