@@ -130,16 +130,8 @@ The variance of the distribution is $\sigma^{2}$.
     <item>
       <title>Cognitive, emotional, and social functioning of preschoolers with attention deficit hyperactivity problems</title>
       <link>/publication/pub_2021b/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       <guid>/publication/pub_2021b/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The effect of special educational assistance in early childhood education and care on psycho-social difficulties in elementary school children</title>
-      <link>/publication/pub_2021c/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/pub_2021c/</guid>
       <description></description>
     </item>
     
@@ -148,6 +140,14 @@ The variance of the distribution is $\sigma^{2}$.
       <link>/publication/pub_2021a/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       <guid>/publication/pub_2021a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The effect of special educational assistance in early childhood education and care on psycho-social difficulties in elementary school children</title>
+      <link>/publication/pub_2021c/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2021c/</guid>
       <description></description>
     </item>
     
@@ -752,7 +752,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-856947213&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-126795438&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -762,7 +762,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-856947213&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-126795438&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1202,6 +1202,14 @@ Three
     </item>
     
     <item>
+      <title>Opioid Modulation of Value-Based Decision-Making in Healthy Humans</title>
+      <link>/publication/pub_2017d/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2017d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The drift diffusion model as the choice rule in reinforcement learning</title>
       <link>/publication/pub_2017a/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
@@ -1212,16 +1220,16 @@ Three
     <item>
       <title>Increased default-mode variability is related to reduced task-performance and is evident in adults with ADHD</title>
       <link>/publication/pub_2017c/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       <guid>/publication/pub_2017c/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Opioid Modulation of Value-Based Decision-Making in Healthy Humans</title>
-      <link>/publication/pub_2017d/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/pub_2017d/</guid>
+      <title>Modelling ADHD. a review of ADHD theories through their predictions for computational models of decision-making and reinforcement learning</title>
+      <link>/publication/pub_2016a/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016a/</guid>
       <description></description>
     </item>
     
@@ -1234,26 +1242,10 @@ Three
     </item>
     
     <item>
-      <title>ADHD i Norge. En statusrapport</title>
-      <link>/publication/pub_2016c/</link>
-      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/pub_2016c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Consistent Bayesians Are No More Accurate Than Non-Bayesians. Economists Surveyed About PSA</title>
       <link>/publication/pub_2016d/</link>
-      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
       <guid>/publication/pub_2016d/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Modelling ADHD. a review of ADHD theories through their predictions for computational models of decision-making and reinforcement learning</title>
-      <link>/publication/pub_2016a/</link>
-      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/pub_2016a/</guid>
       <description></description>
     </item>
     
@@ -1262,6 +1254,14 @@ Three
       <link>/publication/pub_2016e/</link>
       <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
       <guid>/publication/pub_2016e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ADHD i Norge. En statusrapport</title>
+      <link>/publication/pub_2016c/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2016c/</guid>
       <description></description>
     </item>
     

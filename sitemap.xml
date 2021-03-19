@@ -33,97 +33,17 @@
   </url>
   
   <url>
+    <loc>/publication-type/2/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication-type/3/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tag/adhd/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/bayesian/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2021b/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/epidemiology/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/guido-biele/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/heidi-aase/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/kristin-r-overgaard/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/mari-vaage-wang/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/paal-zeiner/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/ragnhild-eek-brandlistuen/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/ratib-lekhal/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/svein-friis/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2021c/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication-type/2/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -133,12 +53,42 @@
   </url>
   
   <url>
+    <loc>/authors/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/bayesian/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/pub_2021b/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/eleni-papadopoulou/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/tag/epidemiology/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/felice-jacka/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/guido-biele/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/heidi-aase/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -153,7 +103,17 @@
   </url>
   
   <url>
+    <loc>/author/kristin-r-overgaard/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/lene-frost-andersen/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/mari-vaage-wang/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -163,12 +123,52 @@
   </url>
   
   <url>
+    <loc>/author/paal-zeiner/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/ragnhild-eek-brandlistuen/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/ratib-lekhal/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tag/riskfactors/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/author/svein-friis/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/pub_2021a/</loc>
+    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/pub_2021c/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -658,12 +658,37 @@
   </url>
   
   <url>
+    <loc>/author/frode-willoch/</loc>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/lotte-thomsen/</loc>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/mads-lund-pedersen/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/author/marie-eikemo/</loc>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/michael-j-frank/</loc>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/pub_2017d/</loc>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/siri-leknes/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -674,62 +699,47 @@
   
   <url>
     <loc>/author/athanasia-monika-mowinckel/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/edmund-j-s-sonuga-barke/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/frode-willoch/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/publication/pub_2017c/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/lars-tjelta-westlye/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/lotte-thomsen/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/marie-eikemo/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/mats-fredriksen/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2017d/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/sigurd-ziegler/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/siri-leknes/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/tor-endestad/</loc>
-    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/athanasia-m-mowinckel/</loc>
+    <lastmod>2016-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/pub_2016a/</loc>
+    <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -763,58 +773,48 @@
   </url>
   
   <url>
-    <loc>/publication/pub_2016c/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/athanasia-m-mowinckel/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/pub_2016d/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2016-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/gerd-gigerenzer/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/pub_2016a/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2016-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/nathan-berg/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/nina-rohrer-baumgartner/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/ragnhild-%C3%B8rstavik/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/tiril-borge/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/%C3%B8ystein-karlstad/</loc>
-    <lastmod>2016-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2016-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/publication/pub_2016e/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/pub_2016c/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/nina-rohrer-baumgartner/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/ragnhild-%C3%B8rstavik/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/tiril-borge/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/%C3%B8ystein-karlstad/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
