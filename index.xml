@@ -156,10 +156,8 @@ The variance of the distribution is $\sigma^{2}$.
       <link>/project/nfrsea/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/project/nfrsea/</guid>
-      <description>&lt;p&gt;This project can be described in flashy terms, like
-&amp;ldquo;&lt;strong&gt;Fusing high impact technologies like causal data science, big data, and probabilistic machine learning to predict how to boost school-performance.&lt;/strong&gt;&amp;rdquo; But this dos not quiet match the spirit of the project. So here is a description that the fits the project better:&lt;/p&gt;
-&lt;p&gt;We are trying to answer an important but hard question, &amp;ldquo;Do ADHD medication and special education improve school performance?&amp;rdquo; with observational data. Estimating causal effects from observational data is hard, some would say rarely possible at all. To still make progress, we will use lots of data from national registries (&lt;em&gt;big data&lt;/em&gt;) and approaches including structural models (&lt;em&gt;causal data science&lt;/em&gt;) and Bayesian estimation of structural models (&lt;em&gt;probabilistic machine learning&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;Here is our related research about &lt;a href=&#34;https://gbiele.github.io/media/Biele_2019.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;selection bias&lt;/a&gt; and &lt;a href=&#34;https://gbiele.github.io/media/sps358_8grp.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;estimation of causal effects with observational data&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;In this project we are trying to answer an important but hard question: Do ADHD medication and special education improve school performance? with observational data. Estimating causal effects from observational data is hard, some would say rarely possible at all. To still make progress, this project uses large data sets from national registries and approaches including structural models and Bayesian estimation of structural models.&lt;/p&gt;
+&lt;p&gt;Here is my related research about &lt;a href=&#34;https://gbiele.github.io/media/Biele_2019.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;selection bias&lt;/a&gt; and &lt;a href=&#34;https://gbiele.github.io/media/sps358_8grp.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;estimation of causal effects with observational data&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Some background&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Most children with ADHD have minor or severe reading and writing problems already in the third grade. A substantial proportion of children and youth receive special educational assistance and/or ADHD medication. This begs the question: Do medication and special educational assistance improve school performance? This question is important, because the few papers that looked at long-term effects of medication find only very small effects, and we know even less about the long-term effects of special educational assistance.&lt;/p&gt;
 
@@ -751,7 +749,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-752439168&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-962135478&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -761,7 +759,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-752439168&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-962135478&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
