@@ -128,6 +128,14 @@ The variance of the distribution is $\sigma^{2}$.
     </item>
     
     <item>
+      <title>Estimating infectiousness throughout SARS-CoV-2 infection course</title>
+      <link>/publication/pub_2021e/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/pub_2021e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cognitive, emotional, and social functioning of preschoolers with attention deficit hyperactivity problems</title>
       <link>/publication/pub_2021b/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
@@ -749,7 +757,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-361259487&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-168935742&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -759,7 +767,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-361259487&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-168935742&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
