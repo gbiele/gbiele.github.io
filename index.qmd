@@ -1,0 +1,59 @@
+---
+title: "Guido Biele"
+about:
+  template: trestles
+  image: images/avatar.jpg
+  image-alt: "Guido Biele"
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:guido.biele@fhi.no
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/GuidoBiele
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=0UkWz9IAAAAJ&hl=en
+    - icon: github
+      text: GitHub
+      href: https://github.com/gbiele
+    - icon: chat-dots
+      text: Stan forum
+      href: https://discourse.mc-stan.org/u/guido_biele/
+---
+
+[Norwegian Institute of Public Health](https://www.fhi.no/en/)
+
+## Biography
+
+I am a research professor in the Department of Child Health and Development at the Norwegian Institute of Public Health and a professor (II) in the Department of Psychology at the University of Oslo. In my current research, I mostly use Bayesian statistical modelling to learn from observational data. This includes topics such as risk factors for Attention Deficit Hyperactivity Disorder (ADHD), estimation of treatment effects in ADHD, and more recently also some SARS-CoV-2 research. My background is in experimental psychology and cognitive neuroscience, where I used quantitative modelling and functional magnetic resonance imaging (fMRI) to learn about cognitive and brain processes for decision making in social contexts.
+
+Download my [resumé](files/CV_GuidoBiele.pdf).
+
+::: {.columns}
+
+::: {.column width="40%"}
+## Interests
+
+- Statistical modelling
+- Bayesian statistics
+- Cognitive modelling
+- ADHD
+:::
+
+::: {.column width="60%"}
+## Education
+
+- PhD, 2005\
+  Max Planck Institute for Human Development, Berlin
+- Diploma (Psychology), 1998\
+  Free University Berlin
+:::
+
+:::
+
+## Contact
+
+[guido.biele@fhi.no](mailto:guido.biele@fhi.no)\
+Marcus Thranes Gate 6\
+0473 Oslo
