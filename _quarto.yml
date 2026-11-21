@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: _site
+  # Render only the Quarto sources; the repository still contains the old Hugo output.
+  render:
+    - index.qmd
+    - research/*.qmd
+    - publications.qmd
+    - 404.qmd
+  resources:
+    - files/*.pdf
+    - images/avatar.jpg
+    - images/favicon.png
+
+website:
+  title: "Guido Biele"
+  site-url: https://gbiele.github.io
+  favicon: images/favicon.png
+  navbar:
+    left:
+      - text: About
+        href: index.qmd
+      - text: Research
+        href: research/index.qmd
+      - text: Publications
+        href: publications.qmd
+      - text: CV
+        href: files/CV_GuidoBiele.pdf
+    right:
+      - icon: github
+        href: https://github.com/gbiele
+        aria-label: GitHub
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=0UkWz9IAAAAJ&hl=en
+        aria-label: Google Scholar
+  page-footer:
+    center: "Guido Biele"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
