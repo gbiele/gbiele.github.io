@@ -1,0 +1,11 @@
+---
+title: "Page not found"
+---
+
+The page you are looking for does not exist or has moved.
+
+Try one of these pages instead:
+
+- [About](index.qmd)
+- [Research](research/index.qmd)
+- [Publications](publications.qmd)
