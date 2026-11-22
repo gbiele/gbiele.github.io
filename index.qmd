@@ -1,0 +1,56 @@
+---
+title: "Guido Biele"
+about:
+  template: trestles
+  image: images/avatar.jpg
+  image-alt: "Guido Biele"
+  links:
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/guidobiele.bsky.social
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=0UkWz9IAAAAJ&hl=en
+    - icon: github
+      text: GitHub
+      href: https://github.com/gbiele
+    - icon: chat-dots
+      text: Stan forum
+      href: https://discourse.mc-stan.org/u/guido_biele/
+---
+
+[Norwegian Institute of Public Health](https://www.fhi.no/en/)
+
+## Biography
+
+I am a research professor in the Department of Child Health and Development at the Norwegian Institute of Public Health and a professor (II) in the Department of Psychology at the University of Oslo. My current research focuses on causal inference from observational and register data—both applied work on topics such as treatment effects in Attention Deficit Hyperactivity Disorder (ADHD) and the effects of parental income on child outcomes, and methodological work on identification and estimation under confounding, attrition, and missingness. I came to this work from a background in experimental psychology, cognitive neuroscience, and Bayesian statistical modelling, where I used quantitative models and neuroimaging to study human learning and decision making.
+
+Download my [resumé](files/CV_GuidoBiele.pdf).
+
+::: {.columns}
+
+::: {.column width="40%"}
+## Interests
+
+- Causal inference
+- Bayesian statistics
+- Statistical modelling
+- ADHD
+- Cognitive modelling
+:::
+
+::: {.column width="60%"}
+## Education
+
+- PhD, 2006\
+  Max Planck Institute for Human Development, Berlin
+- Diploma (Psychology), 1999\
+  Free University Berlin
+:::
+
+:::
+
+## Contact
+
+Marcus Thranes gate 6\
+0473 Oslo
