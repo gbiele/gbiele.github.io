@@ -8,6 +8,7 @@ the contract.
 import re
 import subprocess
 import unicodedata
+from urllib.parse import urlparse
 
 import pytest
 import yaml
@@ -32,14 +33,26 @@ ABOUT_STRINGS = [
     "Norwegian Institute of Public Health",
     "I am a research professor in the Department of Child Health and Development "
     "at the Norwegian Institute of Public Health",
-    "My background is in experimental psychology and cognitive neuroscience",
+    "professor (II) in the Department of Psychology at the University of Oslo",
+    "causal inference",
+    "observational",
+    "register",
+    "parental income",
+    "treatment effects",
+    "confounding",
+    "attrition",
+    "missingness",
+    "experimental psychology",
+    "cognitive neuroscience",
+    "Bayesian statistical modelling",
+    "Causal inference",
     "Statistical modelling",
     "Bayesian statistics",
     "Cognitive modelling",
     "ADHD",
-    "PhD, 2005",
+    "PhD, 2006",
     "Max Planck Institute for Human Development, Berlin",
-    "Diploma (Psychology), 1998",
+    "Diploma (Psychology), 1999",
     "Free University Berlin",
 ]
 
@@ -75,7 +88,7 @@ def test_about_page_links_current_cv_pdf(site, legacy):
     "scholar.google.com/citations?user=0UkWz9IAAAAJ",
     "github.com/gbiele",
     "discourse.mc-stan.org/u/guido_biele",
-    "mailto:guido.biele@fhi.no",
+    "bsky.app/profile/guidobiele.bsky.social",
 ])
 def test_about_page_has_contact_link(site, fragment):
     hrefs = [a["href"] for a in soup_of(site / "index.html").find_all("a", href=True)]
@@ -391,3 +404,355 @@ def test_gitignore_ignores_build_output():
     assert path.is_file()
     lines = [line.strip() for line in path.read_text(encoding="utf8").splitlines()]
     assert "/_site/" in lines and "/.quarto/" in lines
+
+
+# --- 12. issue #2 content audit ----------------------------------------------
+
+
+def _normalize_quotes(text):
+    return (
+        text.replace("\u201c", '"')
+        .replace("\u201d", '"')
+        .replace("\u2018", "'")
+        .replace("\u2019", "'")
+    )
+
+
+def _is_twitter_or_x_host(href):
+    host = (urlparse(href).hostname or "").lower()
+    return (
+        host in ("twitter.com", "x.com")
+        or host.endswith(".twitter.com")
+        or host.endswith(".x.com")
+    )
+
+
+def test_about_biography_covers_causal_inference_and_drops_sars_cov_2(site):
+    page = site / "index.html"
+    assert "sars-cov-2" not in page_text(page).casefold()
+    bio_sec = soup_of(page).select_one("section#biography")
+    assert bio_sec is not None, "missing #biography section on index.html"
+    bio_lower = collapse_ws(bio_sec.get_text(" ")).casefold()
+    for phrase in (
+        "research professor in the department of child health and development "
+        "at the norwegian institute of public health",
+        "professor (ii) in the department of psychology at the university of oslo",
+        "causal inference",
+        "observational",
+        "register",
+        "adhd",
+        "treatment effects",
+        "parental income",
+        "identification",
+        "estimation",
+        "confounding",
+        "attrition",
+        "missingness",
+        "experimental psychology",
+        "cognitive neuroscience",
+        "bayesian statistical modelling",
+    ):
+        assert phrase in bio_lower, f"#biography missing {phrase!r}"
+
+
+def test_about_interests_ordered_by_current_focus(site):
+    sec = soup_of(site / "index.html").select_one("section#interests")
+    assert sec is not None, "missing #interests section on index.html"
+    items = [collapse_ws(li.get_text(" ")) for li in sec.select("ul > li")]
+    assert items == [
+        "Causal inference",
+        "Bayesian statistics",
+        "Statistical modelling",
+        "ADHD",
+        "Cognitive modelling",
+    ]
+
+
+def test_about_education_updated_years_and_drops_old_years(site):
+    page = site / "index.html"
+    text = page_text(page)
+    assert "PhD, 2005" not in text
+    assert "Diploma (Psychology), 1998" not in text
+    sec = soup_of(page).select_one("section#education")
+    assert sec is not None, "missing #education section on index.html"
+    edu_text = collapse_ws(sec.get_text(" "))
+    for expected in (
+        "PhD, 2006",
+        "Max Planck Institute for Human Development, Berlin",
+        "Diploma (Psychology), 1999",
+        "Free University Berlin",
+    ):
+        assert expected in edu_text, f"#education missing {expected!r}"
+
+
+def test_about_contact_retains_address_and_redacts_email(site):
+    page = site / "index.html"
+    soup = soup_of(page)
+    sec = soup.select_one("section#contact")
+    assert sec is not None, "missing #contact section on index.html"
+    contact_text = collapse_ws(sec.get_text(" "))
+    assert "marcus thranes gate 6" in contact_text.casefold()
+    assert "0473 Oslo" in contact_text
+    assert "guido.biele@fhi.no" not in soup.get_text(" ").casefold()
+    hrefs = [a["href"].casefold() for a in soup.find_all("a", href=True)]
+    assert not any("guido.biele@fhi.no" in h or "mailto:guido.biele@fhi.no" in h for h in hrefs)
+
+
+def test_about_social_links_replace_twitter_with_bluesky_and_no_orcid(site, legacy):
+    page = site / "index.html"
+    soup = soup_of(page)
+    all_hrefs = [a["href"] for a in soup.find_all("a", href=True)]
+    assert not any(_is_twitter_or_x_host(h) for h in all_hrefs), "Twitter/X link found on index.html"
+    assert not soup.select(".bi-twitter"), "Twitter icon .bi-twitter found on index.html"
+    assert not any("orcid.org" in h.lower() for h in all_hrefs), "unexpected ORCID link on index.html"
+
+    body_links = [
+        a for a in (soup.body or soup).find_all("a", href=True)
+        if a.find_parent("nav") is None
+    ]
+    body_hrefs = [a["href"] for a in body_links]
+    for expected in (
+        "https://bsky.app/profile/guidobiele.bsky.social",
+        "https://scholar.google.com/citations?user=0UkWz9IAAAAJ&hl=en",
+        "https://github.com/gbiele",
+        "https://discourse.mc-stan.org/u/guido_biele/",
+    ):
+        assert expected in body_hrefs, f"about page body missing link {expected!r}"
+
+    cv_target = (site / "files" / "CV_GuidoBiele.pdf").resolve()
+    assert any(
+        resolve(site, page, a["href"]).resolve() == cv_target
+        and cv_target.is_file()
+        and sha256(cv_target) != legacy["cv_sha256"]
+        for a in body_links
+    ), "about page body missing link to updated files/CV_GuidoBiele.pdf"
+
+
+@pytest.mark.parametrize("rel_page", [
+    "index.html",
+    "research/index.html",
+    "publications.html",
+    "404.html",
+])
+def test_navbar_has_bluesky_github_scholar(site, rel_page):
+    page = site / rel_page
+    assert page.is_file()
+    nav = soup_of(page).find("nav")
+    assert nav is not None, f"missing <nav> on {rel_page}"
+    links = nav.find_all("a", href=True)
+    hrefs = [a["href"] for a in links]
+    assert any("github.com/gbiele" in h for h in hrefs), f"navbar on {rel_page} missing GitHub"
+    assert any("scholar.google.com/citations?user=0UkWz9IAAAAJ" in h for h in hrefs), (
+        f"navbar on {rel_page} missing Google Scholar"
+    )
+    bsky_links = [
+        a for a in links
+        if a["href"] == "https://bsky.app/profile/guidobiele.bsky.social"
+    ]
+    assert bsky_links, f"navbar on {rel_page} missing Bluesky link"
+    bsky = bsky_links[0]
+    has_label = (
+        bsky.get("aria-label") == "Bluesky"
+        or bsky.find(attrs={"aria-label": "Bluesky"}) is not None
+        or collapse_ws(bsky.get_text(" ")) == "Bluesky"
+    )
+    assert has_label, f"navbar Bluesky link on {rel_page} missing accessible label 'Bluesky'"
+    assert bsky.select_one("i.bi-bluesky") is not None, (
+        f"navbar Bluesky link on {rel_page} missing icon bi-bluesky"
+    )
+
+
+def test_research_index_descriptions_fixed(site):
+    text = page_text(site / "research" / "index.html")
+    assert "Epidemiologial" not in text
+    assert "special medication" not in text
+    assert "Epidemiological research about potential risk factors" in text
+    assert (
+        "Estimating effects of stimulant medication and special education "
+        "on school performance using observational data" in text
+    )
+
+
+def test_research_epi_typos_and_alspac_https(site):
+    page = site / "research" / "epi.html"
+    soup = soup_of(page)
+    text = page_text(page)
+    meta_desc = soup.find("meta", attrs={"name": "description"})
+    meta_content = meta_desc.get("content", "") if meta_desc else ""
+
+    for bad in ("Epidemiologial", "rsik factors", "sigfnificant"):
+        assert bad not in text, f"typo {bad!r} still present on research/epi.html"
+        assert bad not in meta_content, f"typo {bad!r} still present in meta description"
+
+    assert "Epidemiological research about potential risk factors" in meta_content
+    assert "Epidemiological research about potential risk factors" in text
+    assert "risk factors for ADHD" in text
+    assert "practically significant" in text
+
+    hrefs = [a["href"] for a in soup.find_all("a", href=True)]
+    assert "http://www.bristol.ac.uk/alspac/" not in hrefs
+    assert "https://www.bristol.ac.uk/alspac/" in hrefs
+
+
+def test_research_bayes_typos_and_publications_link(site):
+    page = site / "research" / "bayes.html"
+    soup = soup_of(page)
+    text = _normalize_quotes(page_text(page))
+    for bad in (
+        "typ of research",
+        "irrelvant",
+        "the the ",
+        'Click the "Bayesian" button below',
+        "papers that uses Bayesian",
+        "button below",
+    ):
+        assert bad not in text, f"stale/typo text {bad!r} still present on research/bayes.html"
+
+    for expected in (
+        "type of research",
+        "practically irrelevant",
+        "on the Stan user forum",
+        "use Bayesian estimation",
+    ):
+        assert expected in text, f"missing expected text {expected!r} on research/bayes.html"
+
+    main = soup.find("main") or soup.body or soup
+    pub_target = (site / "publications.html").resolve()
+    assert any(
+        resolve(site, page, a["href"]).resolve() == pub_target and pub_target.is_file()
+        for a in main.find_all("a", href=True)
+    ), "research/bayes.html main content does not link to publications.html"
+
+
+def test_research_causalinf_updated_opening_prose(site):
+    page = site / "research" / "causalinf.html"
+    text = page_text(page)
+    assert "I am currently establishing this research line" not in text
+    assert "being rewarded a grant" not in text
+
+    soup = soup_of(page)
+    main = soup.find("main") or soup.body or soup
+    body_paras = collapse_ws(" ".join(p.get_text(" ") for p in main.find_all("p")))
+    for expected in (
+        "Norwegian Research Council",
+        "grant",
+        "register",
+        "methodological",
+        "causal inference",
+        "The thematic focus of this research is on the effect of medication and special "
+        "education on educational and other outcomes of children with ADHD.",
+    ):
+        assert expected in body_paras, f"missing {expected!r} in research/causalinf.html body"
+
+
+def test_research_nfrsea_typos_dates_and_table(site):
+    page = site / "research" / "nfrsea.html"
+    soup = soup_of(page)
+    text = page_text(page)
+    meta_desc = soup.find("meta", attrs={"name": "description"})
+    meta_content = meta_desc.get("content", "") if meta_desc else ""
+
+    for bad in (
+        "special medication",
+        "2000 and 2100",
+        "Statistics Norwy",
+        "Karolinska Institiute",
+        "Mats Fredrirksen",
+        "This the begs",
+    ):
+        assert bad not in text, f"typo/stale text {bad!r} still present on research/nfrsea.html"
+        assert bad not in meta_content
+
+    expected_desc = (
+        "Estimating effects of stimulant medication and special education "
+        "on school performance using observational data"
+    )
+    assert expected_desc in meta_content
+    for expected in (
+        "born between 2000 and 2010",
+        "Statistics Norway",
+        "Karolinska Institute",
+        "Mats Fredriksen",
+        "This begs the question",
+    ):
+        assert expected in text, f"missing {expected!r} on research/nfrsea.html"
+
+    table = soup.select_one("section#data table")
+    assert table is not None, "missing data table on research/nfrsea.html"
+    headers = [collapse_ws(th.get_text()) for th in table.select("thead tr th")]
+    assert headers[-1] == "15 (t2)", f"unexpected final table header: {headers[-1]!r}"
+
+    edu_rows = [
+        tr for tr in table.select("tbody tr")
+        if tr.find("td") and collapse_ws(tr.find("td").get_text()) == "Parental edu & income"
+    ]
+    assert len(edu_rows) == 1, "missing 'Parental edu & income' row"
+    data_cells = [collapse_ws(td.get_text()) for td in edu_rows[0].find_all("td")[1:]]
+    assert len(data_cells) == 7 and all(c == "SSB" for c in data_cells), (
+        f"unexpected 'Parental edu & income' cells: {data_cells!r}"
+    )
+
+
+def test_research_nfrsea_collaborator_urls_updated(site):
+    page = site / "research" / "nfrsea.html"
+    soup = soup_of(page)
+    hrefs = [a["href"] for a in soup.find_all("a", href=True)]
+    dead_urls = [
+        "https://www.fhi.no/en/about/departments-and-centres/child-health-and-development/mari-vaage-wang/",
+        "https://www.fhi.no/en/about/departments-and-centres/chronic-diseases-and-ageing/oystein-karlstad/",
+        "https://samforsk.no/Sider/Ansatte/Christian-Wendelborg.aspx",
+        "https://staff.ki.se/people/henlar",
+        "https://www.northumbria.ac.uk/about-us/our-staff/c/reinie-cordier/",
+    ]
+    for url in dead_urls:
+        assert url not in hrefs, f"dead 404 collaborator URL still present: {url}"
+
+    expected_collaborators = {
+        "Mari Vaage Wang": "https://www.uv.uio.no/iped/english/people/aca/marivw/",
+        "Øystein Karlstad": "https://www.fhi.no/en/ab/departments-and-centres/chronic-diseases/oystein-karlstad/",
+        "Christian Wendelborg": "https://samforsk.no/ansatte/christian-wendelborg",
+        "Henrik Larsson": "https://ki.se/en/people/henrik-larsson",
+        "Reinie Cordier": "https://profiles.curtin.edu.au/2482-reinie-cordier",
+    }
+    by_name = {collapse_ws(a.get_text()): a["href"] for a in soup.find_all("a", href=True)}
+    for name, url in expected_collaborators.items():
+        assert by_name.get(name) == url, f"expected {name} -> {url!r}, got {by_name.get(name)!r}"
+
+
+def test_research_cogneuro_typos_fixed(site):
+    text = page_text(site / "research" / "cogneuro.html")
+    for bad in (
+        "reinfocement",
+        "Some og this work",
+        "following reward can in itself",
+        "to described",
+    ):
+        assert bad not in text, f"typo {bad!r} still present on research/cogneuro.html"
+    for expected in (
+        "reinforcement learning",
+        "following advice can in itself be rewarding",
+        "Some of this work",
+        "to describe the effect",
+    ):
+        assert expected in text, f"missing {expected!r} on research/cogneuro.html"
+
+
+def test_research_decneurosc_typo_fixed(site):
+    text = page_text(site / "research" / "decneurosc.html")
+    assert "to described" not in text
+    assert "to describe the effect" in text
+
+
+def test_issue2_no_demo_taxonomy_or_media_files(site):
+    for folder in ("category", "tag"):
+        files = [p for p in (site / folder).rglob("*") if p.is_file()] if (site / folder).exists() else []
+        assert not files, f"_site/{folder}/ contains files"
+    for filename in ("boards.jpg", ".DS_Store"):
+        assert not list(site.rglob(filename)), f"demo file {filename!r} found under _site"
+    for needle in ("ReinforcmentLearning", "Hello R Markdown", "Welcome to Wowchemy"):
+        hits = [
+            p.relative_to(site).as_posix()
+            for p in site.rglob("*.html")
+            if needle in p.read_text(encoding="utf8", errors="replace")
+        ]
+        assert not hits, f"{needle!r} found in {hits[:10]}"
