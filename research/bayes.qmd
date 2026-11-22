@@ -4,6 +4,23 @@ description: "Reliable estimation of complex models"
 image: bayes/featured.png
 aliases:
   - /project/bayes/
+listing:
+  - id: category-projects
+    contents: ../generated/projects-bayes.yml
+    template: ../templates/projects.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
+  - id: category-publications
+    contents: ../generated/publications-bayes.yml
+    template: ../templates/publications.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
 ---
 
 ![](bayes/featured.png)
@@ -17,3 +34,13 @@ In epidemiological research with very large data set effect sizes matter, becaus
 I have published several papers that use Bayesian estimation (see [Publications](../publications.qmd)).
 
 If time permits, I also answer the one or the other question on the [Stan user forum](https://discourse.mc-stan.org/u/guido_biele/summary).
+
+## Research projects
+
+::: {#category-projects}
+:::
+
+## Publications
+
+::: {#category-publications}
+:::

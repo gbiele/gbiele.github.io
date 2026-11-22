@@ -65,6 +65,18 @@ aliases:
   - /publication/pub_2021e/
 ---
 
+```{=html}
+<div class="pub-category-filter" role="group" aria-label="Filter publications by research category">
+  <button type="button" class="pub-filter-btn active" data-category="all" aria-pressed="true">All</button>
+  <button type="button" class="pub-filter-btn" data-category="causalinf" aria-pressed="false">Causal inference</button>
+  <button type="button" class="pub-filter-btn" data-category="bayes" aria-pressed="false">Bayesian statistics</button>
+  <button type="button" class="pub-filter-btn" data-category="adhd" aria-pressed="false">ADHD</button>
+  <button type="button" class="pub-filter-btn" data-category="epi" aria-pressed="false">Epidemiology</button>
+  <button type="button" class="pub-filter-btn" data-category="decision-making" aria-pressed="false">Decision making &amp; neuroscience</button>
+  <span class="pub-filter-status" aria-live="polite"></span>
+</div>
+```
+
 ::: {#published-section}
 ## Published Articles & Reports
 
@@ -82,3 +94,112 @@ aliases:
 :::
 :::
 :::
+
+```{=html}
+<script>
+(function () {
+  function initCategoryFilter() {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll("button.pub-filter-btn"));
+    if (!buttons.length) return;
+
+    var entries = Array.prototype.slice.call(document.querySelectorAll("article.pub-entry"));
+    var yearSections = Array.prototype.slice.call(document.querySelectorAll("section.pub-year"));
+    var publishedSection = document.querySelector("#published-section");
+    var preprintsSection = document.querySelector("#preprints-section");
+    var statusEl = document.querySelector(".pub-filter-status");
+
+    var validCategories = new Set(
+      buttons.map(function (b) { return b.getAttribute("data-category"); }).filter(Boolean)
+    );
+
+    function applyFilter(category, updateUrl) {
+      var activeCat = validCategories.has(category) ? category : "all";
+      var shownCount = 0;
+
+      for (var i = 0; i < entries.length; i++) {
+        var entry = entries[i];
+        var raw = (entry.getAttribute("data-categories") || "").trim();
+        var tokens = raw ? raw.split(/\s+/) : [];
+        var match = activeCat === "all" || tokens.indexOf(activeCat) !== -1;
+        entry.hidden = !match;
+        if (match) shownCount++;
+      }
+
+      for (var j = 0; j < yearSections.length; j++) {
+        var sec = yearSections[j];
+        var secEntries = sec.querySelectorAll("article.pub-entry");
+        var anyInYear = false;
+        for (var k = 0; k < secEntries.length; k++) {
+          if (!secEntries[k].hidden) {
+            anyInYear = true;
+            break;
+          }
+        }
+        sec.hidden = !anyInYear;
+      }
+
+      var wrappers = [publishedSection, preprintsSection];
+      for (var w = 0; w < wrappers.length; w++) {
+        var wrapper = wrappers[w];
+        if (!wrapper) continue;
+        var wrapperEntries = wrapper.querySelectorAll("article.pub-entry");
+        var anyInWrapper = false;
+        for (var m = 0; m < wrapperEntries.length; m++) {
+          if (!wrapperEntries[m].hidden) {
+            anyInWrapper = true;
+            break;
+          }
+        }
+        wrapper.hidden = !anyInWrapper;
+      }
+
+      for (var b = 0; b < buttons.length; b++) {
+        var btn = buttons[b];
+        var isActive = btn.getAttribute("data-category") === activeCat;
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+        btn.classList.toggle("active", isActive);
+      }
+
+      if (statusEl) {
+        statusEl.textContent = activeCat === "all"
+          ? ""
+          : "Showing " + shownCount + " of " + entries.length + " publications";
+      }
+
+      if (updateUrl && window.history && typeof window.history.replaceState === "function") {
+        var params = new URLSearchParams(window.location.search);
+        if (activeCat === "all") {
+          params.delete("category");
+        } else {
+          params.set("category", activeCat);
+        }
+        var qs = params.toString();
+        var nextUrl = window.location.pathname + (qs ? "?" + qs : "") + (window.location.hash || "");
+        window.history.replaceState(null, "", nextUrl);
+      }
+    }
+
+    for (var i = 0; i < buttons.length; i++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          applyFilter(btn.getAttribute("data-category") || "all", true);
+        });
+      })(buttons[i]);
+    }
+
+    var initialCat = new URLSearchParams(window.location.search).get("category");
+    if (initialCat && initialCat !== "all" && validCategories.has(initialCat)) {
+      applyFilter(initialCat, false);
+    } else {
+      applyFilter("all", false);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCategoryFilter);
+  } else {
+    initCategoryFilter();
+  }
+})();
+</script>
+```

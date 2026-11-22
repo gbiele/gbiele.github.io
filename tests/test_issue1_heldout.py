@@ -9,25 +9,20 @@ from site_helpers import (
     redirects_to, soup_of,
 )
 
-# A second plain-text sentence per page from div.article-style of the old
-# project/<slug>/index.html (different from the visible tests).
+# A second plain-text sentence per category page carrying legacy prose
+# (different from the visible tests), plus a topic check for the new ADHD page.
 OTHER_SENTENCES = {
-    "epi": "The reason is that participation predictors are often colliders between (mental "
-           "health) outcomes and exposures, and conditioning on colliders introduces bias, but "
-           "weighting does not.",
-    "nfrsea": "The project will be implemented in collaboration with colleagues in Norway, "
-              "Sweden, and the UK.",
-    "bayes": "So even if Bayesian estimation of large epidemiological data sets can be much "
-             "slower, I still prefer to wait for results I think I can trust more.",
     "causalinf": "Our approach is to reduce this imperfection as much as we can, and to be "
                  "transparent about the remaining uncertainties like unobserved confounders "
                  "when we describe results.",
-    "dm": "This research line, in which I am currently not active, used experiments and "
-          "mathematical modeling to understand decision making in a social context.",
-    "decneurosc": "This was exciting work at the time, but I would approach this research "
-                  "differently today.",
-    "cogneuro": "While this was exciting work at the time, I would approach this research "
-                "differently today.",
+    "bayes": "So even if Bayesian estimation of large epidemiological data sets can be much "
+             "slower, I still prefer to wait for results I think I can trust more.",
+    "adhd": "ADHD",
+    "epi": "The reason is that participation predictors are often colliders between (mental "
+           "health) outcomes and exposures, and conditioning on colliders introduces bias, but "
+           "weighting does not.",
+    "decision-making": "This research line, in which I am currently not active, used experiments "
+                       "and mathematical modeling to understand decision making in a social context.",
 }
 
 
