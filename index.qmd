@@ -5,12 +5,9 @@ about:
   image: images/avatar.jpg
   image-alt: "Guido Biele"
   links:
-    - icon: envelope
-      text: Email
-      href: mailto:guido.biele@fhi.no
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/GuidoBiele
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/guidobiele.bsky.social
     - icon: mortarboard-fill
       text: Google Scholar
       href: https://scholar.google.com/citations?user=0UkWz9IAAAAJ&hl=en
@@ -26,7 +23,7 @@ about:
 
 ## Biography
 
-I am a research professor in the Department of Child Health and Development at the Norwegian Institute of Public Health and a professor (II) in the Department of Psychology at the University of Oslo. In my current research, I mostly use Bayesian statistical modelling to learn from observational data. This includes topics such as risk factors for Attention Deficit Hyperactivity Disorder (ADHD), estimation of treatment effects in ADHD, and more recently also some SARS-CoV-2 research. My background is in experimental psychology and cognitive neuroscience, where I used quantitative modelling and functional magnetic resonance imaging (fMRI) to learn about cognitive and brain processes for decision making in social contexts.
+I am a research professor in the Department of Child Health and Development at the Norwegian Institute of Public Health and a professor (II) in the Department of Psychology at the University of Oslo. My current research focuses on causal inference from observational and register data—both applied work on topics such as treatment effects in Attention Deficit Hyperactivity Disorder (ADHD) and the effects of parental income on child outcomes, and methodological work on identification and estimation under confounding, attrition, and missingness. I came to this work from a background in experimental psychology, cognitive neuroscience, and Bayesian statistical modelling, where I used quantitative models and neuroimaging to study human learning and decision making.
 
 Download my [resumé](files/CV_GuidoBiele.pdf).
 
@@ -35,18 +32,19 @@ Download my [resumé](files/CV_GuidoBiele.pdf).
 ::: {.column width="40%"}
 ## Interests
 
-- Statistical modelling
+- Causal inference
 - Bayesian statistics
-- Cognitive modelling
+- Statistical modelling
 - ADHD
+- Cognitive modelling
 :::
 
 ::: {.column width="60%"}
 ## Education
 
-- PhD, 2005\
+- PhD, 2006\
   Max Planck Institute for Human Development, Berlin
-- Diploma (Psychology), 1998\
+- Diploma (Psychology), 1999\
   Free University Berlin
 :::
 
@@ -54,6 +52,5 @@ Download my [resumé](files/CV_GuidoBiele.pdf).
 
 ## Contact
 
-[guido.biele@fhi.no](mailto:guido.biele@fhi.no)\
-Marcus Thranes Gate 6\
+Marcus Thranes gate 6\
 0473 Oslo

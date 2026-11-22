@@ -1,6 +1,6 @@
 ---
 title: "Effects of stimulant medication and special education on school performance"
-description: "Estimating effects of special medication and special education on school performance using observational data"
+description: "Estimating effects of stimulant medication and special education on school performance using observational data"
 image: nfrsea/featured.png
 aliases:
   - /project/nfrsea/
@@ -28,9 +28,9 @@ Our approach to a careful implementation of an observational study is to formula
 
 ## Data
 
-We are starting with a base population of around 600,000 children in Norway that were born between 2000 and 2100. The study population consists of children with ADHD or other mental health or developmental problems (up to maybe 60,000), and these children's parents and siblings. Parents and siblings are an important part of children's environment, which has an influence on school performance generally, and which can also influence how effective treatments are implemented. Special education data is only available from MoBa, so that sample sizes will be smaller for these analyses.
+We are starting with a base population of around 600,000 children in Norway that were born between 2000 and 2010. The study population consists of children with ADHD or other mental health or developmental problems (up to maybe 60,000), and these children's parents and siblings. Parents and siblings are an important part of children's environment, which has an influence on school performance generally, and which can also influence how effective treatments are implemented. Special education data is only available from MoBa, so that sample sizes will be smaller for these analyses.
 
-  Age                          0           5          6,7          8       10 (*t1*)     11-14     15 (*t1*)
+  Age                          0           5          6,7          8       10 (*t1*)     11-14     15 (*t2*)
   ----------------------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
   Diagnoses                   NPR         NPR         NPR         NPR         NPR         NPR         NPR
   ADHD symptoms                          MoBa                    MoBa                             
@@ -38,10 +38,10 @@ We are starting with a base population of around 600,000 children in Norway that
   Medication                 NorPD       NorPD       NorPD       NorPD       NorPD       NorPD       NorPD
   Special education                      MoBa                    MoBa                    MoBa     
   School perform.                                                MoBa         SSB        MoBa         SSB
-  Parental edu & income       SSB          S          SSB         SSB         SSB         SSB         SSB
+  Parental edu & income       SSB         SSB         SSB         SSB         SSB         SSB         SSB
   Parental diagnoses          NPR         NPR         NPR         NPR         NPR         NPR         NPR
 
-NPR: Norwegian patient registry, MoBa: Norwegian Mother, Father and Child Cohort Study, KUHR: Norway Control and Payment of Health Reimbursement Database, NorPD: Norwegian prescription data base. SSB: Statistics Norwy
+NPR: Norwegian patient registry, MoBa: Norwegian Mother, Father and Child Cohort Study, KUHR: Norway Control and Payment of Health Reimbursement Database, NorPD: Norwegian prescription data base. SSB: Statistics Norway
 
 ## Pilot analyses
 
@@ -60,12 +60,12 @@ WP0 provides input for and guides working packages that implement the research a
 The project will be implemented in collaboration with colleagues in Norway, Sweden, and the UK.
 
 - [Jon Michael Gran](https://www.med.uio.no/imb/english/people/aca/jonmic/) (University of Oslo)
-- [Mari Vaage Wang](https://www.fhi.no/en/about/departments-and-centres/child-health-and-development/mari-vaage-wang/) (NIPH, Oslo)
-- [Øystein Karlstad](https://www.fhi.no/en/about/departments-and-centres/chronic-diseases-and-ageing/oystein-karlstad/) (NIPH, Oslo)
-- [Christian Wendelborg](https://samforsk.no/Sider/Ansatte/Christian-Wendelborg.aspx) (NTNU, Trondheim)
-- [Henrik Larsson](https://staff.ki.se/people/henlar) (Karolinska Institiute, Stockholm)
-- [Reinie Cordier](https://www.northumbria.ac.uk/about-us/our-staff/c/reinie-cordier/) (Northumbria University, Newcastle)
-- Mats Fredrirksen ([Sykehuset i Vestfold](https://siv.no))
+- [Mari Vaage Wang](https://www.uv.uio.no/iped/english/people/aca/marivw/) (University of Oslo; formerly NIPH, Oslo)
+- [Øystein Karlstad](https://www.fhi.no/en/ab/departments-and-centres/chronic-diseases/oystein-karlstad/) (NIPH, Oslo)
+- [Christian Wendelborg](https://samforsk.no/ansatte/christian-wendelborg) (NTNU, Trondheim)
+- [Henrik Larsson](https://ki.se/en/people/henrik-larsson) (Karolinska Institute, Stockholm)
+- [Reinie Cordier](https://profiles.curtin.edu.au/2482-reinie-cordier) (Curtin University, Perth; formerly Northumbria University, Newcastle)
+- Mats Fredriksen ([Sykehuset i Vestfold](https://siv.no))
 - Nina Holmen ([ADHD Norge](https://adhdnorge.no))
 
-[^1]: This paper does not address one issue that complicates Bayesian estimation of structural models: In some circumstances, bias cannot be reduced through adjustment or multilevel regression and post stratification and one has to use weighting. The problem with weighting is that for a fully Bayesian approach, one would like to estimate weights and treatment effects in one model. However, this is due to model coupling impossible. This the begs the question how one could still propagate uncertainty about model weights into the estimation of treatment effects. As far as I know, there are currently no perfect answers to this question.
+[^1]: This paper does not address one issue that complicates Bayesian estimation of structural models: In some circumstances, bias cannot be reduced through adjustment or multilevel regression and post stratification and one has to use weighting. The problem with weighting is that for a fully Bayesian approach, one would like to estimate weights and treatment effects in one model. However, this is due to model coupling impossible. This begs the question how one could still propagate uncertainty about model weights into the estimation of treatment effects. As far as I know, there are currently no perfect answers to this question.
