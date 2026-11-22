@@ -1,9 +1,26 @@
 ---
-title: "Causal inference from observational data"
+title: "Causal inference"
 description: "Estimating treatment effects from observational data"
 image: causalinf/featured.png
 aliases:
   - /project/causalinf/
+listing:
+  - id: category-projects
+    contents: ../generated/projects-causalinf.yml
+    template: ../templates/projects.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
+  - id: category-publications
+    contents: ../generated/publications-causalinf.yml
+    template: ../templates/publications.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
 ---
 
 ![](causalinf/featured.png)
@@ -15,3 +32,13 @@ This research line began with a grant from the Norwegian Research Council and no
 One important challenge when estimating treatment effects from observational data is that of non-random selection into treatment or treatment by indication. To deal with this and other biases, one can use directed acyclic graphs (DAGs) to represent the (assumed) causal structure that generates the data we observe and to determine the best ways to deal with potential biases. Depending on the causal structure, adjustment, multilevel regression and post stratification, weighting or a combination of these approaches can be useful. I am also planning to explore methods often used in econometrics, like Difference in Differences or regression discontinuity, though it is uncertain that there exist data in Norway that would allow to estimate average treatment effects.
 
 The goal of this research is to provide estimates of causal effects, even if we know that these will always be imperfect. Our approach is to reduce this imperfection as much as we can, and to be transparent about the remaining uncertainties like unobserved confounders when we describe results.
+
+## Research projects
+
+::: {#category-projects}
+:::
+
+## Publications
+
+::: {#category-publications}
+:::

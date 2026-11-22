@@ -2,13 +2,11 @@
 title: "Research"
 listing:
   contents:
-    - nfrsea.qmd
-    - epi.qmd
-    - bayes.qmd
     - causalinf.qmd
-    - dm.qmd
-    - decneurosc.qmd
-    - cogneuro.qmd
+    - bayes.qmd
+    - adhd.qmd
+    - epi.qmd
+    - decision-making.qmd
   sort: false
   type: grid
   fields: [image, title, description]

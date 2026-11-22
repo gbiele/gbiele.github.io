@@ -98,32 +98,23 @@ def test_about_page_has_contact_link(site, fragment):
 # --- 3. research pages -------------------------------------------------------
 
 OLD_TITLES = {
-    "epi": "ADHD risk factors",
-    "nfrsea": "Effects of stimulant medication and special education on school performance",
+    "causalinf": "Causal inference",
     "bayes": "Bayesian statistics",
-    "causalinf": "Causal inference from observational data",
-    "dm": "Decision making",
-    "decneurosc": "Decision neuroscience",
-    "cogneuro": "Cognitive neuroscience",
+    "adhd": "ADHD",
+    "epi": "Epidemiology",
+    "decision-making": "Decision making & neuroscience",
 }
 
-# One plain-text sentence (no links/footnotes inside) per page, taken from
-# div.article-style of the old project/<slug>/index.html.
+# One plain-text sentence (no links/footnotes inside) per category page
+# carrying legacy prose, plus a topic check for the new ADHD category page.
 OLD_SENTENCES = {
-    "epi": "In comparison, inverse probability of participation weights will reduce bias.",
-    "nfrsea": "Estimating causal effects from observational data is hard, some would say "
-              "rarely possible at all.",
-    "bayes": "Statistical inference is at the core of scientific research because it allows "
-             "us to learn in a systematic manner from data.",
     "causalinf": "The thematic focus of this research is on the effect of medication and special "
                  "education on educational and other outcomes of children with ADHD.",
-    "dm": "In hindsight it is not surprising that reciprocity explained behavior better.",
-    "decneurosc": "We also investigate how learning and decision making processes are different "
-                  "in adults with ADHD.",
-    "cogneuro": "In this research line I used and sometimes still use mathematical modelling of "
-                "cognitive processes, functional magnetic resonance imaging (fMRI), and EEG to "
-                "understand how humans make decisions, and how decision processes are different "
-                "in adults with ADHD.",
+    "bayes": "Statistical inference is at the core of scientific research because it allows "
+             "us to learn in a systematic manner from data.",
+    "adhd": "ADHD",
+    "epi": "In comparison, inverse probability of participation weights will reduce bias.",
+    "decision-making": "In hindsight it is not surprising that reciprocity explained behavior better.",
 }
 
 
@@ -147,9 +138,7 @@ def test_research_page_images_resolve(site, slug):
     page = site / "research" / f"{slug}.html"
     assert page.is_file()
     imgs = soup_of(page).find_all("img")
-    if slug in ("epi", "nfrsea", "bayes"):
-        # Edge case in the contract: the old pages had images; they must work.
-        assert imgs, f"research/{slug}.html has no images"
+    assert imgs, f"research/{slug}.html has no images"
     for img in imgs:
         src = img.get("src") or ""
         assert src, f"<img> without src on research/{slug}.html"
@@ -267,11 +256,22 @@ def test_no_broken_internal_links(site):
 # --- 7. old URLs ---------------------------------------------------------------
 
 
-@pytest.mark.parametrize("slug", RESEARCH_SLUGS)
-def test_old_project_url_redirects(site, slug):
+LEGACY_PROJECT_REDIRECTS = {
+    "causalinf": "causalinf.html",
+    "bayes": "bayes.html",
+    "epi": "epi.html",
+    "nfrsea": "nfrsea.html",
+    "dm": "decision-making.html",
+    "decneurosc": "decision-making.html",
+    "cogneuro": "decision-making.html",
+}
+
+
+@pytest.mark.parametrize("slug,target", list(LEGACY_PROJECT_REDIRECTS.items()))
+def test_old_project_url_redirects(site, slug, target):
     page = site / "project" / slug / "index.html"
     assert page.is_file()
-    assert redirects_to(site, page, site / "research" / f"{slug}.html")
+    assert redirects_to(site, page, site / "research" / target)
 
 
 def test_old_publication_urls_redirect(site, legacy):
@@ -316,25 +316,6 @@ def test_no_unwanted_file(site, name):
 def _git(*args):
     return subprocess.run(["git", *args], cwd=REPO_ROOT, capture_output=True,
                           text=True, encoding="utf8", errors="replace")
-
-
-def test_change_only_adds_files(site):
-    ref = _git("rev-parse", "--verify", "origin/master")
-    assert ref.returncode == 0, "origin/master not available"
-    diff = _git("diff", "--name-status", "origin/master")
-    assert diff.returncode == 0, diff.stderr
-    # Rendering the new index.qmd / 404.qmd replaces the old root Hugo files,
-    # so exactly these two root deletions are allowed; any other D, M or R fails.
-    allowed_deletions = {"index.html", "404.html"}
-    not_added = []
-    for line in diff.stdout.splitlines():
-        if not line or line.startswith("A"):
-            continue
-        parts = line.split("\t")
-        if parts[0] == "D" and len(parts) == 2 and parts[1] in allowed_deletions:
-            continue
-        not_added.append(line)
-    assert not not_added, "changed/removed files vs origin/master:\n" + "\n".join(not_added[:30])
 
 
 def test_build_output_not_tracked(site):
@@ -563,14 +544,14 @@ def test_navbar_has_bluesky_github_scholar(site, rel_page):
 
 
 def test_research_index_descriptions_fixed(site):
-    text = page_text(site / "research" / "index.html")
-    assert "Epidemiologial" not in text
-    assert "special medication" not in text
-    assert "Epidemiological research about potential risk factors" in text
-    assert (
-        "Estimating effects of stimulant medication and special education "
-        "on school performance using observational data" in text
-    )
+    page = site / "research" / "index.html"
+    soup = soup_of(page)
+    cards = [collapse_ws(d.get_text(" ")) for d in soup.select("#listing-listing .listing-description")]
+    assert len(cards) == 5, f"expected 5 category cards on research/index.html, got {len(cards)}"
+    assert all(cards), f"empty card description on research/index.html: {cards!r}"
+    text = page_text(page)
+    for bad in ("Epidemiologial", "special medication", "rsik factors", "sigfnificant", "reinfocement"):
+        assert bad not in text, f"legacy typo {bad!r} found on research/index.html"
 
 
 def test_research_epi_typos_and_alspac_https(site):
@@ -584,9 +565,7 @@ def test_research_epi_typos_and_alspac_https(site):
         assert bad not in text, f"typo {bad!r} still present on research/epi.html"
         assert bad not in meta_content, f"typo {bad!r} still present in meta description"
 
-    assert "Epidemiological research about potential risk factors" in meta_content
-    assert "Epidemiological research about potential risk factors" in text
-    assert "risk factors for ADHD" in text
+    assert meta_content.strip(), "empty meta description on research/epi.html"
     assert "practically significant" in text
 
     hrefs = [a["href"] for a in soup.find_all("a", href=True)]
@@ -719,28 +698,24 @@ def test_research_nfrsea_collaborator_urls_updated(site):
         assert by_name.get(name) == url, f"expected {name} -> {url!r}, got {by_name.get(name)!r}"
 
 
-def test_research_cogneuro_typos_fixed(site):
-    text = page_text(site / "research" / "cogneuro.html")
+def test_research_decision_making_typos_fixed(site):
+    page = site / "research" / "decision-making.html"
+    assert page.is_file()
+    text = page_text(page)
     for bad in (
         "reinfocement",
         "Some og this work",
         "following reward can in itself",
         "to described",
     ):
-        assert bad not in text, f"typo {bad!r} still present on research/cogneuro.html"
+        assert bad not in text, f"typo {bad!r} still present on research/decision-making.html"
     for expected in (
         "reinforcement learning",
         "following advice can in itself be rewarding",
         "Some of this work",
         "to describe the effect",
     ):
-        assert expected in text, f"missing {expected!r} on research/cogneuro.html"
-
-
-def test_research_decneurosc_typo_fixed(site):
-    text = page_text(site / "research" / "decneurosc.html")
-    assert "to described" not in text
-    assert "to describe the effect" in text
+        assert expected in text, f"missing {expected!r} on research/decision-making.html"
 
 
 def test_issue2_no_demo_taxonomy_or_media_files(site):

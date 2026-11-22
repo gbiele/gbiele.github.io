@@ -7,11 +7,16 @@ import unicodedata
 from pathlib import Path
 
 import pytest
+import yaml
 from pypdf import PdfReader
 
-from site_helpers import REPO_ROOT, collapse_ws, norm, redirects_to, resolve, sha256, soup_of
+from site_helpers import (
+    REPO_ROOT, RESEARCH_ORDER, collapse_ws, norm, redirects_to, resolve,
+    run_publications_filter_js, sha256, soup_of,
+)
 
 REFERENCES_BIB = REPO_ROOT / "data" / "references.bib"
+PUB_CATEGORIES_YML = REPO_ROOT / "data" / "publication_categories.yml"
 LEGACY_BIB = REPO_ROOT / "data" / "legacy-publications.bib"
 CV_PDF = REPO_ROOT / "files" / "CV_GuidoBiele.pdf"
 
@@ -711,12 +716,133 @@ def test_rendered_entries_abstracts_match_bib(site, legacy):
         assert latex_norm(body).startswith(latex_norm(pub["abstract_start"])), pub["pub_id"]
 
 
-def test_no_deferred_category_ui_or_badges(site):
-    soup, _ = _pub_articles_by_key(site)
-    main = soup.find("main") or soup.body or soup
-    assert main.select("select, input[type='checkbox'], .pub-filter, .category-filter, [data-filter]") == []
-    assert main.select(".pub-category, .pub-categories, .pub-tag, .pub-tags") == []
-    assert soup.select('article.pub-entry [class*="category"], article.pub-entry [class*="filter"]') == []
+def test_publications_category_filter_bar_and_badges(site):
+    assert PUB_CATEGORIES_YML.is_file(), "data/publication_categories.yml missing"
+    cat_map = yaml.safe_load(PUB_CATEGORIES_YML.read_text(encoding="utf8"))
+    assert isinstance(cat_map, dict)
+
+    page = site / "publications.html"
+    soup, by_key = _pub_articles_by_key(site)
+    assert len(by_key) == 69
+
+    filter_bar = soup.select_one(".pub-category-filter")
+    pub_sec = soup.select_one("#published-section")
+    assert filter_bar is not None, "missing .pub-category-filter on publications.html"
+    assert pub_sec is not None, "missing #published-section on publications.html"
+    # Filter bar must appear above #published-section in document order
+    all_tags = list(soup.find_all(True))
+    assert all_tags.index(filter_bar) < all_tags.index(pub_sec), (
+        ".pub-category-filter must appear before #published-section"
+    )
+
+    buttons = filter_bar.select("button.pub-filter-btn[data-category]")
+    btn_cats = [b.get("data-category") for b in buttons]
+    assert btn_cats == ["all"] + RESEARCH_ORDER, f"unexpected filter buttons: {btn_cats!r}"
+    assert collapse_ws(buttons[0].get_text()) == "All"
+    assert buttons[0].get("aria-pressed") == "true"
+    for b in buttons[1:]:
+        assert b.get("aria-pressed") == "false", (
+            f"category button {b.get('data-category')!r} should default to aria-pressed='false'"
+        )
+
+    for key, art in by_key.items():
+        expected_cats = [c for c in RESEARCH_ORDER if c in (cat_map.get(key) or [])]
+        assert expected_cats, f"no categories in data/publication_categories.yml for {key}"
+        actual_attr = (art.get("data-categories") or "").strip().split()
+        assert actual_attr == expected_cats, (
+            f"{key}: expected data-categories {expected_cats!r}, got {actual_attr!r}"
+        )
+
+        badges = art.select(".pub-categories a.pub-category-badge[href]")
+        assert len(badges) == len(expected_cats), (
+            f"{key}: expected {len(expected_cats)} category badges, got {len(badges)}"
+        )
+        for badge, slug in zip(badges, expected_cats):
+            target = resolve(site, page, badge["href"]).resolve()
+            expected_target = (site / "research" / f"{slug}.html").resolve()
+            assert target == expected_target and expected_target.is_file(), (
+                f"{key}: badge href {badge['href']!r} resolved to {target}, expected {expected_target}"
+            )
+
+
+def test_publications_client_side_category_filter_runtime(site):
+    assert PUB_CATEGORIES_YML.is_file(), "data/publication_categories.yml missing"
+    cat_map = yaml.safe_load(PUB_CATEGORIES_YML.read_text(encoding="utf8"))
+
+    page = site / "publications.html"
+    res = run_publications_filter_js(
+        page,
+        query="",
+        actions=[
+            {"type": "click", "category": "adhd", "label": "adhd"},
+            {"type": "click", "category": "causalinf", "label": "causalinf"},
+            {"type": "click", "category": "all", "label": "all"},
+        ],
+    )
+    assert res["found"], "no inline category filter <script> found in _site/publications.html"
+
+    # Initial state: all 69 visible, All active
+    init = res["initial"]
+    assert len(init["entries"]) == 69
+    assert all(e["visible"] for e in init["entries"]), "all 69 entries must be visible by default"
+    assert init["publishedSectionVisible"] is True
+    assert init["preprintsSectionVisible"] is True
+    all_btn = next(b for b in init["buttons"] if b["category"] == "all")
+    assert all_btn["ariaPressed"] == "true"
+
+    # Clicking 'adhd' and 'causalinf'
+    for slug in ("adhd", "causalinf"):
+        snap = res["actions"][slug]
+        expected_keys = {k for k, cats in cat_map.items() if slug in cats}
+        assert expected_keys, f"no papers in category {slug!r}"
+        visible_keys = {e["key"] for e in snap["entries"] if e["visible"]}
+        assert visible_keys == expected_keys, (
+            f"filter {slug!r}: visible keys mismatch (extra={visible_keys - expected_keys}, "
+            f"missing={expected_keys - visible_keys})"
+        )
+        for btn in snap["buttons"]:
+            if btn["category"] == slug:
+                assert btn["ariaPressed"] == "true" and btn["activeClass"], (
+                    f"button {slug!r} not marked active/aria-pressed=true: {btn}"
+                )
+            else:
+                assert btn["ariaPressed"] == "false" and not btn["activeClass"], (
+                    f"non-selected button {btn['category']!r} still active: {btn}"
+                )
+        # Empty year sections must be hidden; non-empty visible
+        visible_by_sec = {}
+        for e in snap["entries"]:
+            if e["visible"]:
+                visible_by_sec.setdefault(e["key"], True)
+        soup = soup_of(page)
+        for yr in snap["years"]:
+            sec_el = soup.select_one(f'#{yr["parentId"]} section.pub-year[data-year="{yr["year"]}"]')
+            sec_keys = [a.get("data-key") for a in sec_el.select("article.pub-entry")]
+            has_any = any(k in visible_keys for k in sec_keys)
+            assert yr["visible"] is has_any, (
+                f"filter {slug!r}: #{yr['parentId']} year {yr['year']} visible={yr['visible']}, expected {has_any}"
+            )
+        pub_keys = {a.get("data-key") for a in soup.select("#published article.pub-entry")}
+        pre_keys = {a.get("data-key") for a in soup.select("#preprints article.pub-entry")}
+        assert snap["publishedSectionVisible"] is bool(pub_keys & visible_keys)
+        assert snap["preprintsSectionVisible"] is bool(pre_keys & visible_keys)
+
+    # Clicking 'all' restores everything
+    restored = res["actions"]["all"]
+    assert all(e["visible"] for e in restored["entries"])
+    assert all(y["visible"] for y in restored["years"])
+    assert restored["publishedSectionVisible"] is True
+    assert restored["preprintsSectionVisible"] is True
+
+    # Query string ?category=bayes applies filter on initial load
+    qres = run_publications_filter_js(page, query="?category=bayes")
+    assert qres["found"]
+    qinit = qres["initial"]
+    expected_bayes = {k for k, cats in cat_map.items() if "bayes" in cats}
+    visible_bayes = {e["key"] for e in qinit["entries"] if e["visible"]}
+    assert visible_bayes == expected_bayes
+    bayes_btn = next(b for b in qinit["buttons"] if b["category"] == "bayes")
+    assert bayes_btn["ariaPressed"] == "true" and bayes_btn["activeClass"]
 
 
 def test_legacy_publication_aliases_and_one_to_one_titles(site, legacy):
