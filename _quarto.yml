@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+  pre-render: scripts/build_publications.py
   # Render only the Quarto sources; the repository still contains the old Hugo output.
   render:
     - index.qmd

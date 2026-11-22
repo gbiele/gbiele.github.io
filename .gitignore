@@ -1,4 +1,5 @@
 /_site/
+/generated/
 /.quarto/
 /.issues/
 __pycache__/

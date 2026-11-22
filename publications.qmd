@@ -1,7 +1,22 @@
 ---
 title: "Publications"
-bibliography: data/legacy-publications.bib
-nocite: '@*'
+listing:
+  - id: published-listing
+    contents: generated/publications.yml
+    template: templates/publications.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
+  - id: preprints-listing
+    contents: generated/preprints.yml
+    template: templates/publications.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
 aliases:
   - /publication/
   - /publication/pub_2007a/
@@ -50,7 +65,20 @@ aliases:
   - /publication/pub_2021e/
 ---
 
-This list of publications is being rebuilt and is currently generated from the bibliographic data of the previous version of this website.
+::: {#published-section}
+## Published Articles & Reports
 
-::: {#refs}
+::: {#published}
+::: {#published-listing}
+:::
+:::
+:::
+
+::: {#preprints-section}
+## Preprints & Working Papers
+
+::: {#preprints}
+::: {#preprints-listing}
+:::
+:::
 :::

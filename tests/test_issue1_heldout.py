@@ -1,5 +1,7 @@
 """Held-out checks for issue #1 (same contract, different inputs/angles)."""
 
+import re
+
 import pytest
 
 from site_helpers import (
@@ -39,9 +41,10 @@ def test_research_page_contains_second_old_sentence(site, slug):
 def test_publication_entries_match_old_titles_one_to_one(site, legacy):
     page = site / "publications.html"
     assert page.is_file()
-    entries = [norm(d.get_text(" ")) for d in soup_of(page).select("div.csl-entry")]
+    entries = [norm(d.get_text(" ")) for d in soup_of(page).select("article.pub-entry .pub-title")]
     titles = [norm(p["title"]) for p in legacy["publications"]]
-    assert len(entries) == len(titles) == 44
+    assert len(entries) == 69
+    assert len(titles) == 44
     matched = perfect_matching(titles, entries, lambda t, e: t in e)
     assert matched == 44, f"only {matched} of 44 titles can be paired with distinct entries"
 
@@ -53,14 +56,16 @@ def test_old_publication_url_lands_on_page_listing_it(site, legacy, pub_id):
     target = site / "publications.html"
     assert old.is_file()
     assert redirects_to(site, old, target)
-    entries = [norm(d.get_text(" ")) for d in soup_of(target).select("div.csl-entry")]
+    entries = [norm(d.get_text(" ")) for d in soup_of(target).select("article.pub-entry .pub-title")]
     assert any(norm(record["title"]) in e for e in entries)
 
 
 def test_legacy_bib_has_one_entry_per_old_publication(legacy):
-    path = REPO_ROOT / "data" / "legacy-publications.bib"
-    assert path.is_file(), "data/legacy-publications.bib missing"
-    bib_titles = [norm(e["fields"].get("title", ""))
-                  for e in parse_bib(path.read_text(encoding="utf8"))]
+    path = REPO_ROOT / "data" / "references.bib"
+    assert path.is_file(), "data/references.bib missing"
+    bib_titles = [
+        norm(re.sub(r"\\[A-Za-z]+\*?", "", e["fields"].get("title", "")))
+        for e in parse_bib(path.read_text(encoding="utf8"))
+    ]
     for p in legacy["publications"]:
         assert bib_titles.count(norm(p["title"])) == 1, p["pub_id"]

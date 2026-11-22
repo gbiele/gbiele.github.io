@@ -7,6 +7,7 @@ the contract.
 
 import re
 import subprocess
+import unicodedata
 
 import pytest
 import yaml
@@ -59,15 +60,15 @@ def test_about_page_shows_old_avatar(site, legacy):
     assert legacy["avatar_sha256"] in hashes, "no <img> on the about page shows the old avatar"
 
 
-def test_about_page_links_old_cv_pdf(site, legacy):
+def test_about_page_links_current_cv_pdf(site, legacy):
     page = site / "index.html"
     for a in soup_of(page).find_all("a", href=True):
         href = a["href"]
         if href.lower().split("?")[0].endswith(".pdf"):
             target = resolve(site, page, href)
-            if target.is_file() and sha256(target) == legacy["cv_sha256"]:
+            if target.is_file() and sha256(target) != legacy["cv_sha256"]:
                 return
-    pytest.fail("no link on the about page resolves to the old CV PDF")
+    pytest.fail("no link on the about page resolves to an updated CV PDF")
 
 
 @pytest.mark.parametrize("fragment", [
@@ -162,34 +163,67 @@ def test_research_index_links_pages_in_order(site):
 # --- 4. publications page ----------------------------------------------------
 
 
-def _csl_entries(site):
+def _pub_entries(site):
     page = site / "publications.html"
     assert page.is_file()
-    return [norm(d.get_text(" ")) for d in soup_of(page).select("div.csl-entry")]
+    return [norm(d.get_text(" ")) for d in soup_of(page).select("article.pub-entry .pub-title")]
 
 
-def test_publications_page_has_44_entries(site):
-    assert len(_csl_entries(site)) == 44
+def test_publications_page_has_69_entries(site):
+    assert len(_pub_entries(site)) == 69
 
 
 def test_publications_page_lists_every_old_title(site, legacy):
-    entries = _csl_entries(site)
+    entries = _pub_entries(site)
     missing = [p["pub_id"] for p in legacy["publications"]
                if not any(norm(p["title"]) in e for e in entries)]
-    assert not missing, f"no csl-entry for: {missing}"
+    assert not missing, f"no pub-entry for: {missing}"
 
 
-# --- 5. legacy bib -----------------------------------------------------------
+# --- 5. references bib -------------------------------------------------------
+
+
+_LATEX_LIGATURES = {
+    "aa": "å", "AA": "Å", "o": "ø", "O": "Ø", "ae": "æ", "AE": "Æ",
+    "ss": "ß", "l": "ł", "L": "Ł", "i": "i", "j": "j",
+}
+_LATEX_ACCENTS = {
+    "'": "\u0301", "`": "\u0300", "^": "\u0302", '"': "\u0308", "~": "\u0303",
+    "=": "\u0304", ".": "\u0307", "u": "\u0306", "v": "\u030c", "H": "\u030b",
+    "c": "\u0327", "r": "\u030a",
+}
+
+
+def _latex_norm(text):
+    text = text.replace("\\textbackslashtextquoteright", "'")
+    for k, v in _LATEX_LIGATURES.items():
+        text = re.sub(rf"\{{\\{k}\}}|\\{k}(?![A-Za-z])", v, text)
+    text = re.sub(
+        r"\{\\(['`^\"~=.]|[uvHcr])\{?([A-Za-z])\}?\}|\\(['`^\"~=.]|[uvHcr])\{([A-Za-z])\}|\\(['`^~=.])([A-Za-z])",
+        lambda m: unicodedata.normalize(
+            "NFC",
+            (m.group(2) or m.group(4) or m.group(6))
+            + _LATEX_ACCENTS[m.group(1) or m.group(3) or m.group(5)],
+        ),
+        text,
+    )
+    text = re.sub(r"\\(?:leq|le|geq|ge|pm|times|cdot)\b", "", text)
+    text = re.sub(r"\\mu\b|[\u03bc\u00b5]", "mu", text)
+    text = re.sub(r"\\[A-Za-z]+\*?", "", text)
+    return norm(text)
 
 
 def _bib():
-    path = REPO_ROOT / "data" / "legacy-publications.bib"
-    assert path.is_file(), "data/legacy-publications.bib missing"
+    assert not (REPO_ROOT / "data" / "legacy-publications.bib").exists(), (
+        "data/legacy-publications.bib must be removed"
+    )
+    path = REPO_ROOT / "data" / "references.bib"
+    assert path.is_file(), "data/references.bib missing"
     return parse_bib(path.read_text(encoding="utf8"))
 
 
-def test_legacy_bib_has_44_entries():
-    assert len(_bib()) == 44
+def test_bib_has_69_entries():
+    assert len(_bib()) == 69
 
 
 def test_legacy_bib_keeps_abstracts(legacy):
@@ -198,8 +232,8 @@ def test_legacy_bib_keeps_abstracts(legacy):
     for p in legacy["publications"]:
         if p["abstract_start"] is None:
             continue
-        match = [e for e in entries if norm(e["fields"].get("title", "")) == norm(p["title"])]
-        if not any(norm(e["fields"].get("abstract", "")).startswith(norm(p["abstract_start"]))
+        match = [e for e in entries if _latex_norm(e["fields"].get("title", "")) == _latex_norm(p["title"])]
+        if not any(_latex_norm(e["fields"].get("abstract", "")).startswith(_latex_norm(p["abstract_start"]))
                    for e in match):
             bad.append(p["pub_id"])
     assert not bad, f"missing/incomplete abstract for: {bad}"
