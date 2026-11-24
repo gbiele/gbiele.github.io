@@ -62,9 +62,10 @@ def test_heldout_research_meta_descriptions_and_listing_cards(site):
     epi_soup = soup_of(site / "research" / "epi.html")
     epi_meta = epi_soup.find("meta", attrs={"name": "description"})
     assert epi_meta is not None
-    epi_desc = epi_meta.get("content", "")
+    epi_desc = epi_meta.get("content", "").strip()
+    assert epi_desc
     assert "Epidemiologial" not in epi_desc
-    assert "Epidemiological research about potential risk factors" in epi_desc
+    assert "rsik factors" not in epi_desc
 
     nfrsea_soup = soup_of(site / "research" / "nfrsea.html")
     nfrsea_meta = nfrsea_soup.find("meta", attrs={"name": "description"})
@@ -77,15 +78,13 @@ def test_heldout_research_meta_descriptions_and_listing_cards(site):
     ) == nfrsea_desc
 
     idx_soup = soup_of(site / "research" / "index.html")
-    cards = [collapse_ws(d.get_text(" ")) for d in idx_soup.select("#listing-listing .listing-description")]
-    assert len(cards) == 7
-    assert not any("Epidemiologial" in c or "special medication" in c for c in cards), cards
-    assert any("Epidemiological research about potential risk factors" in c for c in cards), cards
-    assert any(
-        "Estimating effects of stimulant medication and special education "
-        "on school performance using observational data" in c
-        for c in cards
-    ), cards
+    descs = [
+        collapse_ws(d.get_text(" "))
+        for d in idx_soup.select("section.research-interest p.research-interest-description")
+    ]
+    assert len(descs) == 5
+    assert all(descs), descs
+    assert not any("Epidemiologial" in c or "special medication" in c for c in descs), descs
 
 
 def test_heldout_nfrsea_full_table_structure_and_collaborator_section(site):

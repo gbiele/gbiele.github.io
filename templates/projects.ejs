@@ -1,0 +1,38 @@
+<%
+const currentProjects = items.filter((item) => item.status === "current");
+const pastProjects = items.filter((item) => item.status === "past");
+const groups = [
+  { status: "current", heading: "Current projects", list: currentProjects },
+  { status: "past", heading: "Past projects", list: pastProjects },
+].filter((group) => group.list.length > 0);
+%>
+<div class="list project-list">
+<% for (const group of groups) { %>
+<section class="project-group" data-status="<%- group.status %>">
+<h3 class="project-group-heading"><%- group.heading %></h3>
+<% for (const item of group.list) { %>
+<article class="project-entry" data-project-id="<%- item.id %>" data-status="<%- item.status %>" data-year="<%- item.year %>" <%= metadataAttrs(item) %>>
+<div class="project-header">
+<h4 class="project-title"><% if (item.url) { %><a href="<%- item.url %>"><%- item.title %></a><% } else { %><%- item.title %><% } %></h4>
+<div class="project-meta">
+<span class="project-role"><%- item.role %></span>
+<span class="project-period"><%- item.period %></span>
+<% if (item.funder) { %><span class="project-funder"><%- item.funder %></span><% } %>
+</div>
+</div>
+<p class="project-description"><%- item.description %></p>
+<% if (item.papers && item.papers.length > 0) { %>
+<div class="project-papers">
+<span class="project-papers-label">Selected papers:</span>
+<ul class="project-papers-list">
+<% for (const paper of item.papers) { %>
+<li><a href="<%- paper.href %>" title="<%- paper.title %>"><%- paper.citation %></a></li>
+<% } %>
+</ul>
+</div>
+<% } %>
+</article>
+<% } %>
+</section>
+<% } %>
+</div>

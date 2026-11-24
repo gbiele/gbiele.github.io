@@ -1,16 +1,16 @@
 ---
 title: "Research"
 listing:
-  contents:
-    - nfrsea.qmd
-    - epi.qmd
-    - bayes.qmd
-    - causalinf.qmd
-    - dm.qmd
-    - decneurosc.qmd
-    - cogneuro.qmd
+  id: research-interests
+  contents: ../generated/research-interests.yml
+  template: ../templates/research_interests.ejs
   sort: false
-  type: grid
-  fields: [image, title, description]
+  filter-ui: false
+  sort-ui: false
+  categories: false
+  page-size: 9999
 page-layout: full
 ---
+
+::: {#research-interests}
+:::

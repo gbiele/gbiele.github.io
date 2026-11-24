@@ -1,0 +1,165 @@
+- id: mentor-2024
+  title: "Joint Action Mental Health Together – MENTOR"
+  role: "co-PI"
+  funder: "EU4Health"
+  year: 2024
+  period: "2024–present"
+  status: "current"
+  categories:
+    - epi
+  description: "European joint action strengthening mental health promotion, prevention, and cross-country public health collaboration."
+  papers: []
+
+- id: poverty-2024
+  title: "Barn som vokser opp i fattigdom"
+  role: "co-PI"
+  funder: "Research Council of Norway (NFR)"
+  year: 2024
+  period: "2024–present"
+  status: "current"
+  categories:
+    - epi
+    - causalinf
+  description: "Register-based research examining living conditions, health, and schooling outcomes of children growing up in poverty in Norway."
+  papers:
+    - Biele2026-Fattigdom
+    - Biele2023-What
+
+- id: nfrsea-2020
+  title: "Effect of medication and special education on school performance of children with ADHD"
+  role: "PI"
+  funder: "NFR"
+  year: 2020
+  period: "2020–present"
+  status: "current"
+  categories:
+    - adhd
+    - causalinf
+    - bayes
+  url: "nfrsea.html"
+  description: "Causal inference and Bayesian modelling using Norwegian national registries and MoBa to estimate long-term effects of stimulant medication and special education on school performance."
+  papers:
+    - VarnetPerez2025
+    - Cordier2026-SEN
+    - Halvorsen2025-Socioeconomic
+    - Biele2022-iz
+    - deAguas2025a
+    - deAguas2025b
+    - deAguas2025c
+
+- id: adhd-register-2018
+  title: "A register study of regional variations and parental effects on diagnosis and pharmacological treatment of ADHD"
+  role: "PI"
+  funder: ""
+  year: 2018
+  period: "2018–2021"
+  status: "past"
+  categories:
+    - adhd
+    - epi
+  description: "Population-wide register study investigating geographic variation and family-level determinants of ADHD diagnosis and pharmacological treatment in Norway."
+  papers:
+    - Suren2018-bv
+
+- id: toxicants-2016
+  title: "Prenatal exposure to toxicants & childhood neurodevelopmental disorders & cognitive functions"
+  role: "Researcher"
+  funder: "NFR"
+  year: 2016
+  period: "2016–2021"
+  status: "past"
+  categories:
+    - epi
+    - adhd
+    - bayes
+  description: "Cohort investigation of prenatal exposure to environmental toxicants and metals in relation to ADHD symptoms, cognitive functions, and neurodevelopmental outcomes."
+  papers:
+    - Caspersen2016-in
+    - Skogheim2020-ah
+    - Choi2021-ko
+    - Weyde2021-kw
+    - Weyde2023-Association
+
+- id: nutrition-2015
+  title: "The effect of prenatal nutrition on ADHD"
+  role: "co-PI"
+  funder: "NFR"
+  year: 2015
+  period: "2015–2020"
+  status: "past"
+  categories:
+    - epi
+    - adhd
+    - bayes
+  description: "Prospective pregnancy cohort research using Bayesian hierarchical models to evaluate associations between maternal diet quality during pregnancy and child ADHD and developmental outcomes."
+  papers:
+    - Borge2017-qi
+    - Borge2019-th
+    - Borge2021-de
+
+- id: mph-dm-2011
+  title: "Effect of Methylphenidate on Decision Making in ADHD"
+  role: "PI"
+  funder: "NFR"
+  year: 2011
+  period: "2011–2016"
+  status: "past"
+  categories:
+    - adhd
+    - decision-making
+    - bayes
+  description: "Experimental and computational modelling research on how methylphenidate influences reinforcement learning, cost sensitivity, and decision making in adults with ADHD."
+  papers:
+    - Mowinckel2015-yo
+    - Ziegler2016-at
+    - LundPedersen2017-ka
+    - Pedersen2026-Methylphenidate
+
+- id: mph-brain-2011
+  title: "Influence of stimulant medication on brain processes for decision making in ADHD"
+  role: "PI"
+  funder: "HSØ"
+  year: 2011
+  period: "2011–2016"
+  status: "past"
+  categories:
+    - adhd
+    - decision-making
+  description: "Neuroimaging study of how stimulant medication modulates brain networks and decision-making processes in adults with ADHD."
+  papers:
+    - Mowinckel2017-ti
+    - Pedersen2026-Methylphenidate
+
+- id: dm-learning-adhd-2011
+  title: "Decision making and learning in ADHD"
+  role: "PI"
+  funder: "NK AD/HD, Tourettes Syndrom og Narkolepsi"
+  year: 2011
+  period: "2011–2015"
+  status: "past"
+  categories:
+    - adhd
+    - decision-making
+  description: "Behavioral and computational modelling investigation of reinforcement learning and decision-making mechanisms in ADHD."
+  papers:
+    - Mowinckel2015-yo
+    - Ziegler2016-at
+    - LundPedersen2017-ka
+
+- id: reward-dm-2007
+  title: "Reward- and monitoring-based decision making in the healthy brain: behavior, genes, and neural correlates"
+  role: "PI"
+  funder: "BMBF"
+  year: 2007
+  period: "2007–2011"
+  status: "past"
+  categories:
+    - decision-making
+  description: "Cognitive neuroscience and computational modelling research on reward processing, evidence accumulation, social advice, and neural correlates of decision making."
+  papers:
+    - Krugel2009-ck
+    - Basten2010-wa
+    - Philiastides2010-oe
+    - Philiastides2010-si
+    - Biele2011-oo
+    - Blank2013-hy

@@ -15,7 +15,7 @@ for (const item of items) {
 <section class="pub-year" data-year="<%- group.year %>">
 <h3 class="pub-year-heading"><%- group.year %></h3>
 <% for (const item of group.items) { %>
-<article class="pub-entry" data-key="<%- item.key %>" data-year="<%- item.year %>" data-pub-type="<%- item.pub_type %>" <%= metadataAttrs(item) %>>
+<article class="pub-entry" data-key="<%- item.key %>" data-year="<%- item.year %>" data-pub-type="<%- item.pub_type %>" data-categories="<%- item.category_ids || '' %>" <%= metadataAttrs(item) %>>
 <div class="pub-header">
 <% if (item.pub_type === "preprint") { %>
 <span class="pub-badge pub-badge-preprint">Preprint</span>
@@ -30,6 +30,13 @@ for (const item of items) {
 <div class="pub-links">
 <% for (const link of item.links) { %>
 <a class="pub-link" href="<%- link.href %>"><%- link.label %></a>
+<% } %>
+</div>
+<% } %>
+<% if (item.categories && item.categories.length > 0) { %>
+<div class="pub-categories">
+<% for (const cat of item.categories) { %>
+<a class="pub-category-badge" href="<%- cat.href %>"><%- cat.label %></a>
 <% } %>
 </div>
 <% } %>
