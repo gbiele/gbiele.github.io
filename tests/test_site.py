@@ -151,15 +151,19 @@ def test_research_index_links_pages_in_order(site):
     soup = soup_of(page)
     scope = soup.find("main") or soup.body or soup
     wanted = {(site / "research" / f"{s}.html").resolve(): s for s in RESEARCH_SLUGS}
+    nfrsea_target = (site / "research" / "nfrsea.html").resolve()
     seen = []
     for a in scope.find_all("a", href=True):
         href = a["href"]
         if not href.strip() or href.startswith("#") or re.match(r"^[a-zA-Z][\w+.\-]*:", href):
             continue
-        slug = wanted.get(resolve(site, page, href).resolve())
+        resolved = resolve(site, page, href).resolve()
+        assert resolved != nfrsea_target, "nfrsea.html must not be linked as a top-level entry on research/index.html"
+        slug = wanted.get(resolved)
         if slug and slug not in seen:
             seen.append(slug)
-    assert seen == RESEARCH_ORDER
+    assert set(seen) == set(RESEARCH_SLUGS)
+    assert seen == ["causalinf", "bayes", "epi", "adhd", "decision-making"]
 
 
 # --- 4. publications page ----------------------------------------------------
@@ -546,9 +550,12 @@ def test_navbar_has_bluesky_github_scholar(site, rel_page):
 def test_research_index_descriptions_fixed(site):
     page = site / "research" / "index.html"
     soup = soup_of(page)
-    cards = [collapse_ws(d.get_text(" ")) for d in soup.select("#listing-listing .listing-description")]
-    assert len(cards) == 5, f"expected 5 category cards on research/index.html, got {len(cards)}"
-    assert all(cards), f"empty card description on research/index.html: {cards!r}"
+    descs = [
+        collapse_ws(d.get_text(" "))
+        for d in soup.select("section.research-interest p.research-interest-description")
+    ]
+    assert len(descs) == 5, f"expected 5 interest descriptions on research/index.html, got {len(descs)}"
+    assert all(descs), f"empty interest description on research/index.html: {descs!r}"
     text = page_text(page)
     for bad in ("Epidemiologial", "special medication", "rsik factors", "sigfnificant", "reinfocement"):
         assert bad not in text, f"legacy typo {bad!r} found on research/index.html"

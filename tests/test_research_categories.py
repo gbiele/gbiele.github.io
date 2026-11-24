@@ -171,26 +171,25 @@ def test_research_index_lists_five_canonical_categories_in_order(site):
     soup = soup_of(page)
     main = soup.find("main") or soup.body or soup
 
-    listing = soup.select_one("#listing-listing")
-    assert listing is not None, "missing #listing-listing on research/index.html"
-    cards = listing.select(".quarto-grid-item, .listing-item, .card")
-    # Collect unique research/*.html targets linked from listing cards in order
+    sections = main.select("section.research-interest")
+    assert len(sections) == 5, f"expected 5 section.research-interest elements on research/index.html, got {len(sections)}"
+
     wanted = {(site / "research" / f"{s}.html").resolve(): s for s in CANONICAL_CATEGORIES}
     nfrsea_target = (site / "research" / "nfrsea.html").resolve()
     seen = []
-    for a in main.find_all("a", href=True):
-        href = a["href"]
-        if not href.strip() or href.startswith("#") or re.match(r"^[a-zA-Z][\w+.\-]*:", href):
-            continue
-        resolved = resolve(site, page, href).resolve()
-        assert resolved != nfrsea_target, "nfrsea.html must not be listed as a top-level card on research/index.html"
-        slug = wanted.get(resolved)
-        if slug and slug not in seen:
-            seen.append(slug)
+    for sec in sections:
+        for a in sec.find_all("a", href=True):
+            href = a["href"]
+            if not href.strip() or href.startswith("#") or re.match(r"^[a-zA-Z][\w+.\-]*:", href):
+                continue
+            resolved = resolve(site, page, href).resolve()
+            assert resolved != nfrsea_target, "nfrsea.html must not be listed as a top-level item on research/index.html"
+            slug = wanted.get(resolved)
+            if slug and slug not in seen:
+                seen.append(slug)
 
-    assert seen == CANONICAL_CATEGORIES, f"expected category order {CANONICAL_CATEGORIES}, got {seen}"
-    descs = listing.select(".listing-description")
-    assert len(descs) == 5, f"expected 5 category cards on research/index.html, got {len(descs)}"
+    expected_order = ["causalinf", "bayes", "epi", "adhd", "decision-making"]
+    assert seen == expected_order, f"expected interest-aligned category order {expected_order}, got {seen}"
 
 
 def test_old_decision_neuroscience_pages_removed_and_nfrsea_retained(site):

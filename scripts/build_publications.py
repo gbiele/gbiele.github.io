@@ -1128,6 +1128,87 @@ def parse_projects(
     return projects
 
 
+def parse_research_interests(
+    text: str,
+    valid_bib_keys: set[str] | None = None,
+) -> list[dict]:
+    """Parse and strictly validate data/research_interests.yml."""
+    raw = parse_yaml_stdlib(text)
+    if not isinstance(raw, list) or not raw:
+        raise ValueError("data/research_interests.yml must be a non-empty YAML list")
+
+    valid_link_targets = {f"{slug}.html" for slug, _ in CATEGORIES}
+    seen_ids: set[str] = set()
+    interests: list[dict] = []
+
+    for idx, entry in enumerate(raw):
+        if not isinstance(entry, dict):
+            raise ValueError(f"Research interest entry #{idx + 1} must be a mapping")
+
+        iid = entry.get("id")
+        if not isinstance(iid, str) or not iid.strip() or any(ch.isspace() for ch in iid):
+            raise ValueError(f"Invalid research interest id at entry #{idx + 1}: {iid!r}")
+        if iid in seen_ids:
+            raise ValueError(f"Duplicate research interest id: {iid!r}")
+        seen_ids.add(iid)
+
+        for field in ("title", "description"):
+            val = entry.get(field)
+            if not isinstance(val, str) or not val.strip():
+                raise ValueError(f"Research interest {iid!r}: missing or empty {field!r}")
+
+        links = entry.get("links")
+        if not isinstance(links, list) or not links:
+            raise ValueError(f"Research interest {iid!r}: 'links' must be a non-empty list")
+        parsed_links: list[dict[str, str]] = []
+        seen_hrefs: set[str] = set()
+        for lk in links:
+            if not isinstance(lk, dict):
+                raise ValueError(f"Research interest {iid!r}: link entry must be a mapping, got {lk!r}")
+            label = lk.get("label")
+            href = lk.get("href")
+            if not isinstance(label, str) or not label.strip():
+                raise ValueError(f"Research interest {iid!r}: link missing or empty 'label': {lk!r}")
+            if not isinstance(href, str) or href.strip() not in valid_link_targets:
+                raise ValueError(
+                    f"Research interest {iid!r}: invalid link target {href!r}; "
+                    f"expected one of {sorted(valid_link_targets)}"
+                )
+            clean_href = href.strip()
+            if clean_href in seen_hrefs:
+                raise ValueError(f"Research interest {iid!r}: duplicate link target {clean_href!r}")
+            seen_hrefs.add(clean_href)
+            parsed_links.append({"label": label.strip(), "href": clean_href})
+
+        papers = entry.get("papers")
+        if not isinstance(papers, list) or not (2 <= len(papers) <= 3):
+            raise ValueError(
+                f"Research interest {iid!r}: 'papers' must be a list of 2 to 3 BibTeX keys, got {papers!r}"
+            )
+        seen_papers: set[str] = set()
+        clean_papers: list[str] = []
+        for pkey in papers:
+            if not isinstance(pkey, str) or not pkey.strip():
+                raise ValueError(f"Research interest {iid!r}: invalid paper key {pkey!r}")
+            key = pkey.strip()
+            if key in seen_papers:
+                raise ValueError(f"Research interest {iid!r}: duplicate paper key {key!r}")
+            if valid_bib_keys is not None and key not in valid_bib_keys:
+                raise ValueError(f"Research interest {iid!r}: unknown paper BibTeX key {key!r}")
+            seen_papers.add(key)
+            clean_papers.append(key)
+
+        interests.append({
+            "id": iid,
+            "title": entry["title"].strip(),
+            "description": entry["description"].strip(),
+            "links": parsed_links,
+            "papers": clean_papers,
+        })
+
+    return interests
+
+
 def _build_single_listing_item(
     entry: dict,
     pub_categories: dict[str, list[str]] | None = None,
@@ -1266,6 +1347,32 @@ def build_category_project_items(
     return items
 
 
+def build_research_interest_items(
+    interests: list[dict],
+    entries_by_key: dict[str, dict],
+) -> list[dict]:
+    """Build research interest listing items with resolved highlighted papers."""
+    items: list[dict] = []
+    for interest in interests:
+        resolved_papers = [
+            _build_single_listing_item(
+                entries_by_key[pkey],
+                pub_categories=None,
+                relative_prefix="../",
+                warn_uncategorized=False,
+            )
+            for pkey in interest["papers"]
+        ]
+        items.append({
+            "id": interest["id"],
+            "title": interest["title"],
+            "description": interest["description"],
+            "links": list(interest["links"]),
+            "papers": resolved_papers,
+        })
+    return items
+
+
 def dump_yaml_items(items: list[dict]) -> str:
     """Serialize publication listing items as YAML using Python stdlib json string quoting."""
     lines: list[str] = []
@@ -1321,6 +1428,45 @@ def dump_project_yaml_items(items: list[dict]) -> str:
     return "\n".join(lines) + ("\n" if lines else "")
 
 
+def dump_research_interest_yaml_items(items: list[dict]) -> str:
+    """Serialize research interest listing items as YAML using Python stdlib json string quoting."""
+    lines: list[str] = []
+    for item in items:
+        lines.append(f"- id: {json.dumps(item['id'], ensure_ascii=False)}")
+        lines.append(f"  title: {json.dumps(item['title'], ensure_ascii=False)}")
+        lines.append(f"  description: {json.dumps(item['description'], ensure_ascii=False)}")
+        if item["links"]:
+            lines.append("  links:")
+            for lk in item["links"]:
+                lines.append(f"    - label: {json.dumps(lk['label'], ensure_ascii=False)}")
+                lines.append(f"      href: {json.dumps(lk['href'], ensure_ascii=False)}")
+        else:
+            lines.append("  links: []")
+        if item["papers"]:
+            lines.append("  papers:")
+            for paper in item["papers"]:
+                lines.append(f"    - key: {json.dumps(paper['key'], ensure_ascii=False)}")
+                for field in (
+                    "year",
+                    "pub_type",
+                    "type_label",
+                    "title_html",
+                    "authors_html",
+                    "venue_html",
+                ):
+                    lines.append(f"      {field}: {json.dumps(paper.get(field, ''), ensure_ascii=False)}")
+                if paper["links"]:
+                    lines.append("      links:")
+                    for link in paper["links"]:
+                        lines.append(f"        - label: {json.dumps(link['label'], ensure_ascii=False)}")
+                        lines.append(f"          href: {json.dumps(link['href'], ensure_ascii=False)}")
+                else:
+                    lines.append("      links: []")
+        else:
+            lines.append("  papers: []")
+    return "\n".join(lines) + ("\n" if lines else "")
+
+
 def main() -> None:
     root = Path(__file__).resolve().parent.parent
     bib_path = root / "data" / "references.bib"
@@ -1332,6 +1478,9 @@ def main() -> None:
     proj_path = root / "data" / "projects.yml"
     if not proj_path.is_file():
         raise FileNotFoundError(f"Missing projects file: {proj_path}")
+    interests_path = root / "data" / "research_interests.yml"
+    if not interests_path.is_file():
+        raise FileNotFoundError(f"Missing research interests file: {interests_path}")
 
     raw_bib = bib_path.read_text(encoding="utf8")
     entries = parse_bib(raw_bib)
@@ -1346,6 +1495,10 @@ def main() -> None:
         proj_path.read_text(encoding="utf8"),
         valid_bib_keys=bib_keys,
     )
+    interests = parse_research_interests(
+        interests_path.read_text(encoding="utf8"),
+        valid_bib_keys=bib_keys,
+    )
 
     published, preprints = build_listing_items(
         entries,
@@ -1358,6 +1511,11 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "publications.yml").write_text(dump_yaml_items(published), encoding="utf8", newline="\n")
     (out_dir / "preprints.yml").write_text(dump_yaml_items(preprints), encoding="utf8", newline="\n")
+
+    interest_items = build_research_interest_items(interests, entries_by_key)
+    (out_dir / "research-interests.yml").write_text(
+        dump_research_interest_yaml_items(interest_items), encoding="utf8", newline="\n"
+    )
 
     for slug, _ in CATEGORIES:
         cat_pubs = build_category_publication_items(entries, pub_categories, slug)
