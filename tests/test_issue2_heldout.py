@@ -78,10 +78,13 @@ def test_heldout_research_meta_descriptions_and_listing_cards(site):
     ) == nfrsea_desc
 
     idx_soup = soup_of(site / "research" / "index.html")
-    cards = [collapse_ws(d.get_text(" ")) for d in idx_soup.select("#listing-listing .listing-description")]
-    assert len(cards) == 5
-    assert all(cards), cards
-    assert not any("Epidemiologial" in c or "special medication" in c for c in cards), cards
+    descs = [
+        collapse_ws(d.get_text(" "))
+        for d in idx_soup.select("section.research-interest p.research-interest-description")
+    ]
+    assert len(descs) == 5
+    assert all(descs), descs
+    assert not any("Epidemiologial" in c or "special medication" in c for c in descs), descs
 
 
 def test_heldout_nfrsea_full_table_structure_and_collaborator_section(site):
