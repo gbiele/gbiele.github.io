@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import html
 import json
+import math
 import re
 import sys
 import unicodedata
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 CATEGORIES: tuple[tuple[str, str], ...] = (
@@ -1128,9 +1130,65 @@ def parse_projects(
     return projects
 
 
+def _local_xml_name(name: str) -> str:
+    if "}" in name:
+        return name.rsplit("}", 1)[1]
+    return name
+
+
+def load_and_validate_svg(svg_path: Path) -> str:
+    """Load an SVG file, validate well-formedness, viewBox, and safety, and return clean markup."""
+    if not svg_path.is_file():
+        raise ValueError(f"SVG graphic file does not exist: {svg_path}")
+    try:
+        raw = svg_path.read_text(encoding="utf8")
+    except UnicodeDecodeError as exc:
+        raise ValueError(f"SVG graphic file is not valid UTF-8: {svg_path}") from exc
+
+    try:
+        root = ET.fromstring(raw)
+    except ET.ParseError as exc:
+        raise ValueError(f"Invalid SVG XML in {svg_path}: {exc}") from exc
+
+    if _local_xml_name(root.tag) != "svg":
+        raise ValueError(f"SVG graphic {svg_path} root element must be <svg>, got <{root.tag}>")
+
+    viewbox = root.attrib.get("viewBox")
+    if not isinstance(viewbox, str) or not viewbox.strip():
+        raise ValueError(f"SVG graphic {svg_path} is missing a valid 'viewBox' attribute")
+    vb_parts = re.split(r"[\s,]+", viewbox.strip())
+    if len(vb_parts) != 4:
+        raise ValueError(f"SVG graphic {svg_path} has invalid viewBox {viewbox!r}; expected 4 numbers")
+    try:
+        vb_nums = [float(p) for p in vb_parts]
+    except ValueError as exc:
+        raise ValueError(f"SVG graphic {svg_path} has non-numeric viewBox {viewbox!r}") from exc
+    if not all(math.isfinite(n) for n in vb_nums) or vb_nums[2] <= 0 or vb_nums[3] <= 0:
+        raise ValueError(
+            f"SVG graphic {svg_path} viewBox must have finite numbers and positive width/height: {viewbox!r}"
+        )
+
+    for el in root.iter():
+        if _local_xml_name(el.tag).lower() == "script":
+            raise ValueError(f"Unsafe <script> element found in SVG graphic {svg_path}")
+        for attr_name, attr_val in el.attrib.items():
+            local_attr = _local_xml_name(attr_name).lower()
+            if local_attr.startswith("on"):
+                raise ValueError(
+                    f"Unsafe event handler attribute {attr_name!r} found in SVG graphic {svg_path}"
+                )
+            if "javascript:" in str(attr_val).lower():
+                raise ValueError(
+                    f"Unsafe javascript: URL in attribute {attr_name!r} of SVG graphic {svg_path}"
+                )
+
+    return re.sub(r"^\s*<\?xml\b[^>]*\?>\s*", "", raw, flags=re.I).strip()
+
+
 def parse_research_interests(
     text: str,
     valid_bib_keys: set[str] | None = None,
+    repo_root: Path | None = None,
 ) -> list[dict]:
     """Parse and strictly validate data/research_interests.yml."""
     raw = parse_yaml_stdlib(text)
@@ -1139,6 +1197,7 @@ def parse_research_interests(
 
     valid_link_targets = {f"{slug}.html" for slug, _ in CATEGORIES}
     seen_ids: set[str] = set()
+    seen_primary_hrefs: set[str] = set()
     interests: list[dict] = []
 
     for idx, entry in enumerate(raw):
@@ -1156,6 +1215,23 @@ def parse_research_interests(
             val = entry.get(field)
             if not isinstance(val, str) or not val.strip():
                 raise ValueError(f"Research interest {iid!r}: missing or empty {field!r}")
+
+        graphic = entry.get("graphic")
+        if not isinstance(graphic, str) or not graphic.strip():
+            raise ValueError(f"Research interest {iid!r}: missing or empty 'graphic'")
+        clean_graphic = graphic.strip()
+        if not clean_graphic.lower().endswith(".svg"):
+            raise ValueError(f"Research interest {iid!r}: 'graphic' must end with '.svg', got {clean_graphic!r}")
+        if Path(clean_graphic).is_absolute() or clean_graphic.startswith(("/", "\\")):
+            raise ValueError(f"Research interest {iid!r}: 'graphic' must be a relative path, got {clean_graphic!r}")
+        if repo_root is not None:
+            root_resolved = repo_root.resolve()
+            svg_path = (repo_root / clean_graphic).resolve()
+            if root_resolved not in svg_path.parents:
+                raise ValueError(
+                    f"Research interest {iid!r}: 'graphic' path escapes repository root: {clean_graphic!r}"
+                )
+            load_and_validate_svg(svg_path)
 
         links = entry.get("links")
         if not isinstance(links, list) or not links:
@@ -1180,6 +1256,13 @@ def parse_research_interests(
             seen_hrefs.add(clean_href)
             parsed_links.append({"label": label.strip(), "href": clean_href})
 
+        primary_href = parsed_links[0]["href"]
+        if primary_href in seen_primary_hrefs:
+            raise ValueError(
+                f"Research interest {iid!r}: duplicate primary link target {primary_href!r}"
+            )
+        seen_primary_hrefs.add(primary_href)
+
         papers = entry.get("papers")
         if not isinstance(papers, list) or not (2 <= len(papers) <= 3):
             raise ValueError(
@@ -1201,6 +1284,7 @@ def parse_research_interests(
         interests.append({
             "id": iid,
             "title": entry["title"].strip(),
+            "graphic": clean_graphic,
             "description": entry["description"].strip(),
             "links": parsed_links,
             "papers": clean_papers,
@@ -1350,8 +1434,9 @@ def build_category_project_items(
 def build_research_interest_items(
     interests: list[dict],
     entries_by_key: dict[str, dict],
+    repo_root: Path | None = None,
 ) -> list[dict]:
-    """Build research interest listing items with resolved highlighted papers."""
+    """Build research interest listing items with resolved highlighted papers and inline SVGs."""
     items: list[dict] = []
     for interest in interests:
         resolved_papers = [
@@ -1363,9 +1448,18 @@ def build_research_interest_items(
             )
             for pkey in interest["papers"]
         ]
+        graphic = interest["graphic"]
+        graphic_svg = (
+            load_and_validate_svg((repo_root / graphic).resolve())
+            if repo_root is not None
+            else ""
+        )
         items.append({
             "id": interest["id"],
             "title": interest["title"],
+            "href": interest["links"][0]["href"],
+            "graphic": graphic,
+            "graphic_svg": graphic_svg,
             "description": interest["description"],
             "links": list(interest["links"]),
             "papers": resolved_papers,
@@ -1434,6 +1528,9 @@ def dump_research_interest_yaml_items(items: list[dict]) -> str:
     for item in items:
         lines.append(f"- id: {json.dumps(item['id'], ensure_ascii=False)}")
         lines.append(f"  title: {json.dumps(item['title'], ensure_ascii=False)}")
+        lines.append(f"  href: {json.dumps(item['href'], ensure_ascii=False)}")
+        lines.append(f"  graphic: {json.dumps(item['graphic'], ensure_ascii=False)}")
+        lines.append(f"  graphic_svg: {json.dumps(item['graphic_svg'], ensure_ascii=False)}")
         lines.append(f"  description: {json.dumps(item['description'], ensure_ascii=False)}")
         if item["links"]:
             lines.append("  links:")
@@ -1498,6 +1595,7 @@ def main() -> None:
     interests = parse_research_interests(
         interests_path.read_text(encoding="utf8"),
         valid_bib_keys=bib_keys,
+        repo_root=root,
     )
 
     published, preprints = build_listing_items(
@@ -1512,12 +1610,30 @@ def main() -> None:
     (out_dir / "publications.yml").write_text(dump_yaml_items(published), encoding="utf8", newline="\n")
     (out_dir / "preprints.yml").write_text(dump_yaml_items(preprints), encoding="utf8", newline="\n")
 
-    interest_items = build_research_interest_items(interests, entries_by_key)
+    interest_items = build_research_interest_items(interests, entries_by_key, repo_root=root)
     (out_dir / "research-interests.yml").write_text(
         dump_research_interest_yaml_items(interest_items), encoding="utf8", newline="\n"
     )
 
+    interest_by_slug: dict[str, dict] = {}
+    for item in interest_items:
+        href = item["href"]
+        slug = href[:-5] if href.endswith(".html") else href
+        if slug in interest_by_slug:
+            raise ValueError(f"Duplicate research interest mapping for category slug {slug!r}")
+        interest_by_slug[slug] = item
+    missing_slugs = [slug for slug, _ in CATEGORIES if slug not in interest_by_slug]
+    if missing_slugs:
+        raise ValueError(
+            f"Research interests do not cover all canonical categories: missing {missing_slugs!r}"
+        )
+
     for slug, _ in CATEGORIES:
+        (out_dir / f"interest-{slug}.yml").write_text(
+            dump_research_interest_yaml_items([interest_by_slug[slug]]),
+            encoding="utf8",
+            newline="\n",
+        )
         cat_pubs = build_category_publication_items(entries, pub_categories, slug)
         (out_dir / f"publications-{slug}.yml").write_text(
             dump_yaml_items(cat_pubs), encoding="utf8", newline="\n"

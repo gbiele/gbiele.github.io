@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="ADHD diagram showing how ADHD affects life outcomes and how treatment moderates and improves those trajectories">
+  <title>ADHD, Treatment, and Life Outcomes</title>
+  <defs>
+    <marker id="adhd-arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" class="ri-marker-muted"/>
+    </marker>
+    <marker id="adhd-arrow-secondary" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" class="ri-marker-secondary"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="348" height="208" rx="10" class="ri-surface"/>
+  <rect x="16" y="16" width="328" height="188" rx="8" class="ri-panel"/>
+
+  <!-- ADHD node (left) -->
+  <rect x="28" y="96" width="76" height="44" rx="10" class="ri-node-accent"/>
+  <text x="66" y="116" text-anchor="middle" class="ri-text-accent-bold">ADHD</text>
+  <text x="66" y="131" text-anchor="middle" class="ri-text-small">Lifespan</text>
+
+  <!-- Treatment node (top-center) -->
+  <rect x="122" y="28" width="116" height="42" rx="10" class="ri-node-secondary"/>
+  <text x="180" y="47" text-anchor="middle" class="ri-text-secondary-bold">Treatment</text>
+  <text x="180" y="61" text-anchor="middle" class="ri-text-small">Medication &amp; Support</text>
+
+  <!-- Diverging trajectories from ADHD to outcomes -->
+  <!-- Improved trajectory (with treatment) -->
+  <path d="M 104 112 C 146 108, 178 96, 228 84" class="ri-stroke-secondary-bold" marker-end="url(#adhd-arrow-secondary)"/>
+  <!-- Baseline / untreated trajectory -->
+  <path d="M 104 124 C 146 130, 178 144, 228 152" class="ri-stroke-muted-dashed" marker-end="url(#adhd-arrow-muted)"/>
+
+  <!-- Treatment moderation arrow onto trajectory -->
+  <line x1="180" y1="70" x2="180" y2="96" class="ri-stroke-secondary-bold" marker-end="url(#adhd-arrow-secondary)"/>
+
+  <!-- Life outcomes panel (right) -->
+  <rect x="234" y="42" width="98" height="148" rx="8" class="ri-surface"/>
+  <text x="283" y="62" text-anchor="middle" class="ri-text-bold">Life Outcomes</text>
+
+  <rect x="244" y="72" width="78" height="28" rx="6" class="ri-node"/>
+  <text x="283" y="90" text-anchor="middle" class="ri-text-small">School</text>
+
+  <rect x="244" y="108" width="78" height="28" rx="6" class="ri-node"/>
+  <text x="283" y="126" text-anchor="middle" class="ri-text-small">Health</text>
+
+  <rect x="244" y="144" width="78" height="28" rx="6" class="ri-node"/>
+  <text x="283" y="162" text-anchor="middle" class="ri-text-small">Well-being</text>
+
+  <!-- Legend captions -->
+  <text x="168" y="176" text-anchor="middle" class="ri-text-secondary-small">Improved trajectory</text>
+  <text x="168" y="190" text-anchor="middle" class="ri-text-small">Baseline risk</text>
+</svg>

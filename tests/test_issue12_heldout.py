@@ -52,6 +52,17 @@ def _replace_link_target(item, new_target):
     return new_target
 
 
+def _extract_link_target(item):
+    if isinstance(item, str):
+        return item
+    if isinstance(item, dict):
+        for key in ("href", "url", "target", "page"):
+            val = item.get(key)
+            if isinstance(val, str):
+                return val
+    return None
+
+
 def test_heldout_dynamic_rebuild_editing_existing_highlighted_paper_in_bib(tmp_path):
     assert RESEARCH_INTERESTS_YML.is_file(), "data/research_interests.yml missing"
 
@@ -61,6 +72,8 @@ def test_heldout_dynamic_rebuild_editing_existing_highlighted_paper_in_bib(tmp_p
     interests = yaml.safe_load((proj_dir / "data" / "research_interests.yml").read_text(encoding="utf8"))
     target_key = interests[1]["papers"][0]
     target_section_id = interests[1]["id"]
+    target_page_name = _extract_link_target(interests[1]["links"][0])
+    assert target_page_name in CANONICAL_CATEGORY_HTML
 
     bib_path = proj_dir / "data" / "references.bib"
     bib_text = bib_path.read_text(encoding="utf8")
@@ -103,23 +116,23 @@ def test_heldout_dynamic_rebuild_editing_existing_highlighted_paper_in_bib(tmp_p
     proc = _run_quarto_render(proj_dir)
     assert proc.returncode == 0, f"quarto render failed:\n{proc.stderr[-2000:]}"
 
-    soup = soup_of(proj_dir / "_site" / "research" / "index.html")
+    soup = soup_of(proj_dir / "_site" / "research" / target_page_name)
     item = soup.select_one(
         f'section.research-interest[data-interest-id="{target_section_id}"] '
         f'li.highlighted-paper[data-key="{target_key}"]'
     )
-    assert item is not None, f"highlighted paper {target_key!r} missing after bib edit"
+    assert item is not None, f"highlighted paper {target_key!r} missing from research/{target_page_name} after bib edit"
     assert new_title in collapse_ws(item.get_text(" "))
     assert any(
         collapse_ws(a.get_text(" ")) == "DOI"
         and a["href"].strip().casefold() == f"https://doi.org/{new_doi}"
         for a in item.select("a.pub-link[href]")
-    ), f"updated DOI {new_doi!r} not propagated to research/index.html"
+    ), f"updated DOI {new_doi!r} not propagated to research/{target_page_name}"
 
 
 def test_heldout_local_pdf_link_resolves_from_research_index(tmp_path):
     """Biele2019-fd has a local `pdf = {files/Biele_2019.pdf}` field; its PDF link on
-    research/index.html (a subdirectory page) must resolve to _site/files/Biele_2019.pdf."""
+    the linked research topic page (a subdirectory page) must resolve to _site/files/Biele_2019.pdf."""
     assert RESEARCH_INTERESTS_YML.is_file(), "data/research_interests.yml missing"
 
     proj_dir = tmp_path / "proj_local_pdf"
@@ -127,29 +140,34 @@ def test_heldout_local_pdf_link_resolves_from_research_index(tmp_path):
 
     yml_path = proj_dir / "data" / "research_interests.yml"
     interests = yaml.safe_load(yml_path.read_text(encoding="utf8"))
-    if not any("Biele2019-fd" in sec["papers"] for sec in interests):
+    target_entry = next((sec for sec in interests if "Biele2019-fd" in sec["papers"]), None)
+    if target_entry is None:
         interests[0]["papers"] = ["Biele2019-fd"] + interests[0]["papers"][1:]
+        target_entry = interests[0]
         yml_path.write_text(yaml.safe_dump(interests, sort_keys=False, allow_unicode=True), encoding="utf8")
+
+    target_page_name = _extract_link_target(target_entry["links"][0])
+    assert target_page_name in CANONICAL_CATEGORY_HTML
 
     proc = _run_quarto_render(proj_dir)
     assert proc.returncode == 0, f"quarto render failed:\n{proc.stderr[-2000:]}"
 
     out_site = proj_dir / "_site"
-    page = out_site / "research" / "index.html"
+    page = out_site / "research" / target_page_name
     soup = soup_of(page)
-    item = soup.select_one('li.highlighted-paper[data-key="Biele2019-fd"]')
-    assert item is not None, "Biele2019-fd missing from rendered research/index.html"
+    item = soup.select_one('section.research-interest li.highlighted-paper[data-key="Biele2019-fd"]')
+    assert item is not None, f"Biele2019-fd missing from rendered research/{target_page_name}"
 
     pdf_links = [
         a for a in item.select("a.pub-link[href]")
         if collapse_ws(a.get_text(" ")) == "PDF"
     ]
-    assert pdf_links, "Biele2019-fd missing PDF a.pub-link on research/index.html"
+    assert pdf_links, f"Biele2019-fd missing PDF a.pub-link on research/{target_page_name}"
     href = pdf_links[0]["href"].strip()
     assert is_internal(href), f"expected internal local PDF link, got {href!r}"
     resolved = resolve(out_site, page, href).resolve()
     assert resolved == (out_site / "files" / "Biele_2019.pdf").resolve(), (
-        f"local PDF link {href!r} on research/index.html resolved to {resolved}, "
+        f"local PDF link {href!r} on research/{target_page_name} resolved to {resolved}, "
         f"expected {(out_site / 'files' / 'Biele_2019.pdf').resolve()}"
     )
     assert resolved.is_file(), f"resolved local PDF does not exist: {resolved}"
@@ -191,37 +209,34 @@ def test_heldout_validation_edge_cases(tmp_path, mode):
 def test_heldout_research_interest_more_links_cover_all_five_categories_bijectively(site):
     page = site / "research" / "index.html"
     soup = soup_of(page)
-    sections = soup.select("main section.research-interest")
-    assert len(sections) == 5
+    cards = soup.select("main .research-cards-grid article.research-card")
+    assert len(cards) == 5
 
     covered_targets = []
-    for sec in sections:
-        more = sec.select_one("div.research-interest-more")
-        assert more is not None
-        internal_resolved = [
-            resolve(site, page, a["href"]).resolve()
-            for a in more.find_all("a", href=True)
-            if is_internal(a["href"])
-        ]
-        assert all(p.is_file() for p in internal_resolved), (
-            f"broken internal link in div.research-interest-more: {internal_resolved!r}"
+    for card in cards:
+        link = card.select_one("a.research-card-link[href]")
+        assert link is not None, f"card {card.get('data-interest-id')!r} missing a.research-card-link[href]"
+        href = link["href"]
+        assert is_internal(href), f"expected internal card link, got {href!r}"
+        resolved = resolve(site, page, href).resolve()
+        assert resolved.is_file(), f"broken internal card link {href!r} -> {resolved}"
+        assert resolved.parent == (site / "research").resolve() and resolved.name in CANONICAL_CATEGORY_HTML, (
+            f"card link {href!r} does not target a canonical category page: {resolved}"
         )
-        cat_targets = [
-            p.name for p in internal_resolved
-            if p.parent == (site / "research").resolve() and p.name in CANONICAL_CATEGORY_HTML
-        ]
-        assert len(cat_targets) == 1, (
-            f"expected 1 canonical category link in div.research-interest-more, got {cat_targets!r}"
-        )
-        covered_targets.append(cat_targets[0])
+        covered_targets.append(resolved.name)
 
-        for item in sec.select("ul.highlighted-papers-list li.highlighted-paper"):
+        topic_soup = soup_of(resolved)
+        sec = topic_soup.select_one("main section.research-interest")
+        assert sec is not None, f"missing main section.research-interest on research/{resolved.name}"
+        items = sec.select("ul.highlighted-papers-list li.highlighted-paper")
+        assert 2 <= len(items) <= 3, f"expected 2-3 highlighted papers on research/{resolved.name}, got {len(items)}"
+        for item in items:
             links = item.select("a.pub-link[href]")
-            assert links, f"no a.pub-link in {item.get('data-key')!r}"
+            assert links, f"no a.pub-link in {item.get('data-key')!r} on research/{resolved.name}"
             for a in links:
-                href = a["href"].strip()
-                assert href and href != "#" and not href.lower().startswith("javascript:"), (
-                    f"invalid href {href!r} in {item.get('data-key')!r}"
+                phref = a["href"].strip()
+                assert phref and phref != "#" and not phref.lower().startswith("javascript:"), (
+                    f"invalid href {phref!r} in {item.get('data-key')!r}"
                 )
             labels = {collapse_ws(a.get_text(" ")) for a in links}
             assert labels & PAPER_LINK_LABELS, (

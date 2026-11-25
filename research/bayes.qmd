@@ -5,6 +5,14 @@ image: bayes/featured.png
 aliases:
   - /project/bayes/
 listing:
+  - id: topic-overview
+    contents: ../generated/interest-bayes.yml
+    template: ../templates/research_interest_overview.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
   - id: category-projects
     contents: ../generated/projects-bayes.yml
     template: ../templates/projects.ejs
@@ -22,6 +30,9 @@ listing:
     categories: false
     page-size: 9999
 ---
+
+::: {#topic-overview}
+:::
 
 ![](bayes/featured.png)
 

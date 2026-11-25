@@ -1,5 +1,6 @@
 - id: causal-inference
   title: "Causal inference"
+  graphic: "research/graphics/causal-inference.svg"
   description: "Focuses on identifying and estimating causal effects from observational, cohort, and population register data when randomized trials are infeasible or cannot capture long-term outcomes. Combines methodological work on confounding, attrition, missingness, and partial identification with applied target trial emulations examining the effects of ADHD interventions, parental income, and social factors on child health and educational outcomes."
   links:
     - label: "Causal inference projects & publications"
@@ -11,6 +12,7 @@
 
 - id: bayesian-statistics
   title: "Bayesian statistics"
+  graphic: "research/graphics/bayesian-statistics.svg"
   description: "Uses Bayesian estimation and probabilistic programming (including Stan) to fit complex, domain-grounded models and quantify uncertainty transparently rather than relying on null hypothesis significance testing. Across large-scale epidemiological cohorts and experimental datasets, Bayesian hierarchical models help regularize estimates, address multiple comparisons, focus inference on practically meaningful effect sizes, and diagnose when model parameters cannot be reliably identified."
   links:
     - label: "Bayesian statistics projects & publications"
@@ -22,6 +24,7 @@
 
 - id: statistical-modelling
   title: "Statistical modelling"
+  graphic: "research/graphics/statistical-modelling.svg"
   description: "Develops and applies flexible statistical models—including multilevel regression, inverse probability weighting, partial identification bounds, and joint longitudinal models—that reflect the structure of complex observational, cohort, and registry data. A recurring theme is addressing real-world data challenges such as selection bias, missingness, measurement error, and confounding so that empirical estimates remain robust and interpretable in epidemiology and public health."
   links:
     - label: "Epidemiology & statistical modelling projects & publications"
@@ -33,6 +36,7 @@
 
 - id: adhd
   title: "ADHD"
+  graphic: "research/graphics/adhd.svg"
   description: "Investigates attention-deficit/hyperactivity disorder across the lifespan by combining Norwegian national health and education registries, the MoBa pregnancy cohort, clinical cohorts, and controlled experiments. This work spans early screening and developmental trajectories, comorbidities, prenatal and socioeconomic risk factors, cognitive mechanisms, and the long-term effects of stimulant medication and special educational support on school performance and mental health."
   links:
     - label: "ADHD projects & publications"
@@ -44,6 +48,7 @@
 
 - id: cognitive-modelling
   title: "Cognitive modelling"
+  graphic: "research/graphics/cognitive-modelling.svg"
   description: "Applies formal computational models—such as reinforcement learning and drift diffusion sequential-sampling models—together with behavioral experiments and neuroimaging (fMRI, EEG) to study how humans learn from rewards, integrate social advice, and make decisions under uncertainty. This line of research also translates cognitive models to clinical populations, examining how decision-making and learning mechanisms differ in adults with ADHD and respond to stimulant medication."
   links:
     - label: "Decision making & neuroscience projects & publications"

@@ -3,6 +3,14 @@ title: "ADHD"
 description: "Etiology, clinical course, cognitive mechanisms, and treatment effects in ADHD"
 image: nfrsea/featured.png
 listing:
+  - id: topic-overview
+    contents: ../generated/interest-adhd.yml
+    template: ../templates/research_interest_overview.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
   - id: category-projects
     contents: ../generated/projects-adhd.yml
     template: ../templates/projects.ejs
@@ -20,6 +28,9 @@ listing:
     categories: false
     page-size: 9999
 ---
+
+::: {#topic-overview}
+:::
 
 ![](nfrsea/featured.png)
 
