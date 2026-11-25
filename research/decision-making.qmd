@@ -7,6 +7,14 @@ aliases:
   - /project/decneurosc/
   - /project/cogneuro/
 listing:
+  - id: topic-overview
+    contents: ../generated/interest-decision-making.yml
+    template: ../templates/research_interest_overview.ejs
+    sort: false
+    filter-ui: false
+    sort-ui: false
+    categories: false
+    page-size: 9999
   - id: category-projects
     contents: ../generated/projects-decision-making.yml
     template: ../templates/projects.ejs
@@ -24,6 +32,9 @@ listing:
     categories: false
     page-size: 9999
 ---
+
+::: {#topic-overview}
+:::
 
 ![](dm/featured.png)
 

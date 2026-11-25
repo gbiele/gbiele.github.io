@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Cognitive modelling diagram showing a drift diffusion model linked to brain and behavioral data">
+  <title>Cognitive modelling: Drift Diffusion Model linked to Brain and Behavior</title>
+  <defs>
+    <marker id="cognitive-modelling-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" class="ri-marker-accent"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="348" height="208" rx="10" class="ri-surface"/>
+
+  <!-- Left panel: Brain -->
+  <rect x="14" y="42" width="74" height="136" rx="8" class="ri-panel"/>
+  <text x="51" y="62" text-anchor="middle" class="ri-text-bold">Brain</text>
+  <!-- Neural waveform (EEG / fMRI signal) -->
+  <path d="M 22 112 L 30 112 L 35 96 L 41 126 L 47 88 L 53 130 L 59 102 L 65 116 L 72 108 L 80 112" class="ri-stroke-secondary-bold"/>
+  <text x="51" y="156" text-anchor="middle" class="ri-text-small">fMRI / EEG</text>
+
+  <!-- Center panel: Drift Diffusion Model (DDM) -->
+  <rect x="104" y="18" width="152" height="184" rx="8" class="ri-panel"/>
+  <text x="180" y="36" text-anchor="middle" class="ri-text-title">Drift Diffusion (DDM)</text>
+
+  <!-- Upper RT distribution -->
+  <path d="M 122 68 C 134 68, 144 46, 158 46 C 174 46, 190 66, 236 68 Z" class="ri-fill-accent-soft"/>
+  <path d="M 122 68 C 134 68, 144 46, 158 46 C 174 46, 190 66, 236 68" class="ri-stroke-accent"/>
+
+  <!-- Lower RT distribution -->
+  <path d="M 122 162 C 138 162, 152 180, 168 180 C 184 180, 202 164, 236 162 Z" class="ri-fill-tertiary-soft"/>
+  <path d="M 122 162 C 138 162, 152 180, 168 180 C 184 180, 202 164, 236 162" class="ri-stroke-tertiary"/>
+
+  <!-- Upper & Lower decision boundaries -->
+  <line x1="118" y1="68" x2="242" y2="68" class="ri-axis"/>
+  <line x1="118" y1="162" x2="242" y2="162" class="ri-axis"/>
+  <line x1="118" y1="68" x2="118" y2="162" class="ri-axis"/>
+
+  <!-- Starting point z -->
+  <circle cx="118" cy="116" r="3.5" class="ri-fill-accent"/>
+  <text x="112" y="120" text-anchor="end" class="ri-text-small">z</text>
+
+  <!-- Mean drift arrow v -->
+  <line x1="122" y1="116" x2="200" y2="82" class="ri-stroke-muted-dashed"/>
+  <text x="196" y="102" class="ri-text-accent-small">drift v</text>
+
+  <!-- Noisy evidence accumulation trace -->
+  <polyline points="118,116 128,122 138,108 148,114 158,98 168,104 178,86 188,92 198,78 206,68" class="ri-stroke-accent-bold"/>
+
+  <!-- Right panel: Behavior -->
+  <rect x="272" y="42" width="74" height="136" rx="8" class="ri-panel"/>
+  <text x="309" y="62" text-anchor="middle" class="ri-text-bold">Behavior</text>
+  <!-- Mini choice/RT bars -->
+  <line x1="284" y1="138" x2="334" y2="138" class="ri-axis"/>
+  <rect x="288" y="102" width="10" height="36" rx="2" class="ri-fill-accent"/>
+  <rect x="302" y="88" width="10" height="50" rx="2" class="ri-fill-accent"/>
+  <rect x="316" y="114" width="10" height="24" rx="2" class="ri-fill-tertiary"/>
+  <text x="309" y="156" text-anchor="middle" class="ri-text-small">Choice &amp; RT</text>
+
+  <!-- Connecting arrows -->
+  <line x1="88" y1="110" x2="102" y2="110" class="ri-stroke-accent" marker-end="url(#cognitive-modelling-arrow)"/>
+  <line x1="256" y1="110" x2="270" y2="110" class="ri-stroke-accent" marker-end="url(#cognitive-modelling-arrow)"/>
+</svg>

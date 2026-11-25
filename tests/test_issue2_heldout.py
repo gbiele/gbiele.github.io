@@ -78,12 +78,25 @@ def test_heldout_research_meta_descriptions_and_listing_cards(site):
     ) == nfrsea_desc
 
     idx_soup = soup_of(site / "research" / "index.html")
-    descs = [
-        collapse_ws(d.get_text(" "))
-        for d in idx_soup.select("section.research-interest p.research-interest-description")
+    cards = idx_soup.select(".research-cards-grid article.research-card")
+    assert len(cards) == 5
+    card_titles = [
+        collapse_ws(h.get_text(" "))
+        for c in cards
+        if (h := c.select_one("h2.research-card-title")) is not None
     ]
+    assert len(card_titles) == 5 and all(card_titles), card_titles
+
+    descs = []
+    for slug in ("causalinf", "bayes", "epi", "adhd", "decision-making"):
+        topic_soup = soup_of(site / "research" / f"{slug}.html")
+        topic_descs = [
+            collapse_ws(d.get_text(" "))
+            for d in topic_soup.select("section.research-interest p.research-interest-description")
+        ]
+        assert len(topic_descs) == 1 and topic_descs[0], (slug, topic_descs)
+        descs.extend(topic_descs)
     assert len(descs) == 5
-    assert all(descs), descs
     assert not any("Epidemiologial" in c or "special medication" in c for c in descs), descs
 
 

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Causal inference diagram combining a DAG with confounder, treatment, and outcome linked to a causal estimator">
+  <title>Causal inference: DAG and causal estimator</title>
+  <defs>
+    <marker id="causal-inference-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" class="ri-marker-muted"/>
+    </marker>
+    <marker id="causal-inference-arrow-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" class="ri-marker-accent"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="348" height="208" rx="10" class="ri-surface"/>
+
+  <!-- Left panel: DAG -->
+  <rect x="16" y="18" width="154" height="184" rx="8" class="ri-panel"/>
+  <text x="93" y="38" text-anchor="middle" class="ri-text-title">DAG</text>
+
+  <!-- DAG edges -->
+  <line x1="80" y1="78" x2="54" y2="122" class="ri-stroke-muted" marker-end="url(#causal-inference-arrow)"/>
+  <line x1="106" y1="78" x2="132" y2="122" class="ri-stroke-muted" marker-end="url(#causal-inference-arrow)"/>
+  <line x1="65" y1="142" x2="117" y2="142" class="ri-stroke-accent-bold" marker-end="url(#causal-inference-arrow-accent)"/>
+
+  <!-- DAG nodes -->
+  <circle cx="93" cy="68" r="16" class="ri-node"/>
+  <text x="93" y="72" text-anchor="middle" class="ri-text-bold">C</text>
+  <text x="93" y="100" text-anchor="middle" class="ri-text-small">Confounder</text>
+
+  <circle cx="46" cy="142" r="17" class="ri-node-accent"/>
+  <text x="46" y="146" text-anchor="middle" class="ri-text-accent-bold">T</text>
+  <text x="46" y="176" text-anchor="middle" class="ri-text-small">Treatment</text>
+
+  <circle cx="140" cy="142" r="17" class="ri-node-secondary"/>
+  <text x="140" y="146" text-anchor="middle" class="ri-text-secondary-bold">Y</text>
+  <text x="140" y="176" text-anchor="middle" class="ri-text-small">Outcome</text>
+
+  <!-- Connector arrow -->
+  <line x1="172" y1="110" x2="188" y2="110" class="ri-stroke-accent" marker-end="url(#causal-inference-arrow-accent)"/>
+
+  <!-- Right panel: Estimator -->
+  <rect x="192" y="18" width="152" height="184" rx="8" class="ri-panel"/>
+  <text x="268" y="38" text-anchor="middle" class="ri-text-title">Estimator</text>
+  <text x="268" y="60" text-anchor="middle" class="ri-text-accent">E[Y(1) − Y(0)]</text>
+  <text x="268" y="76" text-anchor="middle" class="ri-text-small">Adjustment / IPW</text>
+
+  <!-- Forest / CI plot -->
+  <line x1="210" y1="158" x2="328" y2="158" class="ri-axis"/>
+  <line x1="242" y1="92" x2="242" y2="158" class="ri-stroke-dashed"/>
+  <text x="242" y="172" text-anchor="middle" class="ri-text-small">0</text>
+  <text x="308" y="172" text-anchor="middle" class="ri-text-small">Effect</text>
+
+  <!-- Unadjusted vs Adjusted estimates -->
+  <line x1="256" y1="108" x2="314" y2="108" class="ri-stroke-muted"/>
+  <circle cx="285" cy="108" r="4" class="ri-fill-muted"/>
+  <text x="210" y="111" class="ri-text-small">Crude</text>
+
+  <line x1="258" y1="134" x2="304" y2="134" class="ri-stroke-accent-bold"/>
+  <circle cx="281" cy="134" r="5" class="ri-fill-accent"/>
+  <text x="210" y="137" class="ri-text-accent-small">ATE</text>
+
+  <text x="268" y="191" text-anchor="middle" class="ri-text-small">Point estimate &amp; 95% CI</text>
+</svg>

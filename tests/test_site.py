@@ -548,17 +548,30 @@ def test_navbar_has_bluesky_github_scholar(site, rel_page):
 
 
 def test_research_index_descriptions_fixed(site):
-    page = site / "research" / "index.html"
-    soup = soup_of(page)
-    descs = [
-        collapse_ws(d.get_text(" "))
-        for d in soup.select("section.research-interest p.research-interest-description")
-    ]
-    assert len(descs) == 5, f"expected 5 interest descriptions on research/index.html, got {len(descs)}"
-    assert all(descs), f"empty interest description on research/index.html: {descs!r}"
-    text = page_text(page)
-    for bad in ("Epidemiologial", "special medication", "rsik factors", "sigfnificant", "reinfocement"):
-        assert bad not in text, f"legacy typo {bad!r} found on research/index.html"
+    index_page = site / "research" / "index.html"
+    index_soup = soup_of(index_page)
+    cards = index_soup.select(".research-cards-grid article.research-card")
+    assert len(cards) == 5, f"expected 5 research cards on research/index.html, got {len(cards)}"
+    titles = [collapse_ws(c.select_one("h2.research-card-title").get_text(" ")) for c in cards if c.select_one("h2.research-card-title")]
+    assert len(titles) == 5 and all(titles), f"missing/empty card titles on research/index.html: {titles!r}"
+
+    bad_typos = ("Epidemiologial", "special medication", "rsik factors", "sigfnificant", "reinfocement")
+    index_text = page_text(index_page)
+    for bad in bad_typos:
+        assert bad not in index_text, f"legacy typo {bad!r} found on research/index.html"
+
+    for slug in RESEARCH_SLUGS:
+        topic_page = site / "research" / f"{slug}.html"
+        topic_soup = soup_of(topic_page)
+        descs = [
+            collapse_ws(d.get_text(" "))
+            for d in topic_soup.select("section.research-interest p.research-interest-description")
+        ]
+        assert len(descs) == 1 and descs[0], (
+            f"expected 1 non-empty interest description on research/{slug}.html, got {descs!r}"
+        )
+        for bad in bad_typos:
+            assert bad not in descs[0], f"legacy typo {bad!r} found in interest description on research/{slug}.html"
 
 
 def test_research_epi_typos_and_alspac_https(site):

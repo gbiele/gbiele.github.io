@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Bayesian statistics diagram showing prior and likelihood distributions combining into a posterior distribution">
+  <title>Bayesian statistics: Prior, Likelihood, and Posterior</title>
+
+  <rect x="6" y="6" width="348" height="208" rx="10" class="ri-surface"/>
+  <rect x="16" y="16" width="328" height="188" rx="8" class="ri-panel"/>
+
+  <!-- Formula header -->
+  <text x="180" y="36" text-anchor="middle" class="ri-text-title">p(θ | y) ∝ p(y | θ) · p(θ)</text>
+
+  <!-- Axes -->
+  <line x1="34" y1="162" x2="326" y2="162" class="ri-axis"/>
+  <line x1="34" y1="52" x2="34" y2="162" class="ri-axis"/>
+  <text x="322" y="177" text-anchor="end" class="ri-text-bold">θ</text>
+  <text x="42" y="60" class="ri-text-small">Density</text>
+
+  <!-- Posterior shaded area -->
+  <path d="M 110 162 C 138 160, 152 146, 166 112 C 176 86, 184 74, 192 74 C 200 74, 208 86, 218 112 C 232 146, 246 160, 274 162 Z" class="ri-fill-accent-soft"/>
+
+  <!-- Prior curve (wide, dashed) -->
+  <path d="M 42 162 C 72 158, 94 128, 128 116 C 154 108, 174 128, 206 150 C 230 160, 250 161, 274 162" class="ri-stroke-muted-dashed"/>
+
+  <!-- Likelihood curve (shifted right, secondary) -->
+  <path d="M 134 162 C 166 160, 192 142, 216 106 C 228 88, 236 82, 244 82 C 252 82, 260 88, 272 106 C 290 134, 304 158, 322 162" class="ri-stroke-secondary"/>
+
+  <!-- Posterior curve (tall, sharp, accent) -->
+  <path d="M 110 162 C 138 160, 152 146, 166 112 C 176 86, 184 74, 192 74 C 200 74, 208 86, 218 112 C 232 146, 246 160, 274 162" class="ri-stroke-accent-bold"/>
+
+  <!-- Credible interval bar -->
+  <line x1="156" y1="176" x2="228" y2="176" class="ri-stroke-accent-bold"/>
+  <line x1="156" y1="171" x2="156" y2="181" class="ri-stroke-accent"/>
+  <line x1="228" y1="171" x2="228" y2="181" class="ri-stroke-accent"/>
+  <circle cx="192" cy="176" r="3.5" class="ri-fill-accent"/>
+  <text x="192" y="194" text-anchor="middle" class="ri-text-accent-small">95% Credible Interval</text>
+
+  <!-- Direct curve labels -->
+  <text x="98" y="104" text-anchor="middle" class="ri-text-muted">Prior</text>
+  <text x="192" y="64" text-anchor="middle" class="ri-text-accent-bold">Posterior</text>
+  <text x="278" y="76" text-anchor="middle" class="ri-text-secondary-bold">Likelihood</text>
+</svg>

@@ -1,36 +1,14 @@
-<div class="list research-interests-list">
+```{=html}
+<div class="list research-cards-grid">
 <% for (const item of items) { %>
-<section class="research-interest" id="<%- item.id %>" data-interest-id="<%- item.id %>" <%= metadataAttrs(item) %>>
-<h2 class="research-interest-title"><%- item.title %></h2>
-<p class="research-interest-description"><%- item.description %></p>
-<% if (item.papers && item.papers.length > 0) { %>
-<div class="research-interest-papers">
-<h3 class="research-interest-papers-heading">Highlighted papers</h3>
-<ul class="highlighted-papers-list">
-<% for (const paper of item.papers) { %>
-<li class="highlighted-paper" data-key="<%- paper.key %>" data-year="<%- paper.year %>">
-<div class="highlighted-paper-title"><%= paper.title_html %></div>
-<div class="highlighted-paper-authors"><%= paper.authors_html %></div>
-<div class="highlighted-paper-meta"><span class="highlighted-paper-venue"><%= paper.venue_html %></span> (<span class="highlighted-paper-year"><%- paper.year %></span>)</div>
-<% if (paper.links && paper.links.length > 0) { %>
-<div class="pub-links">
-<% for (const link of paper.links) { %>
-<a class="pub-link" href="<%- link.href %>"><%- link.label %></a>
+<article class="research-card" id="<%- item.id %>" data-interest-id="<%- item.id %>">
+<a class="research-card-link" href="<%- item.href %>">
+<div class="research-card-graphic">
+<%= item.graphic_svg %>
+</div>
+<h2 class="research-card-title"><%- item.title %></h2>
+</a>
+</article>
 <% } %>
 </div>
-<% } %>
-</li>
-<% } %>
-</ul>
-</div>
-<% } %>
-<% if (item.links && item.links.length > 0) { %>
-<div class="research-interest-more">
-<% for (const lk of item.links) { %>
-<a class="research-interest-more-link" href="<%- lk.href %>"><%- lk.label %> →</a>
-<% } %>
-</div>
-<% } %>
-</section>
-<% } %>
-</div>
+```

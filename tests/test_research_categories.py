@@ -171,22 +171,24 @@ def test_research_index_lists_five_canonical_categories_in_order(site):
     soup = soup_of(page)
     main = soup.find("main") or soup.body or soup
 
-    sections = main.select("section.research-interest")
-    assert len(sections) == 5, f"expected 5 section.research-interest elements on research/index.html, got {len(sections)}"
+    cards = main.select(".research-cards-grid article.research-card")
+    assert len(cards) == 5, f"expected 5 article.research-card elements on research/index.html, got {len(cards)}"
 
     wanted = {(site / "research" / f"{s}.html").resolve(): s for s in CANONICAL_CATEGORIES}
     nfrsea_target = (site / "research" / "nfrsea.html").resolve()
     seen = []
-    for sec in sections:
-        for a in sec.find_all("a", href=True):
-            href = a["href"]
-            if not href.strip() or href.startswith("#") or re.match(r"^[a-zA-Z][\w+.\-]*:", href):
-                continue
-            resolved = resolve(site, page, href).resolve()
-            assert resolved != nfrsea_target, "nfrsea.html must not be listed as a top-level item on research/index.html"
-            slug = wanted.get(resolved)
-            if slug and slug not in seen:
-                seen.append(slug)
+    for card in cards:
+        link = card.select_one("a.research-card-link[href]")
+        assert link is not None, f"card {card.get('data-interest-id')!r} missing a.research-card-link[href]"
+        href = link["href"]
+        assert href.strip() and not href.startswith("#") and not re.match(r"^[a-zA-Z][\w+.\-]*:", href), (
+            f"unexpected non-internal card link href {href!r}"
+        )
+        resolved = resolve(site, page, href).resolve()
+        assert resolved != nfrsea_target, "nfrsea.html must not be listed as a top-level item on research/index.html"
+        slug = wanted.get(resolved)
+        if slug and slug not in seen:
+            seen.append(slug)
 
     expected_order = ["causalinf", "bayes", "epi", "adhd", "decision-making"]
     assert seen == expected_order, f"expected interest-aligned category order {expected_order}, got {seen}"
