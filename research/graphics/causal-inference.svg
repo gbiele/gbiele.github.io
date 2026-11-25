@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Causal inference diagram combining a DAG with confounder, treatment, and outcome linked to a causal estimator">
-  <title>Causal inference: DAG and causal estimator</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Causal inference diagram combining a DAG with confounder, treatment, and outcome linked to a potential outcomes estimator using weighted individual-level contrasts">
+  <title>Causal inference: DAG and potential outcomes weighted contrast estimator</title>
   <defs>
     <marker id="causal-inference-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 1 1 L 9 5 L 1 9 z" class="ri-marker-muted"/>
@@ -12,50 +12,67 @@
   <rect x="6" y="6" width="348" height="208" rx="10" class="ri-surface"/>
 
   <!-- Left panel: DAG -->
-  <rect x="16" y="18" width="154" height="184" rx="8" class="ri-panel"/>
-  <text x="93" y="38" text-anchor="middle" class="ri-text-title">DAG</text>
+  <rect x="14" y="18" width="136" height="184" rx="8" class="ri-panel"/>
+  <text x="82" y="36" text-anchor="middle" class="ri-text-title">DAG</text>
 
   <!-- DAG edges -->
-  <line x1="80" y1="78" x2="54" y2="122" class="ri-stroke-muted" marker-end="url(#causal-inference-arrow)"/>
-  <line x1="106" y1="78" x2="132" y2="122" class="ri-stroke-muted" marker-end="url(#causal-inference-arrow)"/>
-  <line x1="65" y1="142" x2="117" y2="142" class="ri-stroke-accent-bold" marker-end="url(#causal-inference-arrow-accent)"/>
+  <line x1="70" y1="80" x2="50" y2="124" class="ri-stroke-muted" marker-end="url(#causal-inference-arrow)"/>
+  <line x1="94" y1="80" x2="114" y2="124" class="ri-stroke-muted" marker-end="url(#causal-inference-arrow)"/>
+  <line x1="60" y1="142" x2="100" y2="142" class="ri-stroke-accent-bold" marker-end="url(#causal-inference-arrow-accent)"/>
 
   <!-- DAG nodes -->
-  <circle cx="93" cy="68" r="16" class="ri-node"/>
-  <text x="93" y="72" text-anchor="middle" class="ri-text-bold">C</text>
-  <text x="93" y="100" text-anchor="middle" class="ri-text-small">Confounder</text>
+  <circle cx="82" cy="68" r="15" class="ri-node"/>
+  <text x="82" y="72" text-anchor="middle" class="ri-text-bold">C</text>
+  <text x="82" y="96" text-anchor="middle" class="ri-text-small">Confounder</text>
 
-  <circle cx="46" cy="142" r="17" class="ri-node-accent"/>
-  <text x="46" y="146" text-anchor="middle" class="ri-text-accent-bold">T</text>
-  <text x="46" y="176" text-anchor="middle" class="ri-text-small">Treatment</text>
+  <circle cx="44" cy="142" r="15" class="ri-node-accent"/>
+  <text x="44" y="146" text-anchor="middle" class="ri-text-accent-bold">T</text>
+  <text x="44" y="172" text-anchor="middle" class="ri-text-small">Treatment</text>
 
-  <circle cx="140" cy="142" r="17" class="ri-node-secondary"/>
-  <text x="140" y="146" text-anchor="middle" class="ri-text-secondary-bold">Y</text>
-  <text x="140" y="176" text-anchor="middle" class="ri-text-small">Outcome</text>
+  <circle cx="120" cy="142" r="15" class="ri-node-secondary"/>
+  <text x="120" y="146" text-anchor="middle" class="ri-text-secondary-bold">Y</text>
+  <text x="120" y="172" text-anchor="middle" class="ri-text-small">Outcome</text>
 
   <!-- Connector arrow -->
-  <line x1="172" y1="110" x2="188" y2="110" class="ri-stroke-accent" marker-end="url(#causal-inference-arrow-accent)"/>
+  <line x1="152" y1="110" x2="164" y2="110" class="ri-stroke-accent" marker-end="url(#causal-inference-arrow-accent)"/>
 
-  <!-- Right panel: Estimator -->
-  <rect x="192" y="18" width="152" height="184" rx="8" class="ri-panel"/>
-  <text x="268" y="38" text-anchor="middle" class="ri-text-title">Estimator</text>
-  <text x="268" y="60" text-anchor="middle" class="ri-text-accent">E[Y(1) − Y(0)]</text>
-  <text x="268" y="76" text-anchor="middle" class="ri-text-small">Adjustment / IPW</text>
+  <!-- Right panel: Potential outcomes & weighted individual-level contrasts -->
+  <rect x="166" y="18" width="180" height="184" rx="8" class="ri-panel"/>
+  <text x="256" y="35" text-anchor="middle" class="ri-text-title">Estimator</text>
 
-  <!-- Forest / CI plot -->
-  <line x1="210" y1="158" x2="328" y2="158" class="ri-axis"/>
-  <line x1="242" y1="92" x2="242" y2="158" class="ri-stroke-dashed"/>
-  <text x="242" y="172" text-anchor="middle" class="ri-text-small">0</text>
-  <text x="308" y="172" text-anchor="middle" class="ri-text-small">Effect</text>
+  <!-- Potential outcomes weighted contrast formula -->
+  <rect x="174" y="42" width="164" height="24" rx="5" class="ri-node-accent"/>
+  <text x="256" y="58" text-anchor="middle" class="ri-text-accent-small">τ̂ = Σ wᵢ · [Yᵢ(1) − Yᵢ(0)]</text>
 
-  <!-- Unadjusted vs Adjusted estimates -->
-  <line x1="256" y1="108" x2="314" y2="108" class="ri-stroke-muted"/>
-  <circle cx="285" cy="108" r="4" class="ri-fill-muted"/>
-  <text x="210" y="111" class="ri-text-small">Crude</text>
+  <!-- Column headers -->
+  <text x="184" y="82" text-anchor="middle" class="ri-text-small">i</text>
+  <text x="220" y="82" text-anchor="middle" class="ri-text-small">Weight wᵢ</text>
+  <text x="296" y="82" text-anchor="middle" class="ri-text-small">Yᵢ(1) − Yᵢ(0)</text>
+  <line x1="174" y1="88" x2="338" y2="88" class="ri-axis"/>
 
-  <line x1="258" y1="134" x2="304" y2="134" class="ri-stroke-accent-bold"/>
-  <circle cx="281" cy="134" r="5" class="ri-fill-accent"/>
-  <text x="210" y="137" class="ri-text-accent-small">ATE</text>
+  <!-- Zero contrast reference line -->
+  <line x1="286" y1="92" x2="286" y2="158" class="ri-stroke-dashed"/>
 
-  <text x="268" y="191" text-anchor="middle" class="ri-text-small">Point estimate &amp; 95% CI</text>
+  <!-- Individual i = 1 -->
+  <text x="184" y="106" text-anchor="middle" class="ri-text-small">1</text>
+  <rect x="200" y="99" width="24" height="8" rx="3" class="ri-node-secondary"/>
+  <line x1="286" y1="103" x2="316" y2="103" class="ri-stroke-accent-bold"/>
+  <circle cx="316" cy="103" r="3.5" class="ri-fill-accent"/>
+
+  <!-- Individual i = 2 -->
+  <text x="184" y="128" text-anchor="middle" class="ri-text-small">2</text>
+  <rect x="200" y="121" width="38" height="8" rx="3" class="ri-node-secondary"/>
+  <line x1="286" y1="125" x2="328" y2="125" class="ri-stroke-accent-bold"/>
+  <circle cx="328" cy="125" r="3.5" class="ri-fill-accent"/>
+
+  <!-- Individual i = 3 -->
+  <text x="184" y="150" text-anchor="middle" class="ri-text-small">3</text>
+  <rect x="200" y="143" width="16" height="8" rx="3" class="ri-node-secondary"/>
+  <line x1="286" y1="147" x2="270" y2="147" class="ri-stroke-muted"/>
+  <circle cx="270" cy="147" r="3.5" class="ri-fill-muted"/>
+
+  <!-- Summary weighted average -->
+  <line x1="174" y1="164" x2="338" y2="164" class="ri-axis"/>
+  <text x="256" y="179" text-anchor="middle" class="ri-text-accent-small">Weighted individual contrasts</text>
+  <text x="256" y="193" text-anchor="middle" class="ri-text-small">Potential outcomes → ATE</text>
 </svg>
