@@ -43,15 +43,10 @@ Download my [resumé](files/CV_GuidoBiele.pdf).
 ::: {.column width="60%"}
 ## Education
 
-- PhD, 2006\
+- PhD\
   Max Planck Institute for Human Development, Berlin
-- Diploma (Psychology), 1999\
+- Diploma (Psychology)\
   Free University Berlin
 :::
 
 :::
-
-## Contact
-
-Marcus Thranes gate 6\
-0473 Oslo
