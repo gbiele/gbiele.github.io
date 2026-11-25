@@ -24,7 +24,7 @@ about:
 
 ## Biography
 
-I am a research professor in the Department of Child Health and Development at the Norwegian Institute of Public Health and a professor (II) in the Department of Psychology at the University of Oslo. My current research focuses on causal inference from observational and register data—both applied work on topics such as treatment effects in Attention Deficit Hyperactivity Disorder (ADHD) and the effects of parental income on child outcomes, and methodological work on identification and estimation under confounding, attrition, and missingness. I came to this work from a background in experimental psychology, cognitive neuroscience, and Bayesian statistical modelling, where I used quantitative models and neuroimaging to study human learning and decision making.
+I am a research professor in the Department of Child Health and Development at the Norwegian Institute of Public Health. My current research focuses on causal inference from observational and register data—both applied work on topics such as treatment effects in Attention Deficit Hyperactivity Disorder (ADHD) and the effects of parental income on child outcomes, and methodological work on identification and estimation under confounding, attrition, and missingness. I came to this work from a background in experimental psychology, cognitive neuroscience, and Bayesian statistical modelling, where I used quantitative models and neuroimaging to study human learning and decision making.
 
 Download my [resumé](files/CV_GuidoBiele.pdf).
 
