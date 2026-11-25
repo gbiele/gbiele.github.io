@@ -33,7 +33,6 @@ ABOUT_STRINGS = [
     "Norwegian Institute of Public Health",
     "I am a research professor in the Department of Child Health and Development "
     "at the Norwegian Institute of Public Health",
-    "professor (II) in the Department of Psychology at the University of Oslo",
     "causal inference",
     "observational",
     "register",
@@ -50,9 +49,9 @@ ABOUT_STRINGS = [
     "Bayesian statistics",
     "Cognitive modelling",
     "ADHD",
-    "PhD, 2006",
+    "PhD",
     "Max Planck Institute for Human Development, Berlin",
-    "Diploma (Psychology), 1999",
+    "Diploma (Psychology)",
     "Free University Berlin",
 ]
 
@@ -418,10 +417,11 @@ def test_about_biography_covers_causal_inference_and_drops_sars_cov_2(site):
     bio_sec = soup_of(page).select_one("section#biography")
     assert bio_sec is not None, "missing #biography section on index.html"
     bio_lower = collapse_ws(bio_sec.get_text(" ")).casefold()
+    assert "professor (ii)" not in bio_lower
+    assert "university of oslo" not in bio_lower
     for phrase in (
         "research professor in the department of child health and development "
         "at the norwegian institute of public health",
-        "professor (ii) in the department of psychology at the university of oslo",
         "causal inference",
         "observational",
         "register",
@@ -453,32 +453,30 @@ def test_about_interests_ordered_by_current_focus(site):
     ]
 
 
-def test_about_education_updated_years_and_drops_old_years(site):
+def test_about_education_drops_years(site):
     page = site / "index.html"
-    text = page_text(page)
-    assert "PhD, 2005" not in text
-    assert "Diploma (Psychology), 1998" not in text
     sec = soup_of(page).select_one("section#education")
     assert sec is not None, "missing #education section on index.html"
     edu_text = collapse_ws(sec.get_text(" "))
+    for year in ("1998", "1999", "2005", "2006"):
+        assert year not in edu_text, f"unexpected year {year!r} in #education"
     for expected in (
-        "PhD, 2006",
+        "PhD",
         "Max Planck Institute for Human Development, Berlin",
-        "Diploma (Psychology), 1999",
+        "Diploma (Psychology)",
         "Free University Berlin",
     ):
         assert expected in edu_text, f"#education missing {expected!r}"
 
 
-def test_about_contact_retains_address_and_redacts_email(site):
+def test_about_omits_contact_info_and_redacts_email(site):
     page = site / "index.html"
     soup = soup_of(page)
-    sec = soup.select_one("section#contact")
-    assert sec is not None, "missing #contact section on index.html"
-    contact_text = collapse_ws(sec.get_text(" "))
-    assert "marcus thranes gate 6" in contact_text.casefold()
-    assert "0473 Oslo" in contact_text
-    assert "guido.biele@fhi.no" not in soup.get_text(" ").casefold()
+    assert soup.select_one("section#contact") is None, "unexpected #contact section on index.html"
+    full_text = soup.get_text(" ").casefold()
+    assert "marcus thranes gate 6" not in full_text
+    assert "0473 oslo" not in full_text
+    assert "guido.biele@fhi.no" not in full_text
     hrefs = [a["href"].casefold() for a in soup.find_all("a", href=True)]
     assert not any("guido.biele@fhi.no" in h or "mailto:guido.biele@fhi.no" in h for h in hrefs)
 
