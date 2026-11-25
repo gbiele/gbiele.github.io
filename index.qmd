@@ -17,9 +17,10 @@ about:
     - icon: chat-dots
       text: Stan forum
       href: https://discourse.mc-stan.org/u/guido_biele/
+    - icon: building
+      text: Norwegian Institute of Public Health
+      href: https://www.fhi.no/en/
 ---
-
-[Norwegian Institute of Public Health](https://www.fhi.no/en/)
 
 ## Biography
 
@@ -32,11 +33,11 @@ Download my [resumé](files/CV_GuidoBiele.pdf).
 ::: {.column width="40%"}
 ## Interests
 
-- Causal inference
-- Bayesian statistics
-- Statistical modelling
-- ADHD
-- Cognitive modelling
+- [Causal inference](research/causalinf.qmd)
+- [Bayesian statistics](research/bayes.qmd)
+- [Statistical modelling](research/epi.qmd)
+- [ADHD](research/adhd.qmd)
+- [Cognitive modelling](research/decision-making.qmd)
 :::
 
 ::: {.column width="60%"}
